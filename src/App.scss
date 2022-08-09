@@ -1,0 +1,29 @@
+$tr-sec: 0.4s;
+
+@media (prefers-color-scheme: light) {
+	:root {
+		background-color: #fff !important;
+	}
+}
+@media (prefers-color-scheme: dark) {
+	:root {
+		background-color: #121212 !important;
+	}
+}
+
+:root[data-theme='light'] {
+	background-color: #fff !important;
+	transition: all $tr-sec ease-in-out;
+}
+:root[data-theme='dark'] {
+	background-color: #121212 !important;
+	transition: all $tr-sec ease-in-out;
+}
+
+body {
+	transition: all $tr-sec ease-in-out;
+}
+
+.MuiPaper-root {
+	transition: all $tr-sec ease-in-out, box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
+}
