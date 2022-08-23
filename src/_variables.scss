@@ -1,7 +1,9 @@
 $tr-sec: 0.4s;
 
 $scr-sizes-min: (
-	'768px': '0px',
+	'400px': '0px',
+	// xxs
+	'768px': '400px',
 	// xs
 	'992px': '768px',
 	// sm
@@ -12,11 +14,13 @@ $scr-sizes-min: (
 );
 
 $scr-sizes: (
-	'768px': '45px',
+	'400px': '45px',
+	// xxs
+	'768px': '50px',
 	// xs
 	'992px': '60px',
 	// sm
-	'1200px': '60px',
+	'1200px': '70px',
 	// md
 	'1424px': '80px',
 	// lg
