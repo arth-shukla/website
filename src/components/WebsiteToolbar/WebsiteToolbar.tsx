@@ -2,7 +2,7 @@ import { Toolbar } from '@mui/material'
 import { ColorSwitch, DarkModeSwitch, LineSheen } from '@arth-shukla/my-icons'
 import { Stack } from '@mui/system'
 import IconButton from '@mui/material/IconButton'
-import MenuIcon from '@mui/icons-material/Menu'
+import MenuRounded from '@mui/icons-material/MenuRounded'
 
 interface WebsiteToolbarProps {
 	theme: any
@@ -29,7 +29,7 @@ function WebsiteToolbar(props: WebsiteToolbarProps) {
 					sx={{ mr: 2 }}
 					onClick={() => props.setMenu(true)}
 				>
-					<MenuIcon />
+					<MenuRounded />
 				</IconButton>
 				<Stack
 					sx={{ marginLeft: 'auto', marginRight: '10px' }}

@@ -1,4 +1,5 @@
 import { Box, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
+import HomeRounded from '@mui/icons-material/HomeRounded'
 import Mail from '@mui/icons-material/Mail'
 import Bookmark from '@mui/icons-material/Bookmark'
 
@@ -22,6 +23,14 @@ function WebsiteToolbarContents() {
 	return (
 		<Box>
 			<List>
+				<ListItem disablePadding>
+					<ListItemButton>
+						<ListItemIcon>
+							<HomeRounded />
+						</ListItemIcon>
+						<ListItemText>Home</ListItemText>
+					</ListItemButton>
+				</ListItem>
 				<ListItem disablePadding>
 					<ListItemButton>
 						<ListItemIcon>
