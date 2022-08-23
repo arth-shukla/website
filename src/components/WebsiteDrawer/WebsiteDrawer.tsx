@@ -1,5 +1,6 @@
 import { Box, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
-import { Mail, Bookmark } from '@mui/icons-material'
+import Mail from '@mui/icons-material/Mail'
+import Bookmark from '@mui/icons-material/Bookmark'
 
 interface WebsiteDrawerProps {
 	open: boolean
