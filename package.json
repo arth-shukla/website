@@ -2,7 +2,7 @@
 	"name": "website",
 	"version": "0.1.0",
 	"private": true,
-	"homepage": "https://arth-shukla.github.io",
+	"homepage": "https://arth-shukla.github.io/website",
 	"dependencies": {
 		"@arth-shukla/my-icons": "^2.1.10",
 		"@emotion/react": "^11.10.0",
