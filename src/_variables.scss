@@ -1,1 +1,23 @@
 $tr-sec: 0.4s;
+
+$scr-sizes-min: (
+	'768px': '0px',
+	// xs
+	'992px': '768px',
+	// sm
+	'1200px': '992px',
+	// md
+	'1424px': '1200px',
+	// lg
+);
+
+$scr-sizes: (
+	'768px': '45px',
+	// xs
+	'992px': '60px',
+	// sm
+	'1200px': '60px',
+	// md
+	'1424px': '80px',
+	// lg
+);

@@ -1,34 +1,53 @@
-import { AppBar, SvgIcon, Toolbar } from '@mui/material'
-import { Container } from '@mui/system'
-import { DarkModeSwitch } from '@arth-shukla/my-icons'
+import { Toolbar } from '@mui/material'
+import { ColorSwitch, DarkModeSwitch, LineSheen } from '@arth-shukla/my-icons'
+import { Stack } from '@mui/system'
 
 interface WebsiteToolbarProps {
+	theme: any
+	colors: string[]
+	currentColorIndex: number
+	setCurrentColorIndex: React.Dispatch<React.SetStateAction<number>>
 	darkMode: boolean
 	setDarkMode: (arg: boolean) => void
 }
 
 function WebsiteToolbar(props: WebsiteToolbarProps) {
 	return (
-		<AppBar position='static'>
-			<Container maxWidth='xl'>
-				<Toolbar variant='dense'>
-					<HomeIcon />
+		<>
+			<Toolbar
+				id='toolbar'
+				sx={{ display: 'flex' }}
+			>
+				<Stack
+					sx={{ marginLeft: 'auto', marginRight: '10px' }}
+					direction='row'
+					spacing={1}
+				>
+					<ColorSwitch
+						colors={props.colors}
+						currentColorIndex={props.currentColorIndex}
+						onClick={() => props.setCurrentColorIndex((props.currentColorIndex + 1) % props.colors.length)}
+						size={48}
+					/>
 					<DarkModeSwitch
 						darkMode={props.darkMode}
 						onClick={() => props.setDarkMode(!props.darkMode)}
+						style={{
+							marginTop: 'auto',
+							marginBottom: 'auto',
+						}}
+						size={48}
 					/>
-				</Toolbar>
-			</Container>
-		</AppBar>
+				</Stack>
+			</Toolbar>
+			<LineSheen
+				lineHeight='3px'
+				lineColor={props.theme.palette.primary.main}
+				sheenColor={props.darkMode ? props.theme.palette.primary.light : props.theme.palette.primary.dark}
+				animDuration={0.4 * 3}
+			/>
+		</>
 	)
 }
 
 export default WebsiteToolbar
-
-function HomeIcon(props: any) {
-	return (
-		<SvgIcon {...props}>
-			<path d='M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z' />
-		</SvgIcon>
-	)
-}
