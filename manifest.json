@@ -1,11 +1,16 @@
 {
-	"short_name": "React App",
-	"name": "Create React App Sample",
+	"short_name": "Arth Shukla",
+	"name": "Arth Shukla Website",
 	"icons": [
 		{
 			"src": "a.svg",
-			"sizes": "256x256 128x128 64x64 32x32 24x24 16x16",
+			"sizes": "64x64 32x32 24x24 16x16",
 			"type": "image/svg"
+		},
+		{
+			"src": "a.png",
+			"sizes": "64x64 32x32",
+			"type": "image/png"
 		}
 	],
 	"start_url": ".",
