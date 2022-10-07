@@ -49,4 +49,8 @@ body {
 		--main-page-intro-font-size: 80px;
 		--main-page-intro-cursor-height: 82px;
 	}
+
+	@media screen and (max-width: '675px') {
+		height: 200px;
+	}
 }

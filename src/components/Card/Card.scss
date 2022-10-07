@@ -1,0 +1,6 @@
+@use '../../variables' as v;
+
+.card {
+	font-family: Courier, monospace;
+	transition: all v.$tr-sec ease-in-out;
+}

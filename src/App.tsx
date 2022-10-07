@@ -9,6 +9,7 @@ import { TextTypeDelete } from '@arth-shukla/my-icons'
 
 import WebsiteToolbar from './components/WebsiteToolbar/WebsiteToolbar'
 import WebsiteDrawer from './components/WebsiteDrawer/WebsiteDrawer'
+import Card from './components/Card/Card'
 
 import './App.scss'
 
@@ -57,7 +58,7 @@ function App() {
 				darkMode={darkMode}
 				setDarkMode={setDarkMode}
 			/>
-			<Box>
+			<Box sx={{ padding: '1em' }}>
 				<TextTypeDelete
 					className='main-page-intro'
 					constText={
@@ -75,13 +76,17 @@ function App() {
 					cursorWidth='3px'
 					cursorHeight='var(--main-page-intro-cursor-height)'
 					cursorColor={theme.palette.text.primary}
-					style={{ marginLeft: '10%', marginRight: '10%', marginTop: '50px' }}
+					style={{ marginLeft: '10%', marginRight: '10%', marginTop: '50px', marginBottom: '50px' }}
+				/>
+				<Card>
+					<h2>Hello!</h2>
+					<p>Nice to meet you!</p>
+				</Card>
+				<WebsiteDrawer
+					open={menu}
+					setMenu={setMenu}
 				/>
 			</Box>
-			<WebsiteDrawer
-				open={menu}
-				setMenu={setMenu}
-			/>
 		</ThemeProvider>
 	)
 }
