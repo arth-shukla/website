@@ -43,13 +43,13 @@ function Card({ children }: CardProps) {
 			<Box
 				className='card'
 				sx={{
-					margin: 'auto',
+					margin: '1em auto',
 					maxWidth: '800px',
 					color: cardTheme.palette.text.primary,
 					background: cardTheme.palette.background.default,
 					border: `1px solid ${cardTheme.palette.background.paper}`,
 					borderRadius: '8px',
-					padding: '.5em 2em 1em',
+					padding: '.5em 2em 2em',
 				}}
 			>
 				{children}

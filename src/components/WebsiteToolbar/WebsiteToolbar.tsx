@@ -41,6 +41,7 @@ function WebsiteToolbar(props: WebsiteToolbarProps) {
 						currentColorIndex={props.currentColorIndex}
 						onClick={() => props.setCurrentColorIndex((props.currentColorIndex + 1) % props.colors.length)}
 						size={48}
+						style={{ cursor: 'pointer' }}
 					/>
 					<DarkModeSwitch
 						darkMode={props.darkMode}
@@ -48,6 +49,7 @@ function WebsiteToolbar(props: WebsiteToolbarProps) {
 						style={{
 							marginTop: 'auto',
 							marginBottom: 'auto',
+							cursor: 'pointer',
 						}}
 						size={48}
 					/>
