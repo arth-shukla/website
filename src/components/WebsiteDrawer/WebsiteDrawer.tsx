@@ -19,11 +19,11 @@ function WebsiteToolbar(props: WebsiteDrawerProps) {
 	)
 }
 
-const toolbarItems = {
-	Home: <HomeRounded />,
-	'My Projects': <Bookmark />,
-	'Contact Me': <Mail />,
-}
+// const toolbarItems = {
+// 	Home: <HomeRounded />,
+// 	'My Projects': <Bookmark />,
+// 	'Contact Me': <Mail />,
+// }
 
 function WebsiteToolbarContents() {
 	return (

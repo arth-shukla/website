@@ -9,7 +9,8 @@ import { TextTypeDelete } from '@arth-shukla/my-icons'
 
 import WebsiteToolbar from './components/WebsiteToolbar/WebsiteToolbar'
 import WebsiteDrawer from './components/WebsiteDrawer/WebsiteDrawer'
-import Card from './components/Card/Card'
+// import Card from './components/Card/Card'
+import Section from './components/Section/Section'
 
 import './App.scss'
 
@@ -18,6 +19,15 @@ const primaryColors = {
 	lightDark: ['#0443a2', '#821734'],
 	dark: ['#1b8ad4', '#d754a3'],
 	darkLight: ['#76bcea', '#f29fd1'],
+}
+
+const themeColors = {
+	light: {
+		primaryText: 'rgba(0, 0, 0, .8)',
+	},
+	dark: {
+		primaryText: 'rgb(255, 255, 255, .87)',
+	},
 }
 
 function App() {
@@ -35,6 +45,9 @@ function App() {
 						main: primaryColors[darkMode ? 'dark' : 'light'][currentColorIndex],
 						light: darkMode ? primaryColors['darkLight'][currentColorIndex] : undefined,
 						dark: darkMode ? undefined : primaryColors['lightDark'][currentColorIndex],
+					},
+					text: {
+						primary: themeColors[darkMode ? 'dark' : 'light']['primaryText'],
 					},
 				},
 			}),
@@ -58,7 +71,7 @@ function App() {
 				darkMode={darkMode}
 				setDarkMode={setDarkMode}
 			/>
-			<Box sx={{ padding: '1em' }}>
+			<Box>
 				<TextTypeDelete
 					className='main-page-intro'
 					constText={
@@ -73,15 +86,28 @@ function App() {
 					typeText={[' a developer.', ' a student.', ' Arth.']}
 					typeTextColor={theme.palette.primary.main}
 					fontSize='var(--main-page-intro-font-size)'
+					fontFamily='Courier, sans-serif'
 					cursorWidth='3px'
 					cursorHeight='var(--main-page-intro-cursor-height)'
 					cursorColor={theme.palette.text.primary}
 					style={{ marginLeft: '10%', marginRight: '10%', marginTop: '50px', marginBottom: '50px' }}
 				/>
-				<Card>
+				{/* <Card>
 					<h2>Hello!</h2>
 					<p>Nice to meet you!</p>
 				</Card>
+				<Card>
+					<h2>Another Section</h2>
+					<p>Lol lmao</p>
+				</Card> */}
+				<Section>
+					<h1>Hello!</h1>
+					<p>Nice to meet you!</p>
+				</Section>
+				<Section>
+					<h1>You are smelly</h1>
+					<p>Go take a shower</p>
+				</Section>
 				<WebsiteDrawer
 					open={menu}
 					setMenu={setMenu}

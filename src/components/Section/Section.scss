@@ -1,0 +1,20 @@
+@use '../../variables' as v;
+
+.section {
+	font-size: 25px;
+	line-height: 1.1em;
+
+	margin: 0 !important;
+	padding: 30px 70px !important;
+
+	h1 {
+		font-size: 40px;
+		margin-top: 0;
+		margin-bottom: 26.1px;
+		line-height: 1.3em;
+	}
+
+	p {
+		margin-top: 0;
+	}
+}
