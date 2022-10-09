@@ -1,27 +1,24 @@
 $tr-sec: 0.4s;
+$default-transition: all $tr-sec ease-in-out;
+
+$xs: '400px';
+$sm: '768px';
+$md: '992px';
+$lg: '1200px';
+$xl: '1424px';
 
 $scr-sizes-min: (
-	'400px': '0px',
-	// xxs
-	'768px': '400px',
-	// xs
-	'992px': '768px',
-	// sm
-	'1200px': '992px',
-	// md
-	'1424px': '1200px',
-	// lg
+	$xs: '0px',
+	$sm: $xs,
+	$md: $sm,
+	$lg: $md,
+	$xl: $lg,
 );
 
 $scr-sizes: (
-	'400px': '45px',
-	// xxs
-	'768px': '50px',
-	// xs
-	'992px': '60px',
-	// sm
-	'1200px': '70px',
-	// md
-	'1424px': '80px',
-	// lg
+	$xs: '45px',
+	$sm: '50px',
+	$md: '60px',
+	$lg: '70px',
+	$xl: '80px',
 );

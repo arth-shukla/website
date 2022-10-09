@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
@@ -11,6 +11,7 @@ import WebsiteToolbar from './components/WebsiteToolbar/WebsiteToolbar'
 import WebsiteDrawer from './components/WebsiteDrawer/WebsiteDrawer'
 // import Card from './components/Card/Card'
 import Section from './components/Section/Section'
+import DownButton from './components/DownButton/DownButton'
 
 import './App.scss'
 
@@ -53,7 +54,8 @@ function App() {
 			}),
 		[darkMode, currentColorIndex],
 	)
-	console.log(theme.palette.text.primary)
+
+	const textRef = useRef()
 
 	useEffect(() => {
 		document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light')
@@ -72,42 +74,47 @@ function App() {
 				setDarkMode={setDarkMode}
 			/>
 			<Box>
-				<TextTypeDelete
-					className='main-page-intro'
-					constText={
-						<>
-							Hi!
-							<br />
-							I'm
-						</>
-					}
-					textAlign='left'
-					constTextColor={theme.palette.text.primary}
-					typeText={[' a developer.', ' a student.', ' Arth.']}
-					typeTextColor={theme.palette.primary.main}
-					fontSize='var(--main-page-intro-font-size)'
-					fontFamily='Courier, sans-serif'
-					cursorWidth='3px'
-					cursorHeight='var(--main-page-intro-cursor-height)'
-					cursorColor={theme.palette.text.primary}
-					style={{ marginLeft: '10%', marginRight: '10%', marginTop: '50px', marginBottom: '50px' }}
-				/>
-				{/* <Card>
-					<h2>Hello!</h2>
-					<p>Nice to meet you!</p>
-				</Card>
-				<Card>
-					<h2>Another Section</h2>
-					<p>Lol lmao</p>
-				</Card> */}
-				<Section>
-					<h1>Hello!</h1>
-					<p>Nice to meet you!</p>
-				</Section>
-				<Section>
-					<h1>You are smelly</h1>
-					<p>Go take a shower</p>
-				</Section>
+				<Box
+					className='top-section'
+					sx={{
+						position: 'relative',
+						padding: '10%',
+					}}
+				>
+					<TextTypeDelete
+						className='main-page-intro'
+						constText={
+							<>
+								Hi!
+								<br />
+								I'm
+							</>
+						}
+						textAlign='left'
+						constTextColor={theme.palette.text.primary}
+						typeText={[' a developer.', ' a student.', ' Arth.']}
+						typeTextColor={theme.palette.primary.main}
+						fontSize='var(--main-page-intro-font-size)'
+						fontFamily='Courier, sans-serif'
+						cursorWidth='3px'
+						cursorHeight='var(--main-page-intro-cursor-height)'
+						cursorColor={theme.palette.text.primary}
+					/>
+					<DownButton scrollTargRef={textRef} />
+				</Box>
+				<Box
+					ref={textRef}
+					className='text-section'
+				>
+					<Section>
+						<h1>Hello!</h1>
+						<p>Nice to meet you!</p>
+					</Section>
+					<Section>
+						<h1>You are smelly</h1>
+						<p>Go take a shower</p>
+					</Section>
+				</Box>
 				<WebsiteDrawer
 					open={menu}
 					setMenu={setMenu}

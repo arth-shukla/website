@@ -14,27 +14,27 @@
 
 :root[data-theme='light'] {
 	background-color: #fff !important;
-	transition: all v.$tr-sec ease-in-out;
+	transition: v.$default-transition;
 }
 :root[data-theme='dark'] {
 	background-color: #121212 !important;
-	transition: all v.$tr-sec ease-in-out;
+	transition: v.$default-transition;
 }
 
 body {
-	transition: all v.$tr-sec ease-in-out;
+	transition: v.$default-transition;
 }
 
 .MuiPaper-root {
-	transition: all v.$tr-sec ease-in-out;
+	transition: v.$default-transition;
 }
 
 .main-page-intro {
 	#ai-text-type-delete-text {
-		transition: all v.$tr-sec ease-in-out;
+		transition: v.$default-transition;
 
 		span {
-			transition: all v.$tr-sec ease-in-out;
+			transition: v.$default-transition;
 		}
 	}
 
@@ -50,7 +50,16 @@ body {
 		--main-page-intro-cursor-height: 82px;
 	}
 
-	@media screen and (max-width: '675px') {
+	@media screen and (max-width: v.$sm) {
 		height: 200px;
+	}
+}
+
+@media screen and (min-width: v.$sm) {
+	.top-section {
+		height: calc(100vh - 64px - 3px);
+	}
+	.text-section {
+		min-height: 100vh;
 	}
 }
