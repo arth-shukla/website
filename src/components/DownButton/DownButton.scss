@@ -2,11 +2,11 @@
 
 .scroll-down-button {
 	opacity: 0;
+	visibility: hidden;
 
 	@media screen and (min-width: v.$sm) {
-		// visibility: hidden;
 		opacity: 1;
-		transition: opacity v.$tr-sec ease-in-out 0.6s, fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
+		visibility: visible;
 	}
 
 	transition: v.$default-transition;
@@ -21,4 +21,6 @@
 
 .scroll-down-button-hidden {
 	opacity: 0;
+	visibility: hidden;
+	transition: visibility v.$tr-sec ease-in-out, opacity v.$tr-sec ease-in-out, fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
 }
