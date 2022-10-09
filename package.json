@@ -4,7 +4,7 @@
 	"private": true,
 	"homepage": "https://arth-shukla.github.io/website",
 	"dependencies": {
-		"@arth-shukla/my-icons": "^2.1.13",
+		"@arth-shukla/my-icons": "^2.1.14",
 		"@emotion/react": "^11.10.0",
 		"@emotion/styled": "^11.10.0",
 		"@mui/icons-material": "^5.8.4",
