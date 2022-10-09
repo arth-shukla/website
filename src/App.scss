@@ -62,11 +62,10 @@ body {
 }
 
 .top-section {
-	@media screen and (min-width: v.$sm) {
-		min-height: calc(100vh - 64px - 3px) !important;
-		transition: min-height 1s cubic-bezier(0.21, 0.24, 0.28, 0.8);
+	@media screen and (max-width: v.$sm) {
+		min-height: 0;
+		transition: min-height 2s cubic-bezier(0.21, 0.24, 0.28, 0.8) !important;
 	}
 
-	min-height: 0;
-	transition: min-height 2s cubic-bezier(0.21, 0.24, 0.28, 0.8);
+	transition: min-height 1s cubic-bezier(0.21, 0.24, 0.28, 0.8);
 }

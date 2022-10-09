@@ -31,6 +31,7 @@ function App() {
 	const [darkMode, setDarkMode] = useState<boolean>(prefersDarkMode || false)
 	const [currentColorIndex, setCurrentColorIndex] = useState<number>(0)
 	const [menu, setMenu] = useState<boolean>(false)
+	const [winHeight, setWinHeight] = useState<number>(window.innerHeight)
 
 	const theme = React.useMemo(
 		() =>
@@ -56,6 +57,14 @@ function App() {
 		document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light')
 	}, [darkMode])
 
+	const handleResize = () => {
+		setWinHeight(window.innerHeight)
+	}
+
+	useEffect(() => {
+		window.addEventListener('resize', handleResize)
+	}, [])
+
 	return (
 		<ThemeProvider theme={theme}>
 			<CssBaseline />
@@ -74,6 +83,7 @@ function App() {
 						position: 'relative',
 						padding: '10%',
 						paddingBottom: '1em',
+						minHeight: `calc(${winHeight}px - 64px - 3px)`,
 					}}
 				>
 					<TextTypeDelete
