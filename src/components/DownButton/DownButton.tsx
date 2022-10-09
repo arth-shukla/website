@@ -37,8 +37,9 @@ function DownButton({ scrollTargRef }: DownButtonProps) {
 			onClick={() => {
 				scrollToTarg()
 			}}
+			aria-hidden='true'
 		>
-			<KeyboardArrowDownIcon />
+			<KeyboardArrowDownIcon fontSize='large' />
 		</Button>
 	)
 }

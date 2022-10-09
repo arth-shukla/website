@@ -66,7 +66,6 @@ function App() {
 			<CssBaseline />
 			<WebsiteToolbar
 				setMenu={setMenu}
-				theme={theme}
 				colors={primaryColors[theme.palette.mode]}
 				currentColorIndex={currentColorIndex}
 				setCurrentColorIndex={setCurrentColorIndex}

@@ -27,7 +27,11 @@ function WebsiteToolbar(props: WebsiteDrawerProps) {
 
 function WebsiteToolbarContents() {
 	return (
-		<Box>
+		<Box
+			sx={{
+				width: '250px',
+			}}
+		>
 			<List>
 				<ListItem disablePadding>
 					<ListItemButton>
