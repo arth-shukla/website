@@ -1,0 +1,43 @@
+@use '../../variables' as v;
+@use 'sass:map';
+
+.main-page-intro {
+	#ai-text-type-delete-text {
+		transition: v.$default-transition;
+
+		span {
+			transition: v.$default-transition;
+		}
+	}
+
+	@each $scr in map.keys(v.$scr-sizes) {
+		@media screen and (max-width: $scr) and (min-width: #{map.get(v.$scr-sizes-min, $scr)}) {
+			--main-page-intro-font-size: #{map.get(v.$scr-sizes, $scr)};
+			--main-page-intro-cursor-height: calc(#{map.get(v.$scr-sizes, $scr)} + 2px);
+		}
+	}
+
+	@media screen and (min-width: '1424px') {
+		--main-page-intro-font-size: 80px;
+		--main-page-intro-cursor-height: 82px;
+	}
+
+	@media screen and (max-width: v.$sm) {
+		height: 225px;
+	}
+}
+
+@media screen and (min-width: v.$sm) {
+	.text-section {
+		min-height: 100vh;
+	}
+}
+
+.top-section {
+	@media screen and (max-width: v.$sm) {
+		min-height: 0 !important;
+		transition: min-height 2s cubic-bezier(0.21, 0.24, 0.28, 0.8) !important;
+	}
+
+	transition: min-height 1s cubic-bezier(0.21, 0.24, 0.28, 0.8);
+}

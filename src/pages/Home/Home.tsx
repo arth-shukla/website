@@ -5,6 +5,8 @@ import { TextTypeDelete } from '@arth-shukla/my-icons'
 import { DownButton, Section, Socials } from '../../components'
 import { useTheme } from '@mui/system'
 
+import './Home.scss'
+
 function HomePage() {
 	const textRef = useRef()
 	const theme = useTheme()
