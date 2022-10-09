@@ -2,7 +2,6 @@ import { Toolbar, useTheme } from '@mui/material'
 import { ColorSwitch, DarkModeSwitch, LineSheen } from '@arth-shukla/my-icons'
 import { Stack } from '@mui/system'
 import IconButton from '@mui/material/IconButton'
-import MenuRounded from '@mui/icons-material/MenuRounded'
 
 interface WebsiteToolbarProps {
 	setMenu: (arg: boolean) => void
