@@ -63,7 +63,7 @@ body {
 
 .top-section {
 	@media screen and (max-width: v.$sm) {
-		min-height: 0;
+		min-height: 0 !important;
 		transition: min-height 2s cubic-bezier(0.21, 0.24, 0.28, 0.8) !important;
 	}
 
