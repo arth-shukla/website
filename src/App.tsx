@@ -1,12 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import CssBaseline from '@mui/material/CssBaseline'
-import { Box } from '@mui/system'
-import { TextTypeDelete } from '@arth-shukla/my-icons'
 
-import { DownButton, Section, Socials, WebsiteDrawer, WebsiteToolbar } from './components'
+import { WebsiteDrawer, WebsiteToolbar } from './components'
+import { Home } from './pages'
 
 import './App.scss'
 
@@ -26,12 +25,15 @@ const themeColors = {
 	},
 }
 
-function App() {
+interface AppProps {
+	page: 'home'
+}
+
+function App({ page }: AppProps) {
 	const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
 	const [darkMode, setDarkMode] = useState<boolean>(prefersDarkMode || false)
 	const [currentColorIndex, setCurrentColorIndex] = useState<number>(0)
 	const [menu, setMenu] = useState<boolean>(false)
-	const [winHeight, setWinHeight] = useState<number>(window.innerHeight)
 
 	const theme = React.useMemo(
 		() =>
@@ -51,19 +53,9 @@ function App() {
 		[darkMode, currentColorIndex],
 	)
 
-	const textRef = useRef()
-
 	useEffect(() => {
 		document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light')
 	}, [darkMode])
-
-	const handleResize = () => {
-		setWinHeight(window.innerHeight)
-	}
-
-	useEffect(() => {
-		window.addEventListener('resize', handleResize)
-	}, [])
 
 	return (
 		<ThemeProvider theme={theme}>
@@ -76,56 +68,11 @@ function App() {
 				darkMode={darkMode}
 				setDarkMode={setDarkMode}
 			/>
-			<Box>
-				<Box
-					className='top-section'
-					sx={{
-						position: 'relative',
-						padding: '10%',
-						paddingBottom: '1em',
-						minHeight: `calc(${winHeight}px - 64px - 3px)`,
-					}}
-				>
-					<TextTypeDelete
-						className='main-page-intro'
-						constText={
-							<>
-								Hi!
-								<br />
-								I'm
-							</>
-						}
-						textAlign='left'
-						constTextColor={theme.palette.text.primary}
-						typeText={[' a developer.', ' a student.', ' Arth.']}
-						typeTextColor={theme.palette.primary.main}
-						fontSize='var(--main-page-intro-font-size)'
-						fontFamily='Courier, sans-serif'
-						cursorWidth='3px'
-						cursorHeight='var(--main-page-intro-cursor-height)'
-						cursorColor={theme.palette.text.primary}
-					/>
-					<Socials />
-					<DownButton scrollTargRef={textRef} />
-				</Box>
-				<Box
-					ref={textRef}
-					className='text-section'
-				>
-					<Section>
-						<h1>Hello!</h1>
-						<p>Nice to meet you!</p>
-					</Section>
-					<Section>
-						<h1>You are smelly</h1>
-						<p>Go take a shower</p>
-					</Section>
-				</Box>
-				<WebsiteDrawer
-					open={menu}
-					setMenu={setMenu}
-				/>
-			</Box>
+			{page === 'home' && <Home />}
+			<WebsiteDrawer
+				open={menu}
+				setMenu={setMenu}
+			/>
 		</ThemeProvider>
 	)
 }

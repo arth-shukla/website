@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import { Box, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
 import HomeRounded from '@mui/icons-material/HomeRounded'
 import Mail from '@mui/icons-material/Mail'
@@ -19,11 +21,39 @@ function WebsiteToolbar(props: WebsiteDrawerProps) {
 	)
 }
 
-// const toolbarItems = {
-// 	Home: <HomeRounded />,
-// 	'My Projects': <Bookmark />,
-// 	'Contact Me': <Mail />,
-// }
+const toolbarRoutes: any = {
+	'/': {
+		name: 'Home',
+		icon: <HomeRounded />,
+	},
+	projects: {
+		name: 'My Projects',
+		icon: <Bookmark />,
+	},
+	contact: {
+		name: 'Contact Me',
+		icon: <Mail />,
+	},
+}
+
+function renderToolbarRoutes() {
+	let renderedRoutes = []
+	for (const route in toolbarRoutes) {
+		renderedRoutes.push(
+			<ListItem disablePadding>
+				<ListItemButton
+					component={Link}
+					to={route}
+				>
+					<ListItemIcon>{toolbarRoutes[route]['icon']}</ListItemIcon>
+					<ListItemText>{toolbarRoutes[route]['name']}</ListItemText>
+				</ListItemButton>
+			</ListItem>,
+		)
+	}
+
+	return renderedRoutes
+}
 
 function WebsiteToolbarContents() {
 	return (
@@ -32,32 +62,7 @@ function WebsiteToolbarContents() {
 				width: '250px',
 			}}
 		>
-			<List>
-				<ListItem disablePadding>
-					<ListItemButton>
-						<ListItemIcon>
-							<HomeRounded />
-						</ListItemIcon>
-						<ListItemText>Home</ListItemText>
-					</ListItemButton>
-				</ListItem>
-				<ListItem disablePadding>
-					<ListItemButton>
-						<ListItemIcon>
-							<Bookmark />
-						</ListItemIcon>
-						<ListItemText>My Projects</ListItemText>
-					</ListItemButton>
-				</ListItem>
-				<ListItem disablePadding>
-					<ListItemButton>
-						<ListItemIcon>
-							<Mail />
-						</ListItemIcon>
-						<ListItemText>Contact Me</ListItemText>
-					</ListItemButton>
-				</ListItem>
-			</List>
+			<List>{renderToolbarRoutes()}</List>
 		</Box>
 	)
 }
