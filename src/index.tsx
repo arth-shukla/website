@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Routes, Route, HashRouter } from 'react-router-dom'
 
 import './index.scss'
 import App from './App'
@@ -9,14 +9,15 @@ import reportWebVitals from './reportWebVitals'
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
 	<React.StrictMode>
-		<BrowserRouter>
+		{/* using hashrouter while im still on gh pages, will switch to browerrouter after i'm ready for real deployment */}
+		<HashRouter>
 			<Routes>
 				<Route
 					index
 					element={<App page='home' />}
 				/>
 			</Routes>
-		</BrowserRouter>
+		</HashRouter>
 	</React.StrictMode>,
 )
 
