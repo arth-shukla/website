@@ -1,0 +1,9 @@
+@use '../../variables' as v;
+
+.socials-box {
+	@media screen and (max-width: v.$sm) {
+		margin-top: 0;
+	}
+
+	margin-top: 2em;
+}

@@ -51,15 +51,22 @@ body {
 	}
 
 	@media screen and (max-width: v.$sm) {
-		height: 200px;
+		height: 225px;
 	}
 }
 
 @media screen and (min-width: v.$sm) {
-	.top-section {
-		height: calc(100vh - 64px - 3px);
-	}
 	.text-section {
 		min-height: 100vh;
 	}
+}
+
+.top-section {
+	@media screen and (min-width: v.$sm) {
+		min-height: calc(100vh - 64px - 3px) !important;
+		transition: min-height 1s cubic-bezier(0.21, 0.24, 0.28, 0.8);
+	}
+
+	min-height: 0;
+	transition: min-height 2s cubic-bezier(0.21, 0.24, 0.28, 0.8);
 }

@@ -4,14 +4,9 @@ import { createTheme, ThemeProvider } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import CssBaseline from '@mui/material/CssBaseline'
 import { Box } from '@mui/system'
-
 import { TextTypeDelete } from '@arth-shukla/my-icons'
 
-import WebsiteToolbar from './components/WebsiteToolbar/WebsiteToolbar'
-import WebsiteDrawer from './components/WebsiteDrawer/WebsiteDrawer'
-// import Card from './components/Card/Card'
-import Section from './components/Section/Section'
-import DownButton from './components/DownButton/DownButton'
+import { DownButton, Section, Socials, WebsiteDrawer, WebsiteToolbar } from './components'
 
 import './App.scss'
 
@@ -78,6 +73,7 @@ function App() {
 					sx={{
 						position: 'relative',
 						padding: '10%',
+						paddingBottom: '1em',
 					}}
 				>
 					<TextTypeDelete
@@ -99,6 +95,7 @@ function App() {
 						cursorHeight='var(--main-page-intro-cursor-height)'
 						cursorColor={theme.palette.text.primary}
 					/>
+					<Socials />
 					<DownButton scrollTargRef={textRef} />
 				</Box>
 				<Box
