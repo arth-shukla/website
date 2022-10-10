@@ -16,7 +16,7 @@ function WebsiteToolbar(props: WebsiteDrawerProps) {
 			open={props.open}
 			onClose={() => props.setMenu(false)}
 		>
-			<WebsiteToolbarContents />
+			<WebsiteToolbarContents setMenu={props.setMenu} />
 		</Drawer>
 	)
 }
@@ -36,7 +36,7 @@ const toolbarRoutes: any = {
 	},
 }
 
-function renderToolbarRoutes() {
+function renderToolbarRoutes(setMenu: any) {
 	let renderedRoutes = []
 	for (const route in toolbarRoutes) {
 		renderedRoutes.push(
@@ -44,6 +44,9 @@ function renderToolbarRoutes() {
 				<ListItemButton
 					component={Link}
 					to={route}
+					onClick={() => {
+						setMenu(false)
+					}}
 				>
 					<ListItemIcon>{toolbarRoutes[route]['icon']}</ListItemIcon>
 					<ListItemText>{toolbarRoutes[route]['name']}</ListItemText>
@@ -55,14 +58,14 @@ function renderToolbarRoutes() {
 	return renderedRoutes
 }
 
-function WebsiteToolbarContents() {
+function WebsiteToolbarContents({ setMenu }: any) {
 	return (
 		<Box
 			sx={{
 				width: '250px',
 			}}
 		>
-			<List>{renderToolbarRoutes()}</List>
+			<List>{renderToolbarRoutes(setMenu)}</List>
 		</Box>
 	)
 }
