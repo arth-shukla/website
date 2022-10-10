@@ -1,12 +1,12 @@
 @use '../../variables' as v;
 
 .scroll-down-button {
-	opacity: 0;
-	visibility: hidden;
+	opacity: 1;
+	visibility: visible;
 
-	@media screen and (min-width: v.$sm) {
-		opacity: 1;
-		visibility: visible;
+	@media screen and (max-width: v.$sm) {
+		opacity: 0;
+		visibility: hidden;
 	}
 
 	transition: v.$default-transition;

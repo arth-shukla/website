@@ -5,6 +5,7 @@ import './Section.scss'
 
 interface SectionProps {
 	children: any
+	sx?: any
 }
 
 // const cardColors = {
@@ -20,7 +21,7 @@ interface SectionProps {
 // 	},
 // }
 
-function Card({ children }: SectionProps) {
+function Section({ children, sx, ...rest }: SectionProps) {
 	const theme = useTheme()
 
 	return (
@@ -29,11 +30,13 @@ function Card({ children }: SectionProps) {
 			style={{
 				color: theme.palette.text.primary,
 				padding: '55px',
+				...sx,
 			}}
+			{...rest}
 		>
 			{children}
 		</section>
 	)
 }
 
-export default Card
+export default Section

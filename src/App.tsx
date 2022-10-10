@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
+import { Routes, Route, HashRouter } from 'react-router-dom'
 
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import CssBaseline from '@mui/material/CssBaseline'
 
 import { WebsiteDrawer, WebsiteToolbar } from './components'
-import { Home } from './pages'
+import { Home, Error404, Projects } from './pages'
 
 import './App.scss'
 
@@ -25,11 +26,7 @@ const themeColors = {
 	},
 }
 
-interface AppProps {
-	page: 'home'
-}
-
-function App({ page }: AppProps) {
+function App() {
 	const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
 	const [darkMode, setDarkMode] = useState<boolean>(prefersDarkMode || false)
 	const [currentColorIndex, setCurrentColorIndex] = useState<number>(0)
@@ -58,22 +55,37 @@ function App({ page }: AppProps) {
 	}, [darkMode])
 
 	return (
-		<ThemeProvider theme={theme}>
-			<CssBaseline />
-			<WebsiteToolbar
-				setMenu={setMenu}
-				colors={primaryColors[theme.palette.mode]}
-				currentColorIndex={currentColorIndex}
-				setCurrentColorIndex={setCurrentColorIndex}
-				darkMode={darkMode}
-				setDarkMode={setDarkMode}
-			/>
-			{page === 'home' && <Home />}
-			<WebsiteDrawer
-				open={menu}
-				setMenu={setMenu}
-			/>
-		</ThemeProvider>
+		<HashRouter>
+			<ThemeProvider theme={theme}>
+				<CssBaseline />
+				<WebsiteToolbar
+					setMenu={setMenu}
+					colors={primaryColors[theme.palette.mode]}
+					currentColorIndex={currentColorIndex}
+					setCurrentColorIndex={setCurrentColorIndex}
+					darkMode={darkMode}
+					setDarkMode={setDarkMode}
+				/>
+				<Routes>
+					<Route
+						index
+						element={<Home />}
+					/>
+					<Route
+						path='projects'
+						element={<Projects />}
+					/>
+					<Route
+						path='*'
+						element={<Error404 />}
+					/>
+				</Routes>
+				<WebsiteDrawer
+					open={menu}
+					setMenu={setMenu}
+				/>
+			</ThemeProvider>
+		</HashRouter>
 	)
 }
 

@@ -27,17 +27,22 @@
 	}
 }
 
-@media screen and (min-width: v.$sm) {
-	.text-section {
-		min-height: 100vh;
+.text-section {
+	min-height: calc(100vh - 50px);
+
+	@media screen and (max-width: v.$sm) {
+		min-height: 0;
 	}
+
+	padding-bottom: 100px;
 }
 
 .top-section {
 	@media screen and (max-width: v.$sm) {
 		min-height: 0 !important;
-		transition: min-height 2s cubic-bezier(0.21, 0.24, 0.28, 0.8) !important;
+		transition: min-height 2s cubic-bezier(0.21, 0.24, 0.28, 0.8), padding v.$tr-sec cubic-bezier(0.21, 0.24, 0.28, 0.8) !important;
+		padding: 10% !important;
 	}
 
-	transition: min-height 1s cubic-bezier(0.21, 0.24, 0.28, 0.8);
+	transition: min-height 1s cubic-bezier(0.21, 0.24, 0.28, 0.8), padding v.$tr-sec cubic-bezier(0.21, 0.24, 0.28, 0.8);
 }

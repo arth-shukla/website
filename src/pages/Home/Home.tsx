@@ -27,7 +27,7 @@ function HomePage() {
 				className='top-section'
 				sx={{
 					position: 'relative',
-					padding: '10%',
+					padding: `${winHeight / 5}px 10%`,
 					paddingBottom: '1em',
 					minHeight: `calc(${winHeight}px - 64px - 3px)`,
 				}}

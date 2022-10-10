@@ -18,7 +18,7 @@ function DownButton({ scrollTargRef }: DownButtonProps) {
 	const hideOnScroll = () => {
 		const winScroll = document.body.scrollTop || document.documentElement.scrollTop
 
-		if (winScroll < 10) setHidden(false)
+		if (winScroll < 20) setHidden(false)
 		else setHidden(true)
 	}
 
