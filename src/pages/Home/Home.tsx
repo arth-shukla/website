@@ -111,7 +111,7 @@ function SelfIntroSection() {
 						/>
 					</p>
 					<p>I'm Arth. I'm a second-year Math-Computer Science major at UCSD, and I'm looking for new opportunities to gain experience.</p>
-					<p>I'm eager to learn new skills and technologies, and I'm especially interested web development and AI/ML.</p>
+					<p>I'm eager to learn new skills and technologies, and I'm especially interested in web development and AI/ML.</p>
 				</Grid>
 				<Grid
 					item
