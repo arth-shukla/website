@@ -33,11 +33,11 @@ function App() {
 	const [menu, setMenu] = useState<boolean>(false)
 
 	const [winHeight, setWinHeight] = useState<number>(window.innerHeight)
-	const [winWidth, setWinWidth] = useState<number>(window.innerWidth)
+	// const [winWidth, setWinWidth] = useState<number>(window.innerWidth)
 
 	const handleResize = () => {
 		setWinHeight(window.innerHeight)
-		setWinWidth(window.innerWidth)
+		// setWinWidth(window.innerWidth)
 	}
 
 	useEffect(() => {

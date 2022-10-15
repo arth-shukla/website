@@ -168,12 +168,12 @@ function Resume() {
 				<h1>My Resume</h1>
 				<p>
 					Below is my resume. It is also available for{' '}
-					<a
-						href=''
-						style={{ color: theme.palette.primary.main }}
+					<A
+						href={process.env.PUBLIC_URL + '/documents/Arth_Shukla_Resume.pdf'}
+						target='_blank'
 					>
 						download as pdf
-					</a>
+					</A>
 					.
 				</p>
 			</Section>
