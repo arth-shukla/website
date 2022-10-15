@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 
 import { TextTypeDelete } from '@arth-shukla/my-icons'
-import { DownButton, ProfilePic, Section, Socials } from '../../components'
+import { DownButton, ProfilePic, Section, Socials, SocialsContext, SocialsContextProvider } from '../../components'
 
 import useTheme from '@mui/system/useTheme'
 import Box from '@mui/system/Box'
@@ -11,6 +11,25 @@ import './Home.scss'
 
 interface HomeProps {
 	winHeight: number
+}
+
+const HomeSocials: SocialsContext = {
+	Email: {
+		include: true,
+		text: false,
+	},
+	GitHub: {
+		include: true,
+		text: false,
+	},
+	LinkedIn: {
+		include: true,
+		text: false,
+	},
+	PhoneNumber: {
+		include: false,
+		text: false,
+	},
 }
 
 function Home({ winHeight }: HomeProps) {
@@ -47,7 +66,9 @@ function Home({ winHeight }: HomeProps) {
 					cursorHeight='var(--main-page-intro-cursor-height)'
 					cursorColor={theme.palette.text.primary}
 				/>
-				<Socials />
+				<SocialsContextProvider value={HomeSocials}>
+					<Socials />
+				</SocialsContextProvider>
 				<DownButton scrollTargRef={textRef} />
 			</Box>
 			<Box

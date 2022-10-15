@@ -1,0 +1,46 @@
+@use '../../variables' as v;
+
+.resume {
+	margin: 0 calc(1em + 4px) 1em calc(1em - 4px);
+
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+	transition: inherit;
+
+	span {
+		transition: inherit;
+	}
+
+	.resume-section:last-of-type {
+		padding-bottom: 2em;
+	}
+
+	.resume-socials-1 {
+		@media screen and (max-width: 819px) {
+			display: none;
+		}
+	}
+	.resume-socials-21,
+	.resume-socials-22 {
+		@media screen and (max-width: 819px) and (min-width: 472px) {
+			display: flex;
+		}
+		display: none;
+	}
+	.resume-socials-3 {
+		@media screen and (min-width: 472px) {
+			display: none;
+		}
+	}
+
+	.pslim {
+		padding-bottom: 0.25em;
+	}
+	.pslim:last-of-type {
+		padding-bottom: 0;
+	}
+
+	a {
+		transition: inherit;
+	}
+}

@@ -47,7 +47,7 @@ function ProfilePic({ size = 100, className = '' }: ProfilePicProps) {
 					id='sd'
 					cx='50%'
 					cy='50%'
-					r={`calc((100% / 2) - ${strokeWidth}px * 4)`} //{(size - strokeWidth * 4) / 2}
+					r={`calc((100% / 2) - ${strokeWidth}px * 4)`}
 					fill={`url(#${`image-${className}`})`}
 					stroke={theme.palette.mode === 'dark' ? '#121212' : '#fff'}
 					stroke-width={strokeWidth}
@@ -57,7 +57,7 @@ function ProfilePic({ size = 100, className = '' }: ProfilePicProps) {
 					cx='50%'
 					cy='50%'
 					fill='none'
-					r={`calc((100% / 2) - ${strokeWidth}px * 2)`} //{(size - strokeWidth * 4) / 2}
+					r={`calc((100% / 2) - ${strokeWidth}px * 2)`}
 					stroke={theme.palette.primary.main}
 					stroke-width={strokeWidth}
 				/>
