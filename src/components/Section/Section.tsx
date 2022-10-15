@@ -16,7 +16,6 @@ function Section({ children, sx, ...rest }: SectionProps) {
 			className='section'
 			style={{
 				color: theme.palette.text.primary,
-				padding: '55px',
 				...sx,
 			}}
 			{...rest}

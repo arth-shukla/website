@@ -20,4 +20,8 @@
 	}
 
 	transition: v.$default-transition;
+
+	@media screen and (max-width: v.$sm) {
+		padding: 30px 10% !important;
+	}
 }

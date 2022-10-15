@@ -1,0 +1,9 @@
+@use '../../variables' as v;
+
+.profile-pic {
+	> circle {
+		transition: v.$default-transition;
+		max-width: 100% !important;
+	}
+	aspect-ratio: 1 / 1;
+}

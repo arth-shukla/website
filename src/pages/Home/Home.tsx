@@ -1,15 +1,13 @@
 import React, { useRef } from 'react'
 
 import { TextTypeDelete } from '@arth-shukla/my-icons'
-import { DownButton, Section, Socials } from '../../components'
-
-import './Home.scss'
+import { DownButton, ProfilePic, Section, Socials } from '../../components'
 
 import useTheme from '@mui/system/useTheme'
 import Box from '@mui/system/Box'
 import Grid from '@mui/material/Grid'
 
-import profile from './Me_Profile.jpg'
+import './Home.scss'
 
 interface HomeProps {
 	winHeight: number
@@ -88,7 +86,7 @@ function SelfIntroSection() {
 					>
 						<ProfilePic
 							className='lt-md'
-							size='300px'
+							size={300}
 						/>
 					</p>
 					<p>I'm Arth. I'm a second-year Math-Computer Science major at UCSD, and I'm looking for new opportunities to gain experience.</p>
@@ -106,29 +104,11 @@ function SelfIntroSection() {
 				>
 					<ProfilePic
 						className='ge-md'
-						size='250px'
+						size={250}
 					/>
 				</Grid>
 			</Grid>
 		</Section>
-	)
-}
-
-function ProfilePic({ size = '100px', sx = {}, className }: any) {
-	return (
-		<Box
-			className={className}
-			component='img'
-			sx={{
-				maxWidth: '100%',
-				maxHeight: '100%',
-				width: size,
-				borderRadius: '100%',
-				...sx,
-			}}
-			alt='An image of myself, Arth Shukla.'
-			src={profile}
-		></Box>
 	)
 }
 
