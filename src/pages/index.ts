@@ -1,3 +1,5 @@
+export { default as Contact } from './Contact'
 export { default as Error404 } from './Error404'
 export { default as Home } from './Home'
 export { default as Projects } from './Projects'
+export { default as Resume } from './Resume'

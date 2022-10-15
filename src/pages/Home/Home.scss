@@ -35,6 +35,18 @@
 	}
 
 	padding-bottom: 100px;
+
+	@media screen and (max-width: #{v.$mui-md - 1px}) {
+		.ge-md {
+			display: none;
+		}
+	}
+
+	@media screen and (min-width: v.$mui-md) {
+		.lt-md {
+			display: none;
+		}
+	}
 }
 
 .top-section {

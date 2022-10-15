@@ -1,25 +1,23 @@
-import React, { useEffect, useRef, useState } from 'react'
-import Box from '@mui/system/Box'
-import { TextTypeDelete } from '@arth-shukla/my-icons'
+import React, { useRef } from 'react'
 
+import { TextTypeDelete } from '@arth-shukla/my-icons'
 import { DownButton, Section, Socials } from '../../components'
-import { useTheme } from '@mui/system'
 
 import './Home.scss'
 
-function HomePage() {
+import useTheme from '@mui/system/useTheme'
+import Box from '@mui/system/Box'
+import Grid from '@mui/material/Grid'
+
+import profile from './Me_Profile.jpg'
+
+interface HomeProps {
+	winHeight: number
+}
+
+function Home({ winHeight }: HomeProps) {
 	const textRef = useRef()
 	const theme = useTheme()
-
-	const [winHeight, setWinHeight] = useState<number>(window.innerHeight)
-
-	const handleResize = () => {
-		setWinHeight(window.innerHeight)
-	}
-
-	useEffect(() => {
-		window.addEventListener('resize', handleResize)
-	}, [])
 
 	return (
 		<Box>
@@ -58,10 +56,7 @@ function HomePage() {
 				ref={textRef}
 				className='text-section'
 			>
-				<Section>
-					<h1>Hello!</h1>
-					<p>Nice to meet you!</p>
-				</Section>
+				<SelfIntroSection />
 				<Section>
 					<h1>You are smelly</h1>
 					<p>Go take a shower</p>
@@ -71,4 +66,70 @@ function HomePage() {
 	)
 }
 
-export default HomePage
+function SelfIntroSection() {
+	return (
+		<Section>
+			<Grid
+				container
+				spacing={3}
+			>
+				<Grid
+					item
+					sm={12}
+					md={8}
+				>
+					<h1>Hi there!</h1>
+					<p
+						style={{
+							display: 'flex',
+							justifyContent: 'center',
+							alignItems: 'center',
+						}}
+					>
+						<ProfilePic
+							className='lt-md'
+							size='300px'
+						/>
+					</p>
+					<p>I'm Arth. I'm a second-year Math-Computer Science major at UCSD, and I'm looking for new opportunities to gain experience.</p>
+					<p>I'm eager to learn new skills and technologies, and I'm especially interested web development and AI/ML.</p>
+				</Grid>
+				<Grid
+					item
+					sm={0}
+					md={4}
+					sx={{
+						display: 'flex',
+						justifyContent: 'center',
+						alignItems: 'center',
+					}}
+				>
+					<ProfilePic
+						className='ge-md'
+						size='250px'
+					/>
+				</Grid>
+			</Grid>
+		</Section>
+	)
+}
+
+function ProfilePic({ size = '100px', sx = {}, className }: any) {
+	return (
+		<Box
+			className={className}
+			component='img'
+			sx={{
+				maxWidth: '100%',
+				maxHeight: '100%',
+				width: size,
+				borderRadius: '100%',
+				...sx,
+			}}
+			alt='An image of myself, Arth Shukla.'
+			src={profile}
+		></Box>
+	)
+}
+
+export default Home

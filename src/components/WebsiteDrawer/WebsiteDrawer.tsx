@@ -4,6 +4,7 @@ import { Box, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText
 import HomeRounded from '@mui/icons-material/HomeRounded'
 import Mail from '@mui/icons-material/Mail'
 import Bookmark from '@mui/icons-material/Bookmark'
+import Article from '@mui/icons-material/Article'
 
 interface WebsiteDrawerProps {
 	open: boolean
@@ -25,6 +26,10 @@ const toolbarRoutes: any = {
 	'/': {
 		name: 'Home',
 		icon: <HomeRounded />,
+	},
+	resume: {
+		name: 'Resume',
+		icon: <Article />,
 	},
 	projects: {
 		name: 'My Projects',
