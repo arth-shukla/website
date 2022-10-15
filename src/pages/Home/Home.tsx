@@ -67,7 +67,7 @@ function Home({ winHeight }: HomeProps) {
 					cursorColor={theme.palette.text.primary}
 				/>
 				<SocialsContextProvider value={HomeSocials}>
-					<Socials />
+					<Socials justifyContent='left' />
 				</SocialsContextProvider>
 				<DownButton scrollTargRef={textRef} />
 			</Box>

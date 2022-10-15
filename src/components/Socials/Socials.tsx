@@ -71,9 +71,9 @@ function Socials({ ...rest }: any) {
 				<Stack
 					className='socials-box'
 					spacing={2}
-					alignItems='center'
-					justifyContent='center'
 					{...rest}
+					alignItems='center'
+					justifyContent={rest.justifyContent ?? 'center'}
 					direction={rest.direction || 'row'}
 				>
 					{renderSocials(theme, socialsContext!)}
