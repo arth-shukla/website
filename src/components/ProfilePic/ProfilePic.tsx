@@ -24,6 +24,7 @@ function ProfilePic({ size = 100, className = '' }: ProfilePicProps) {
 				style={{
 					maxWidth: `min(100%, ${size}px)`,
 				}}
+				width={size}
 			>
 				<defs>
 					<pattern
