@@ -390,9 +390,7 @@ function Resume() {
 							<b>Inspirit AI and Summer Stem Institute 2020</b>
 						</PSlim>
 						<PSlim>
-							<b>
-								<i>Program Participant and Inspirit AI End-of-Program Project Lead</i> - Learn AI Fundamentals (neural nets and backprop, computer vision,etc) and develop model to identify pro- and anti-refugee tweets using sentiment analysis
-							</b>
+							<i>Program Participant and Inspirit AI End-of-Program Project Lead</i> - Learn AI Fundamentals (neural nets and backprop, computer vision,etc) and develop model to identify pro- and anti-refugee tweets using sentiment analysis
 						</PSlim>
 					</p>
 					<p>
@@ -400,9 +398,7 @@ function Resume() {
 							<b>Sequoia Robotics</b>
 						</PSlim>
 						<PSlim>
-							<b>
-								<i>Club President (August 2020 - June 2021); Team Head and Lead Software Engineer</i> - Organize club participation in tournaments and lead Sequoia’s Purple Pi team
-							</b>
+							<i>Club President (August 2020 - June 2021); Team Head and Lead Software Engineer</i> - Organize club participation in tournaments and lead Sequoia’s Purple Pi team
 						</PSlim>
 					</p>
 					<p>
@@ -410,7 +406,7 @@ function Resume() {
 							<b>Cañada College Mathematics Instructional Assistant</b>
 						</PSlim>
 						<PSlim>
-							<i>Calculus I Instructional Assistant</i>- Design and grade 5 bi-weekly tests and final exam and weekly homework assignments, Tutor 26 students via Zoom and email for 3 hrs/week
+							<i>Calculus I Instructional Assistant</i> - Design and grade 5 bi-weekly tests and final exam and weekly homework assignments, Tutor 26 students via Zoom and email for 3 hrs/week
 						</PSlim>
 					</p>
 					<p>
