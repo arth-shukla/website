@@ -382,7 +382,7 @@ function Resume() {
 					</ULSlim>
 				</ResumeSection>
 				<Divider textAlign='left'>
-					<h3>ACTIVITIES &amp; LEADERSHIP</h3>
+					<h3>Activities &amp; Leadership</h3>
 				</Divider>
 				<ResumeSection>
 					<p>

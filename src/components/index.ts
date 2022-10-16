@@ -8,3 +8,5 @@ export { default as WebsiteToolbar } from './WebsiteToolbar'
 
 export { SocialsContextProvider } from './Socials'
 export type { SocialsContext } from './Socials'
+
+export * from './Projects'

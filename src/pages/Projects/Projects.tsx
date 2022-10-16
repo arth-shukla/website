@@ -1,13 +1,27 @@
+import { render } from '@testing-library/react'
 import React from 'react'
-import { Section } from '../../components'
+import { Section, ProjectsData, ProjectsDataType, ProjectContextProvider, ProjectCard, ProjectTile } from '../../components'
+
+const renderProjects = (projectsData: ProjectsDataType) => {
+	let renderedProjects = []
+
+	for (const project in projectsData) {
+		renderedProjects.push(
+			<>
+				<ProjectContextProvider value={projectsData[project]}>
+					<h1>{project}</h1>
+					<ProjectTile />
+					<ProjectCard />
+				</ProjectContextProvider>
+			</>,
+		)
+	}
+
+	return renderedProjects
+}
 
 function Projects() {
-	return (
-		<Section>
-			<h1>My Projects</h1>
-			<p>Idk write abt my projects or smth</p>
-		</Section>
-	)
+	return <Section>{renderProjects(ProjectsData)}</Section>
 }
 
 export default Projects
