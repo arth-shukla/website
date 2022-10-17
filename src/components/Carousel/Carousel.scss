@@ -1,0 +1,22 @@
+.embla {
+	overflow: hidden;
+
+	.embla__viewport {
+		.is-draggable {
+			cursor: move;
+			cursor: grab;
+		}
+
+		.is-dragging {
+			cursor: grabbing;
+		}
+
+		.embla__container {
+			display: flex;
+
+			.embla__slide {
+				flex: 0 0 100%;
+			}
+		}
+	}
+}

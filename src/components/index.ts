@@ -1,4 +1,5 @@
 export { default as Card } from './Card'
+export { default as Carousel } from './Carousel'
 export { default as DownButton } from './DownButton'
 export { default as ProfilePic } from './ProfilePic'
 export { default as Section } from './Section'

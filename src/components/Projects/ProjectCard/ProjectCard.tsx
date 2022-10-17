@@ -1,24 +1,11 @@
-import React from 'react'
-import { ProjectContextConsumer } from '../ProjectContext'
+import React, { useEffect, useState } from 'react'
+import { Carousel } from '../..'
+import type { Project } from '../ProjectsData'
 
 import './ProjectCard.scss'
 
-function ProjectCard() {
-	return (
-		<ProjectContextConsumer>
-			{project =>
-				project && (
-					<div className='project-card'>
-						<h2>{project.name}</h2>
-						<p>Motivation</p>
-						<p>{project.motivation}</p>
-						<p>Features</p>
-						<p>{project.features}</p>
-					</div>
-				)
-			}
-		</ProjectContextConsumer>
-	)
+function ProjectCard({ project }: { project: any }) {
+	return <Carousel slides={project} />
 }
 
 export default ProjectCard

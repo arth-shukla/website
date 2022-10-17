@@ -14,6 +14,7 @@ function ProjectTile() {
 						>
 							{String(project.GitHub)}
 						</a>
+						{/* {project.logo} */}
 					</>
 				)
 			}

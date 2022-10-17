@@ -1,8 +1,11 @@
 import React from 'react'
 
+import DiceRollerLogo from './dice-roller.svg'
+
 export interface Project {
 	name: string
 	GitHub?: URL
+	logo: any
 	deployment: URL
 	description: React.ReactElement | string
 	motivation: React.ReactElement | string
@@ -12,6 +15,7 @@ export interface Project {
 const DiceRollerData: Project = {
 	name: 'TTRPG Dice Roller',
 	GitHub: new URL('https://github.com/arth-shukla/dice-roller'),
+	logo: <DiceRollerLogo />,
 	deployment: new URL('https://arth-shukla.github.io/dice-roller/'),
 	description: "This is a dice roller made for quick rolling and an aesthetically pleasing, accessible design. It's great for TTRPGS like D&D, Cyberpunk Red, and more.",
 	motivation: (
