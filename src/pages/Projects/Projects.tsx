@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react'
-import { Section, ProjectsData, ProjectsDataType, ProjectContextProvider, ProjectCard, ProjectTile } from '../../components'
+import { Section, ProjectsData, ProjectsDataType, ProjectContextProvider, ProjectCard } from '../../components'
 
 import Typography from '@mui/material/Typography'
 
@@ -8,19 +8,17 @@ function Projects() {
 		let renderedProjects = []
 
 		for (const project in projectsData) {
-			const projectCardData = [
+			const projectCarousel = [
 				{ label: <h2>Motivation</h2>, content: <Typography>{projectsData[project].motivation}</Typography> },
 				{ label: <h2>Features</h2>, content: <Typography>{projectsData[project].features}</Typography> },
 			]
 
 			renderedProjects.push(
-				<>
+				<p>
 					<ProjectContextProvider value={projectsData[project]}>
-						<h1>{project}</h1>
-						<ProjectTile />
-						<ProjectCard project={projectCardData} />
+						<ProjectCard projectCarousel={projectCarousel} />
 					</ProjectContextProvider>
-				</>,
+				</p>,
 			)
 		}
 

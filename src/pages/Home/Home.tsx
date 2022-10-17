@@ -1,13 +1,15 @@
 import React, { useRef } from 'react'
 
 import { TextTypeDelete } from '@arth-shukla/my-icons'
-import { DownButton, ProfilePic, Section, Socials, SocialsContext, SocialsContextProvider } from '../../components'
+import { DownButton, CircleLogo, Section, Socials, SocialsContext, SocialsContextProvider } from '../../components'
 
 import useTheme from '@mui/system/useTheme'
 import Box from '@mui/system/Box'
 import Grid from '@mui/material/Grid'
 
 import './Home.scss'
+
+import profilePic from '../../assets/Me_Profile.jpg'
 
 interface HomeProps {
 	winHeight: number
@@ -105,9 +107,10 @@ function SelfIntroSection() {
 							alignItems: 'center',
 						}}
 					>
-						<ProfilePic
+						<CircleLogo
 							className='lt-md'
 							size={300}
+							logo={profilePic}
 						/>
 					</p>
 					<p>I'm Arth. I'm a second-year Math-Computer Science major at UCSD, and I'm looking for new opportunities to gain experience.</p>
@@ -123,9 +126,10 @@ function SelfIntroSection() {
 						alignItems: 'center',
 					}}
 				>
-					<ProfilePic
+					<CircleLogo
 						className='ge-md'
 						size={250}
+						logo={profilePic}
 					/>
 				</Grid>
 			</Grid>

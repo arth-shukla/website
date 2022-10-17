@@ -1,22 +1,31 @@
-.embla {
-	overflow: hidden;
+@use '../../variables' as v;
 
-	.embla__viewport {
-		.is-draggable {
-			cursor: move;
-			cursor: grab;
-		}
+.carousel {
+	.MuiPaper-root {
+		transition: inherit;
+	}
+	.embla {
+		overflow: hidden;
 
-		.is-dragging {
-			cursor: grabbing;
-		}
+		.embla__viewport {
+			.is-draggable {
+				cursor: move;
+				cursor: grab;
+			}
 
-		.embla__container {
-			display: flex;
+			.is-dragging {
+				cursor: grabbing;
+			}
 
-			.embla__slide {
-				flex: 0 0 100%;
+			.embla__container {
+				display: flex;
+
+				.embla__slide {
+					flex: 0 0 100%;
+				}
 			}
 		}
 	}
+
+	transition: v.$default-transition;
 }

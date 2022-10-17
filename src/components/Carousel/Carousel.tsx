@@ -32,9 +32,9 @@ function Carousel({ slides, height, width }: CarouselProps) {
 	const onSelect = useCallback(() => {
 		if (!emblaApi) return
 		setActiveStep(emblaApi.selectedScrollSnap())
-		setPrevBtnEnabled(!emblaApi.canScrollPrev())
+		setPrevBtnEnabled(!emblaApi.canScrollPrev() && scrollSnaps)
 		setNextBtnEnabled(!emblaApi.canScrollNext())
-	}, [emblaApi, setActiveStep])
+	}, [emblaApi, setActiveStep, scrollSnaps])
 
 	useEffect(() => {
 		if (!emblaApi) return
@@ -44,14 +44,16 @@ function Carousel({ slides, height, width }: CarouselProps) {
 	}, [emblaApi, setScrollSnaps, onSelect])
 
 	return (
-		<Box sx={{ flexGrow: 1 }}>
+		<Box
+			className='carousel'
+			sx={{ flexGrow: 1 }}
+		>
 			<Paper
 				square
 				elevation={0}
 				sx={{
 					display: 'flex',
 					alignItems: 'center',
-					// height: 50,
 					pl: 2,
 					bgcolor: 'background.default',
 				}}

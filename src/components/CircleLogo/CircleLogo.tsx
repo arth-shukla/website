@@ -3,18 +3,17 @@ import React from 'react'
 import useTheme from '@mui/system/useTheme'
 import ThemeProvider from '@mui/system/ThemeProvider'
 
-import profile from './Me_Profile.jpg'
-
-import './ProfilePic.scss'
+import './CircleLogo.scss'
 
 const strokeWidth = 4
 
-interface ProfilePicProps {
+interface CircleLogoProps {
+	logo: string | React.ReactElement
 	size: number
-	className: string
+	className?: string
 }
 
-function ProfilePic({ size = 100, className = '' }: ProfilePicProps) {
+function CircleLogo({ logo, size = 100, className = '' }: CircleLogoProps) {
 	const theme = useTheme()
 
 	return (
@@ -35,20 +34,23 @@ function ProfilePic({ size = 100, className = '' }: ProfilePicProps) {
 						width='100%'
 						viewBox={`0 0 ${size} ${size}`}
 					>
-						<image
-							x='0%'
-							y='0%'
-							width={size}
-							height={size}
-							href={profile}
-						/>
+						{typeof logo === 'string' && (
+							<image
+								x='0%'
+								y='0%'
+								width={size}
+								height={size}
+								href={logo}
+							/>
+						)}
+						{typeof logo !== 'string' && logo}
 					</pattern>
 				</defs>
 				<circle
 					id='sd'
 					cx='50%'
 					cy='50%'
-					r={`calc((100% / 2) - ${strokeWidth}px * 4)`}
+					r={`calc((100% / 2) - ${strokeWidth}px * 2)`}
 					fill={`url(#${`image-${className}`})`}
 					stroke={theme.palette.mode === 'dark' ? '#121212' : '#fff'}
 					stroke-width={strokeWidth}
@@ -58,7 +60,7 @@ function ProfilePic({ size = 100, className = '' }: ProfilePicProps) {
 					cx='50%'
 					cy='50%'
 					fill='none'
-					r={`calc((100% / 2) - ${strokeWidth}px * 2)`}
+					r={`calc((100% / 2) - ${strokeWidth}px)`}
 					stroke={theme.palette.primary.main}
 					stroke-width={strokeWidth}
 				/>
@@ -67,4 +69,4 @@ function ProfilePic({ size = 100, className = '' }: ProfilePicProps) {
 	)
 }
 
-export default ProfilePic
+export default CircleLogo

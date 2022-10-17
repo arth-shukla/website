@@ -54,7 +54,7 @@ function renderSocials(theme: any, socialsContext: SocialsContext) {
 					>
 						{socials[social]['icon']}
 					</IconButton>
-					{socialsContext[social as keyof SocialsContext].text && socials[social]['text']}
+					{socialsContext[social as keyof SocialsContext].text && (socialsContext[social as keyof SocialsContext].textOverride ?? socials[social]['text'])}
 				</Link>,
 			)
 	}

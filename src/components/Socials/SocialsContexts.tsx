@@ -3,6 +3,7 @@ import React from 'react'
 interface SocialInterface {
 	include: boolean
 	text: boolean
+	textOverride?: string
 }
 
 export interface SocialsContext {
