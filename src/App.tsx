@@ -4,6 +4,7 @@ import { Routes, Route, HashRouter } from 'react-router-dom'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import CssBaseline from '@mui/material/CssBaseline'
+import Box from '@mui/material/Box'
 
 import { WebsiteDrawer, WebsiteToolbar } from './components'
 import { Contact, Error404, Home, Projects, Resume } from './pages'
@@ -78,28 +79,30 @@ function App() {
 					darkMode={darkMode}
 					setDarkMode={setDarkMode}
 				/>
-				<Routes>
-					<Route
-						index
-						element={<Home winHeight={winHeight} />}
-					/>
-					<Route
-						path='projects'
-						element={<Projects />}
-					/>
-					<Route
-						path='resume'
-						element={<Resume />}
-					/>
-					<Route
-						path='contact'
-						element={<Contact />}
-					/>
-					<Route
-						path='*'
-						element={<Error404 />}
-					/>
-				</Routes>
+				<Box sx={{ paddingBottom: '100px' }}>
+					<Routes>
+						<Route
+							index
+							element={<Home winHeight={winHeight} />}
+						/>
+						<Route
+							path='projects'
+							element={<Projects />}
+						/>
+						<Route
+							path='resume'
+							element={<Resume />}
+						/>
+						<Route
+							path='contact'
+							element={<Contact />}
+						/>
+						<Route
+							path='*'
+							element={<Error404 />}
+						/>
+					</Routes>
+				</Box>
 				<WebsiteDrawer
 					open={menu}
 					setMenu={setMenu}

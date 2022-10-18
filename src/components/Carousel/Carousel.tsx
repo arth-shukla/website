@@ -13,11 +13,11 @@ import './Carousel.scss'
 
 interface CarouselProps {
 	slides: Array<any>
-	height?: number
+	maxHeight?: number
 	width?: number
 }
 
-function Carousel({ slides, height, width }: CarouselProps) {
+function Carousel({ slides, maxHeight, width }: CarouselProps) {
 	const theme = useTheme()
 
 	const [emblaRef, emblaApi] = useEmblaCarousel({ direction: theme.direction })
@@ -60,7 +60,10 @@ function Carousel({ slides, height, width }: CarouselProps) {
 			>
 				<Typography>{slides[activeStep].label}</Typography>
 			</Paper>
-			<div className='embla'>
+			<div
+				className='embla'
+				style={{ maxHeight: maxHeight }}
+			>
 				<div
 					className='embla__viewport'
 					ref={emblaRef}
@@ -72,7 +75,7 @@ function Carousel({ slides, height, width }: CarouselProps) {
 								key={k}
 								style={{ padding: '0 1em' }}
 							>
-								{v.content}
+								<Typography>{v.content}</Typography>
 							</div>
 						))}
 					</div>

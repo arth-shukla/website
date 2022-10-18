@@ -7,7 +7,7 @@ import { Link } from '@mui/material'
 
 import './ProjectTile.scss'
 
-function ProjectTile({ size }: { size: number }) {
+function ProjectTile({ size, ...rest }: { size: number; [x: string]: any }) {
 	const theme = useTheme()
 
 	const ProjectLogo = useCallback(
@@ -15,9 +15,10 @@ function ProjectTile({ size }: { size: number }) {
 			<CircleLogo
 				logo={project.logo(size, theme.palette.text.primary)}
 				size={size}
+				{...rest}
 			/>
 		),
-		[theme.palette.text.primary, size],
+		[theme.palette.text.primary, size, rest],
 	)
 
 	return (
@@ -25,9 +26,12 @@ function ProjectTile({ size }: { size: number }) {
 			{project =>
 				project && (
 					<IconButton
+						className='project-tile'
 						component={Link}
 						href={String(project.deployment)}
 						target='_blank'
+						aria-label={`Deployment for ${project.name}`}
+						title={`Deployment for ${project.name}`}
 					>
 						{ProjectLogo(project)}
 					</IconButton>

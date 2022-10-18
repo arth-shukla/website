@@ -1,5 +1,33 @@
+$proj-card-md-scr: 750px;
+$proj-card-lg-scr: 1000px;
+
 .project-card {
 	li {
 		padding: 0.1em 0;
+	}
+
+	@media screen and (max-width: #{$proj-card-md-scr - 1px}) {
+		.project-tile-md-scr {
+			display: none;
+			visibility: hidden;
+		}
+	}
+	@media screen
+		and (min-width: #{$proj-card-md-scr})
+		and (max-width: #{$proj-card-lg-scr - 1px}) {
+		.project-tile-sm-scr {
+			display: none;
+			visibility: hidden;
+		}
+	}
+	@media screen and (min-width: #{$proj-card-lg-scr}) {
+		.project-tile-sm-scr {
+			display: none;
+			visibility: hidden;
+		}
+		.project-tile-md-scr {
+			display: none;
+			visibility: hidden;
+		}
 	}
 }

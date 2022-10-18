@@ -27,13 +27,13 @@ const toolbarRoutes: any = {
 		name: 'Home',
 		icon: <HomeRounded />,
 	},
-	resume: {
-		name: 'Resume',
-		icon: <Article />,
-	},
 	projects: {
 		name: 'My Projects',
 		icon: <Bookmark />,
+	},
+	resume: {
+		name: 'Resume',
+		icon: <Article />,
 	},
 	contact: {
 		name: 'Contact Me',

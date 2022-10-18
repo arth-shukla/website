@@ -14,7 +14,10 @@ function ProjectCard({ projectCarousel }: { projectCarousel: any }) {
 			{project =>
 				project && (
 					<Box className='project-card'>
-						<Box sx={{ display: 'flex' }}>
+						<Box
+							className='project-card-header'
+							sx={{ display: 'flex' }}
+						>
 							<Box sx={{ flexGrow: 1 }}>
 								<h1 style={{ margin: 0 }}>{project.name}</h1>
 								<IconButton
@@ -25,15 +28,25 @@ function ProjectCard({ projectCarousel }: { projectCarousel: any }) {
 									edge='start'
 									color='inherit'
 									aria-label={'GitHub page for ' + project.name}
+									title={'GitHub page for ' + project.name}
 								>
 									<GitHubIcon fontSize='large' />
 								</IconButton>
 							</Box>
-							<Box className='project-tile'>
+							<Box className='project-tile-md-scr'>
 								<ProjectTile size={100} />
 							</Box>
 						</Box>
-						<Carousel slides={projectCarousel} />
+						<Box sx={{ display: 'flex', justifyContent: 'center' }}>
+							<ProjectTile
+								className='project-tile-sm-scr'
+								size={200}
+							/>
+						</Box>
+						<Carousel
+							slides={projectCarousel}
+							maxHeight={300}
+						/>
 					</Box>
 				)
 			}

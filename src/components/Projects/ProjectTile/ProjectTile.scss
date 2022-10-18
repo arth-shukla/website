@@ -1,0 +1,7 @@
+@use '../../../variables' as v;
+
+.project-tile {
+	svg {
+		transition: v.$default-transition;
+	}
+}
