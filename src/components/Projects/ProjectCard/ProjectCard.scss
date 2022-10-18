@@ -5,6 +5,9 @@ $proj-card-lg-scr: 1000px;
 	li {
 		padding: 0.1em 0;
 	}
+	li:last-child {
+		padding: o;
+	}
 
 	@media screen and (max-width: #{$proj-card-md-scr - 1px}) {
 		.project-tile-md-scr {

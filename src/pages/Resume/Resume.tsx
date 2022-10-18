@@ -21,7 +21,7 @@ const ResumeSocials: SocialsContext = {
 		include: true,
 		text: true,
 	},
-	PhoneNumber: {
+	'Phone Number': {
 		include: true,
 		text: true,
 	},
@@ -40,7 +40,7 @@ const ResumeSocialsEmailGitHub: SocialsContext = {
 		include: false,
 		text: false,
 	},
-	PhoneNumber: {
+	'Phone Number': {
 		include: false,
 		text: false,
 	},
@@ -59,7 +59,7 @@ const ResumeSocialsLinkedInPhone: SocialsContext = {
 		include: true,
 		text: true,
 	},
-	PhoneNumber: {
+	'Phone Number': {
 		include: true,
 		text: true,
 	},
@@ -143,6 +143,15 @@ function ULSlim(props: any) {
 	)
 }
 
+function DivBP({ style, ...rest }: any) {
+	return (
+		<div
+			style={{ paddingBottom: '1em', ...style }}
+			{...rest}
+		/>
+	)
+}
+
 function A({ style, href, children, target = '_blank', ...rest }: any) {
 	const theme = useTheme()
 
@@ -166,7 +175,7 @@ function Resume() {
 		<ThemeProvider theme={theme}>
 			<Section>
 				<h1>My Resume</h1>
-				<p>
+				<DivBP>
 					Below is my resume. It is also available for{' '}
 					<A
 						href={process.env.PUBLIC_URL + '/documents/Arth_Shukla_Resume.pdf'}
@@ -175,7 +184,7 @@ function Resume() {
 						download as pdf
 					</A>
 					.
-				</p>
+				</DivBP>
 			</Section>
 			<Box
 				className='resume'
@@ -187,14 +196,14 @@ function Resume() {
 				<h2 style={{ textAlign: 'center' }}>
 					Arth <span style={{ color: theme.palette.primary.main }}>Shukla</span>
 				</h2>
-				<p>
+				<DivBP>
 					<ResumeSocialsLinks />
-				</p>
+				</DivBP>
 				<Divider textAlign='left'>
 					<h3>Education</h3>
 				</Divider>
 				<ResumeSection>
-					<p>
+					<DivBP>
 						<PSlim>
 							<b>University of California, San Diego</b>
 							<RFloat>September 2021 - June 2025</RFloat>
@@ -205,9 +214,8 @@ function Resume() {
 							<RFloat>GPA - 4.0</RFloat>
 						</PSlim>
 						<ClrDiv />
-					</p>
-					<ClrDiv />
-					<p>
+					</DivBP>
+					<DivBP>
 						<PSlim>
 							<b>Sequoia High School</b>
 							<RFloat>August 2017 - June 2021</RFloat>
@@ -218,9 +226,9 @@ function Resume() {
 							<RFloat>GPA - 4.6</RFloat>
 						</PSlim>
 						<ClrDiv />
-					</p>
+					</DivBP>
 					<ClrDiv />
-					<p>
+					<DivBP>
 						<PSlim>
 							<b>Relevant Coursework</b>
 						</PSlim>
@@ -231,13 +239,13 @@ function Resume() {
 						<PSlim>
 							<i>Planned for Fall 2022</i>: Optimizations for Data Science I, Advanced Data Structures, Abstract Algebra I, and Physics/Mechanics I
 						</PSlim>
-					</p>
+					</DivBP>
 				</ResumeSection>
 				<Divider textAlign='left'>
 					<h3>Experience</h3>
 				</Divider>
 				<ResumeSection>
-					<p>
+					<DivBP>
 						<PSlim>
 							<b>Bittner Development Co.</b>
 						</PSlim>
@@ -281,8 +289,8 @@ function Resume() {
 								<li>Independent project involving automation of over 10 spreadsheet and data entry tasks using Java improving efficiency by over 90%</li>
 							</ULSlim>
 						</PSlim>
-					</p>
-					<p>
+					</DivBP>
+					<DivBP>
 						<PSlim>
 							<b>Personal Web Development Projects</b>
 						</PSlim>
@@ -307,8 +315,8 @@ function Resume() {
 								</li>
 							</ULSlim>
 						</PSlim>
-					</p>
-					<p>
+					</DivBP>
+					<DivBP>
 						<PSlim>
 							<b>ACM AI UCSD</b>
 						</PSlim>
@@ -363,53 +371,55 @@ function Resume() {
 								<li>Coordinate with team of 3 front- and back-end devs to implement model into user-friendly tool</li>
 							</ULSlim>
 						</PSlim>
-					</p>
+					</DivBP>
 				</ResumeSection>
 				<Divider textAlign='left'>
 					<h3>Skills</h3>
 				</Divider>
 				<ResumeSection>
-					<ULSlim>
-						<li>
-							<b>Programming Languages</b> - TypeScript, JavaScript, Node, React, Java, Python, Ruby, Bash, SCSS, LESS, HTML5 and CSS3, C, R
-						</li>
-						<li>
-							<b>Programs and Software</b> - Git, GitHub, GitLab, Visual Studio, WSL, Storybook, Android Studio, Matlab, Microsoft Office, Microsoft Excel, Microsoft Powerpoint
-						</li>
-						<li>
-							<b>Languages</b> - Fluent in English and French, Spoken Hindi
-						</li>
-					</ULSlim>
+					<DivBP>
+						<ULSlim>
+							<li>
+								<b>Programming Languages</b> - TypeScript, JavaScript, Node, React, Java, Python, Ruby, Bash, SCSS, LESS, HTML5 and CSS3, C, R
+							</li>
+							<li>
+								<b>Programs and Software</b> - Git, GitHub, GitLab, Visual Studio, WSL, Storybook, Android Studio, Matlab, Microsoft Office, Microsoft Excel, Microsoft Powerpoint
+							</li>
+							<li>
+								<b>Languages</b> - Fluent in English and French, Spoken Hindi
+							</li>
+						</ULSlim>
+					</DivBP>
 				</ResumeSection>
 				<Divider textAlign='left'>
 					<h3>Activities &amp; Leadership</h3>
 				</Divider>
 				<ResumeSection>
-					<p>
+					<DivBP>
 						<PSlim>
 							<b>Inspirit AI and Summer Stem Institute 2020</b>
 						</PSlim>
 						<PSlim>
 							<i>Program Participant and Inspirit AI End-of-Program Project Lead</i> - Learn AI Fundamentals (neural nets and backprop, computer vision,etc) and develop model to identify pro- and anti-refugee tweets using sentiment analysis
 						</PSlim>
-					</p>
-					<p>
+					</DivBP>
+					<DivBP>
 						<PSlim>
 							<b>Sequoia Robotics</b>
 						</PSlim>
 						<PSlim>
 							<i>Club President (August 2020 - June 2021); Team Head and Lead Software Engineer</i> - Organize club participation in tournaments and lead Sequoia’s Purple Pi team
 						</PSlim>
-					</p>
-					<p>
+					</DivBP>
+					<DivBP>
 						<PSlim>
 							<b>Cañada College Mathematics Instructional Assistant</b>
 						</PSlim>
 						<PSlim>
 							<i>Calculus I Instructional Assistant</i> - Design and grade 5 bi-weekly tests and final exam and weekly homework assignments, Tutor 26 students via Zoom and email for 3 hrs/week
 						</PSlim>
-					</p>
-					<p>
+					</DivBP>
+					<DivBP>
 						<PSlim>
 							<b>STEM Tutoring</b>
 						</PSlim>
@@ -431,7 +441,7 @@ function Resume() {
 							</b>{' '}
 							- Tutor groups of 5 elementary and middle school students in Math and Science
 						</PSlim>
-					</p>
+					</DivBP>
 				</ResumeSection>
 			</Box>
 		</ThemeProvider>

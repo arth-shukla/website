@@ -29,7 +29,7 @@ const socials: any = {
 		href: 'mailto:arthshukla03@gmail.com',
 		icon: <EmailIcon fontSize='large' />,
 	},
-	PhoneNumber: {
+	'Phone Number': {
 		text: '(650) 850-9097',
 		href: 'tel:+1-650-850-9097',
 		icon: <Call fontSize='large' />,
@@ -41,21 +41,26 @@ function renderSocials(theme: any, socialsContext: SocialsContext) {
 	for (const social in socials) {
 		if (socialsContext[social as keyof SocialsContext].include)
 			renderedSocials.push(
-				<Link
-					color={theme.palette.text.primary}
-					href={socials[social]['href']}
-					target='_blank'
-				>
+				// <Link
+				// 	color={theme.palette.text.primary}
+				// 	href={socials[social]['href']}
+				// 	target='_blank'
+				// ></Link>,
+				<div key={social}>
 					<IconButton
+						component={Link}
+						href={socials[social]['href']}
+						target='_blank'
+						color='inherit'
 						size='large'
 						edge='start'
-						color='inherit'
 						aria-label={social}
+						title={social}
 					>
 						{socials[social]['icon']}
 					</IconButton>
 					{socialsContext[social as keyof SocialsContext].text && (socialsContext[social as keyof SocialsContext].textOverride ?? socials[social]['text'])}
-				</Link>,
+				</div>,
 			)
 	}
 

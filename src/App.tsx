@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { Routes, Route, HashRouter } from 'react-router-dom'
 
 import { createTheme, ThemeProvider } from '@mui/material/styles'
@@ -6,10 +6,12 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 import CssBaseline from '@mui/material/CssBaseline'
 import Box from '@mui/material/Box'
 
-import { WebsiteDrawer, WebsiteToolbar } from './components'
-import { Contact, Error404, Home, Projects, Resume } from './pages'
+import { ProjectsData, ProjectsDataType, WebsiteDrawer, WebsiteToolbar } from './components'
+import { Contact, Error404, Home, ProjectInfo, Projects, Resume } from './pages'
 
 import './App.scss'
+
+const colorNames = ['blue', 'pink']
 
 const primaryColors = {
 	light: ['#066aff', '#dd285b'],
@@ -67,6 +69,23 @@ function App() {
 		document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light')
 	}, [darkMode])
 
+	const generateProjectRoutes = useCallback(() => {
+		const projectsData: ProjectsDataType = ProjectsData
+
+		let projectRoutes = []
+
+		for (const project in projectsData) {
+			projectRoutes.push(
+				<Route
+					path={`projects/${projectsData[project].pagePath}`}
+					element={<ProjectInfo project={projectsData[project]} />}
+				/>,
+			)
+		}
+
+		return projectRoutes
+	}, [])
+
 	return (
 		<HashRouter>
 			<ThemeProvider theme={theme}>
@@ -74,6 +93,7 @@ function App() {
 				<WebsiteToolbar
 					setMenu={setMenu}
 					colors={primaryColors[theme.palette.mode]}
+					colorNames={colorNames}
 					currentColorIndex={currentColorIndex}
 					setCurrentColorIndex={setCurrentColorIndex}
 					darkMode={darkMode}
@@ -89,6 +109,8 @@ function App() {
 							path='projects'
 							element={<Projects />}
 						/>
+						{/* <ProjectRoutes /> */}
+						{generateProjectRoutes()}
 						<Route
 							path='resume'
 							element={<Resume />}

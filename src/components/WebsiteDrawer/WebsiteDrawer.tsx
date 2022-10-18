@@ -45,7 +45,10 @@ function renderToolbarRoutes(setMenu: any) {
 	let renderedRoutes = []
 	for (const route in toolbarRoutes) {
 		renderedRoutes.push(
-			<ListItem disablePadding>
+			<ListItem
+				disablePadding
+				key={route}
+			>
 				<ListItemButton
 					component={Link}
 					to={route}

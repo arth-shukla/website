@@ -3,9 +3,12 @@ import { ColorSwitch, DarkModeSwitch, LineSheen } from '@arth-shukla/my-icons'
 import { Stack } from '@mui/system'
 import IconButton from '@mui/material/IconButton'
 
+import './WebsiteToolbar.scss'
+
 interface WebsiteToolbarProps {
 	setMenu: (arg: boolean) => void
 	colors: string[]
+	colorNames: Array<string>
 	currentColorIndex: number
 	setCurrentColorIndex: (arg: number) => void
 	darkMode: boolean
@@ -59,7 +62,8 @@ function WebsiteToolbar(props: WebsiteToolbarProps) {
 					size='large'
 					edge='start'
 					color='inherit'
-					aria-label='menu'
+					aria-label='Menu'
+					title='Menu'
 					sx={{ mr: 2 }}
 					onClick={() => props.setMenu(true)}
 				>
@@ -71,21 +75,31 @@ function WebsiteToolbar(props: WebsiteToolbarProps) {
 					spacing={1}
 				>
 					<ColorSwitch
+						className='theme-switch'
 						colors={props.colors}
 						currentColorIndex={props.currentColorIndex}
 						onClick={() => props.setCurrentColorIndex((props.currentColorIndex + 1) % props.colors.length)}
 						size={26 / 0.558}
-						style={{ cursor: 'pointer' }}
+						style={{
+							cursor: 'pointer',
+							'--theme-switch-shadow-color': theme.palette.primary.main,
+						}}
+						aria-label={`Select this button to switch color to ${props.colorNames[(props.currentColorIndex + 1) % props.colors.length]}.`}
+						title={`Select this button to switch color to ${props.colorNames[(props.currentColorIndex + 1) % props.colors.length]}.`}
 					/>
 					<DarkModeSwitch
+						className='theme-switch'
 						darkMode={props.darkMode}
 						onClick={() => props.setDarkMode(!props.darkMode)}
 						style={{
 							marginTop: 'auto',
 							marginBottom: 'auto',
 							cursor: 'pointer',
+							'--theme-switch-shadow-color': theme.palette.primary.main,
 						}}
 						size={26 / 0.558}
+						aria-label={`Select this button to switch to ${theme.palette.mode === 'dark' ? 'light' : 'dark'} mode.`}
+						title={`Select this button to switch to ${theme.palette.mode === 'dark' ? 'light' : 'dark'} mode.`}
 					/>
 				</Stack>
 			</Toolbar>

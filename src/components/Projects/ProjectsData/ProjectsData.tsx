@@ -22,6 +22,7 @@ const ProjectIcons = {
 
 export interface Project {
 	name: string
+	pagePath: string
 	GitHub?: URL
 	logo: any
 	deployment: URL
@@ -32,6 +33,7 @@ export interface Project {
 
 const DiceRollerData: Project = {
 	name: 'TTRPG Dice Roller',
+	pagePath: 'dice-roller',
 	GitHub: new URL('https://github.com/arth-shukla/dice-roller'),
 	logo: ProjectIcons.DiceRollerLogo,
 	deployment: new URL('https://arth-shukla.github.io/dice-roller/'),

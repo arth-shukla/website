@@ -37,7 +37,10 @@ function ProjectCard({ projectCarousel }: { projectCarousel: any }) {
 								<ProjectTile size={100} />
 							</Box>
 						</Box>
-						<Box sx={{ display: 'flex', justifyContent: 'center' }}>
+						<Box
+							sx={{ display: 'flex', justifyContent: 'center' }}
+							className='project-tile-sm-scr'
+						>
 							<ProjectTile
 								className='project-tile-sm-scr'
 								size={200}

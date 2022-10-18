@@ -28,7 +28,7 @@ const HomeSocials: SocialsContext = {
 		include: true,
 		text: false,
 	},
-	PhoneNumber: {
+	'Phone Number': {
 		include: false,
 		text: false,
 	},

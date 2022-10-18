@@ -38,6 +38,7 @@ function DownButton({ scrollTargRef }: DownButtonProps) {
 				scrollToTarg()
 			}}
 			aria-hidden='true'
+			title='Scroll to content'
 		>
 			<KeyboardArrowDownIcon fontSize='large' />
 		</Button>
