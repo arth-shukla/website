@@ -23,9 +23,11 @@ const primaryColors = {
 const themeColors = {
 	light: {
 		primaryText: 'rgba(0, 0, 0, .8)',
+		secondaryText: 'rgb(0, 0, 0)',
 	},
 	dark: {
 		primaryText: 'rgb(255, 255, 255, .87)',
+		secondaryText: 'rgb(255, 255, 255)',
 	},
 }
 
@@ -59,6 +61,7 @@ function App() {
 					},
 					text: {
 						primary: themeColors[darkMode ? 'dark' : 'light']['primaryText'],
+						// secondary: themeColors[darkMode ? 'dark' : 'light']['secondaryText'],
 					},
 				},
 			}),

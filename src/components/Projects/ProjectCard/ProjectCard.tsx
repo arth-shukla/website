@@ -77,7 +77,7 @@ function ProjectCard({ projectCarousel }: { projectCarousel: any }) {
 							</Box>
 							<Carousel
 								slides={projectCarousel}
-								maxHeight={300}
+								// maxHeight={300}
 							/>
 						</Box>
 						<Box
