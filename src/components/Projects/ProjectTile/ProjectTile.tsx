@@ -3,7 +3,7 @@ import CircleLogo from '../../CircleLogo'
 import { ProjectContextConsumer } from '../ProjectContext'
 import useTheme from '@mui/material/styles/useTheme'
 import IconButton from '@mui/material/IconButton'
-import { Link } from '@mui/material'
+import { Link } from 'react-router-dom'
 
 import './ProjectTile.scss'
 
@@ -28,8 +28,7 @@ function ProjectTile({ size, ...rest }: { size: number; [x: string]: any }) {
 					<IconButton
 						className='project-tile'
 						component={Link}
-						href={String(project.deployment)}
-						target='_blank'
+						to={`/projects/${project.pagePath}`}
 						aria-label={`Deployment for ${project.name}`}
 						title={`Deployment for ${project.name}`}
 					>

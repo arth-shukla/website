@@ -4,7 +4,9 @@ import { ProjectContextConsumer } from '../ProjectContext'
 import Box from '@mui/material/Box'
 import IconButton from '@mui/material/IconButton'
 import GitHubIcon from '@mui/icons-material/GitHub'
+import LaunchIcon from '@mui/icons-material/Launch'
 import Link from '@mui/material/Link'
+import Stack from '@mui/material/Stack'
 
 import './ProjectCard.scss'
 
@@ -20,18 +22,35 @@ function ProjectCard({ projectCarousel }: { projectCarousel: any }) {
 						>
 							<Box sx={{ flexGrow: 1 }}>
 								<h1 style={{ margin: 0 }}>{project.name}</h1>
-								<IconButton
-									component={Link}
-									href={String(project.GitHub)}
-									target='_blank'
-									size='large'
-									edge='start'
-									color='inherit'
-									aria-label={'GitHub page for ' + project.name}
-									title={'GitHub page for ' + project.name}
+								<Stack
+									direction='row'
+									spacing={1}
 								>
-									<GitHubIcon fontSize='large' />
-								</IconButton>
+									<IconButton
+										component={Link}
+										href={String(project.deployment)}
+										target='_blank'
+										size='large'
+										edge='start'
+										color='inherit'
+										aria-label={'Deployment page for ' + project.name}
+										title={'Deployment page for ' + project.name}
+									>
+										<LaunchIcon fontSize='large' />
+									</IconButton>
+									<IconButton
+										component={Link}
+										href={String(project.GitHub)}
+										target='_blank'
+										size='large'
+										edge='start'
+										color='inherit'
+										aria-label={'GitHub page for ' + project.name}
+										title={'GitHub page for ' + project.name}
+									>
+										<GitHubIcon fontSize='large' />
+									</IconButton>
+								</Stack>
 							</Box>
 							<Box className='project-tile-md-scr'>
 								<ProjectTile size={100} />
