@@ -11,9 +11,10 @@ interface CircleLogoProps {
 	logo: string | React.ReactElement
 	size: number
 	className?: string
+	[x: string]: any
 }
 
-function CircleLogo({ logo, size = 100, className = '' }: CircleLogoProps) {
+function CircleLogo({ logo, size = 100, className = '', ...rest }: CircleLogoProps) {
 	const theme = useTheme()
 
 	return (
@@ -24,6 +25,7 @@ function CircleLogo({ logo, size = 100, className = '' }: CircleLogoProps) {
 					maxWidth: `min(100%, ${size}px)`,
 				}}
 				width={size}
+				{...rest}
 			>
 				<defs>
 					<pattern

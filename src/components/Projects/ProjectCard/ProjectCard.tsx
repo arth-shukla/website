@@ -1,12 +1,10 @@
 import React from 'react'
 import { Carousel, ProjectTile } from '../..'
 import { ProjectContextConsumer } from '../ProjectContext'
-import Box from '@mui/material/Box'
+import { Box, Link, Stack } from '@mui/material'
 import IconButton from '@mui/material/IconButton'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import LaunchIcon from '@mui/icons-material/Launch'
-import Link from '@mui/material/Link'
-import Stack from '@mui/material/Stack'
 
 import './ProjectCard.scss'
 
@@ -15,60 +13,82 @@ function ProjectCard({ projectCarousel }: { projectCarousel: any }) {
 		<ProjectContextConsumer>
 			{project =>
 				project && (
-					<Box className='project-card'>
-						<Box
-							className='project-card-header'
-							sx={{ display: 'flex' }}
-						>
-							<Box sx={{ flexGrow: 1 }}>
-								<h1 style={{ margin: 0 }}>{project.name}</h1>
-								<Stack
-									direction='row'
-									spacing={1}
-								>
-									<IconButton
-										component={Link}
-										href={String(project.deployment)}
-										target='_blank'
-										size='large'
-										edge='start'
-										color='inherit'
-										aria-label={'Deployment page for ' + project.name}
-										title={'Deployment page for ' + project.name}
+					<Box
+						className='project-card'
+						sx={{
+							display: 'flex',
+							flexDirection: 'row',
+							alignItems: 'stretch',
+							justifyContent: 'space-evenly',
+						}}
+					>
+						<Box className='info-container'>
+							<Box
+								className='project-card-header'
+								sx={{ display: 'flex' }}
+							>
+								<Box sx={{ flexGrow: 1 }}>
+									<h1 style={{ margin: 0 }}>{project.name}</h1>
+									<Stack
+										direction='row'
+										spacing={1}
 									>
-										<LaunchIcon fontSize='large' />
-									</IconButton>
-									<IconButton
-										component={Link}
-										href={String(project.GitHub)}
-										target='_blank'
-										size='large'
-										edge='start'
-										color='inherit'
-										aria-label={'GitHub page for ' + project.name}
-										title={'GitHub page for ' + project.name}
-									>
-										<GitHubIcon fontSize='large' />
-									</IconButton>
-								</Stack>
+										<IconButton
+											component={Link}
+											href={String(project.deployment)}
+											target='_blank'
+											size='large'
+											edge='start'
+											color='inherit'
+											aria-label={'Deployment page for ' + project.name}
+											title={'Deployment page for ' + project.name}
+										>
+											<LaunchIcon fontSize='large' />
+										</IconButton>
+										<IconButton
+											component={Link}
+											href={String(project.GitHub)}
+											target='_blank'
+											size='large'
+											edge='start'
+											color='inherit'
+											aria-label={'GitHub page for ' + project.name}
+											title={'GitHub page for ' + project.name}
+										>
+											<GitHubIcon fontSize='large' />
+										</IconButton>
+									</Stack>
+								</Box>
+								<Box className='project-tile-md-scr'>
+									<ProjectTile
+										size={100}
+										className='project-tile-md-scr'
+									/>
+								</Box>
 							</Box>
-							<Box className='project-tile-md-scr'>
-								<ProjectTile size={100} />
-							</Box>
-						</Box>
-						<Box
-							sx={{ display: 'flex', justifyContent: 'center' }}
-							className='project-tile-sm-scr'
-						>
-							<ProjectTile
+							<Box
+								sx={{ display: 'flex', justifyContent: 'center' }}
 								className='project-tile-sm-scr'
-								size={200}
+							>
+								<ProjectTile
+									size={200}
+									className='project-tile-sm-scr'
+								/>
+							</Box>
+							<Carousel
+								slides={projectCarousel}
+								maxHeight={300}
 							/>
 						</Box>
-						<Carousel
-							slides={projectCarousel}
-							maxHeight={300}
-						/>
+						<Box
+							sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexGrow: 1 }}
+							className='project-tile-lg-scr'
+						>
+							<ProjectTile
+								size={300}
+								className='project-tile-lg-scr'
+							/>
+						</Box>
 					</Box>
 				)
 			}
