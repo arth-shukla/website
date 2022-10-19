@@ -55,7 +55,7 @@ function CircleLogo({ logo, size = 100, className = '', ...rest }: CircleLogoPro
 					r={`calc((100% / 2) - ${strokeWidth}px * 2)`}
 					fill={`url(#${`image-${className}`})`}
 					stroke={theme.palette.mode === 'dark' ? '#121212' : '#fff'}
-					stroke-width={strokeWidth}
+					strokeWidth={strokeWidth}
 				/>
 				<circle
 					id='sd'
@@ -64,7 +64,7 @@ function CircleLogo({ logo, size = 100, className = '', ...rest }: CircleLogoPro
 					fill='none'
 					r={`calc((100% / 2) - ${strokeWidth}px)`}
 					stroke={theme.palette.primary.main}
-					stroke-width={strokeWidth}
+					strokeWidth={strokeWidth}
 				/>
 			</svg>
 		</ThemeProvider>

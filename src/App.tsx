@@ -79,6 +79,7 @@ function App() {
 				<Route
 					path={`projects/${projectsData[project].pagePath}`}
 					element={<ProjectInfo project={projectsData[project]} />}
+					key={`route-to-projects/${projectsData[project].pagePath}`}
 				/>,
 			)
 		}
@@ -109,7 +110,6 @@ function App() {
 							path='projects'
 							element={<Projects />}
 						/>
-						{/* <ProjectRoutes /> */}
 						{generateProjectRoutes()}
 						<Route
 							path='resume'
