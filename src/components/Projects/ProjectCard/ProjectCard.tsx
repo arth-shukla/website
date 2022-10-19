@@ -59,7 +59,10 @@ function ProjectCard() {
 										</IconButton>
 									</Stack>
 								</Box>
-								<Box className='project-tile-md-scr'>
+								<Box
+									className='project-tile-md-scr'
+									sx={{ width: 225 }}
+								>
 									<ProjectTile
 										size={100}
 										className='project-tile-md-scr'

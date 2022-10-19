@@ -97,12 +97,69 @@ const DiceRollerData: Project = {
 	],
 }
 
+const AnimationLibrary: Project = {
+	name: 'Animations and Icon Component Library',
+	pagePath: 'anim-library',
+	GitHub: new URL('https://github.com/arth-shukla/my-icons'),
+	logo: ProjectIcons.DiceRollerLogo,
+	deployment: new URL('https://arth-shukla.github.io/my-icons-documentation/'),
+	description: 'This is a React component library with animations and icons which I use frequently. Many of those components are used in this website!',
+	carouselSlides: [
+		{
+			label: <h2>Description and Purpose</h2>,
+			content: (
+				<>
+					<p>I often want similar functionality across different websites I make. So, I made a React component library with animations and icons which I use frequently. Many of those components are used in this website!</p>
+					<p>
+						The library can be installed by running <code>npm i @arth-shukla/my-icons</code>.
+					</p>
+				</>
+			),
+		},
+		{
+			label: <h2>Motivation</h2>,
+			content: (
+				<>
+					<p>I often use certain components frequently to fulfill the same purposes, like</p>
+					<ul>
+						<li>changing page between light and dark mode,</li>
+						<li>changing the color of some element, or</li>
+						<li>animations to add extra flare.</li>
+					</ul>
+					<p>I didn't want to keep re-making these components, and I wanted flexibility with how I could use these components.</p>
+					<p>If I want, I should be able to change the state of component using an external state variable (e.g. change light/dark mode button along with page), but I shouldn't need have access to essential functions of a component (e.g. the animation of a light/dark mode button when selected).</p>
+				</>
+			),
+		},
+		{
+			label: <h2>Features</h2>,
+			content: (
+				<>
+					<p>To meet development needs, I made each component in this library so that they are:</p>
+					<ol>
+						<li>
+							<b>Adaptable</b>: The component can interact with external state variables (e.g. once a light/dark mode button is clicked, change the state of the page).
+						</li>
+						<li>
+							<b>Self-Reliant</b>: Should maintain internal state (e.g. when left on its own, a light/dark mode button will still switch between light/dark animations, even if the site is not 'connected'.)
+						</li>
+						<li>
+							<b>Accessible</b>: Compatible with Web Content Accessibility Guidelines (WCAG) 2.1 AA standards.
+						</li>
+					</ol>
+				</>
+			),
+		},
+	],
+}
+
 export interface ProjectsDataType {
 	[x: string]: Project
 }
 
 const ProjectsData = {
 	'Dice Roller': DiceRollerData,
+	'Animation Library': AnimationLibrary,
 }
 
 export default ProjectsData

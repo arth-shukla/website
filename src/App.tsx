@@ -46,7 +46,7 @@ function App() {
 	}
 
 	useEffect(() => {
-		window.addEventListener('resize', handleResize)
+		window.addEventListener('resize', handleResize, { passive: true })
 	}, [])
 
 	const theme = React.useMemo(
@@ -62,6 +62,15 @@ function App() {
 					text: {
 						primary: themeColors[darkMode ? 'dark' : 'light']['primaryText'],
 						// secondary: themeColors[darkMode ? 'dark' : 'light']['secondaryText'],
+					},
+				},
+				typography: {
+					fontFamily: "-apple-system, BlinkMacSystemFont, 'Roboto', 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
+					h1: {
+						fontFamily: "'Courier New', Courier, monospace",
+					},
+					h2: {
+						fontFamily: "'Courier New', Courier, monospace",
 					},
 				},
 			}),
@@ -103,7 +112,7 @@ function App() {
 					darkMode={darkMode}
 					setDarkMode={setDarkMode}
 				/>
-				<Box sx={{ paddingBottom: '100px' }}>
+				<Box sx={{ paddingBottom: '50px' }}>
 					<Routes>
 						<Route
 							index

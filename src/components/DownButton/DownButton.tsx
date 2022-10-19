@@ -23,7 +23,7 @@ function DownButton({ scrollTargRef }: DownButtonProps) {
 	}
 
 	useEffect(() => {
-		window.addEventListener('scroll', hideOnScroll)
+		window.addEventListener('scroll', hideOnScroll, { passive: true })
 	}, [])
 
 	return (
