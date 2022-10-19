@@ -13,7 +13,7 @@ function ProjectTile({ size, ...rest }: { size: number; [x: string]: any }) {
 	const ProjectLogo = useCallback(
 		(project: any) => (
 			<CircleLogo
-				logo={project.logo(size, theme.palette.text.primary)}
+				logo={project.logo(size, theme.palette.text.primary, theme.palette.primary.main, theme.palette.mode === 'dark')}
 				size={size}
 				{...rest}
 			/>

@@ -3,5 +3,11 @@
 .project-tile {
 	svg {
 		transition: v.$default-transition;
+
+		path,
+		rect,
+		circle {
+			transition: v.$default-transition;
+		}
 	}
 }
