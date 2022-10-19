@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 
 import './ProjectTile.scss'
 
-function ProjectTile({ size, ...rest }: { size: number; [x: string]: any }) {
+function ProjectTile({ size, identifier, ...rest }: { size: number; identifier?: string; [x: string]: any }) {
 	const theme = useTheme()
 
 	const ProjectLogo = useCallback(
@@ -15,6 +15,7 @@ function ProjectTile({ size, ...rest }: { size: number; [x: string]: any }) {
 			<CircleLogo
 				logo={project.logo(size, theme.palette.text.primary, theme.palette.primary.main, theme.palette.mode === 'dark')}
 				size={size}
+				identifier={String(identifier)}
 				{...rest}
 			/>
 		),

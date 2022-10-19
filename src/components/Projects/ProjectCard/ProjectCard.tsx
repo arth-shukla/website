@@ -27,7 +27,7 @@ function ProjectCard() {
 								className='project-card-header'
 								sx={{ display: 'flex' }}
 							>
-								<Box sx={{ flexGrow: 1 }}>
+								<Box sx={{ width: '80%' }}>
 									<h1 style={{ margin: 0 }}>{project.name}</h1>
 									<Stack
 										direction='row'
@@ -61,11 +61,12 @@ function ProjectCard() {
 								</Box>
 								<Box
 									className='project-tile-md-scr'
-									sx={{ width: 225 }}
+									sx={{ width: '20%' }}
 								>
 									<ProjectTile
 										size={100}
 										className='project-tile-md-scr'
+										identifier={`${project.pagePath}-card-md`}
 									/>
 								</Box>
 							</Box>
@@ -76,6 +77,7 @@ function ProjectCard() {
 								<ProjectTile
 									size={200}
 									className='project-tile-sm-scr'
+									identifier={`${project.pagePath}-card-sm`}
 								/>
 							</Box>
 							<Carousel
@@ -90,6 +92,7 @@ function ProjectCard() {
 							<ProjectTile
 								size={300}
 								className='project-tile-lg-scr'
+								identifier={`${project.pagePath}-card-lg`}
 							/>
 						</Box>
 					</Box>

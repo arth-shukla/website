@@ -1,13 +1,10 @@
 @use '../../../variables' as v;
 
 .project-tile {
-	svg {
+	svg,
+	path,
+	rect,
+	circle {
 		transition: v.$default-transition;
-
-		path,
-		rect,
-		circle {
-			transition: v.$default-transition;
-		}
 	}
 }

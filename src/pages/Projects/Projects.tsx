@@ -13,7 +13,10 @@ function Projects() {
 					<div key={projectsData[project].name}>
 						<Box sx={{ display: 'flex', justifyContent: 'space-evenly', paddingBottom: '1em' }}>
 							<ProjectContextProvider value={projectsData[project]}>
-								<ProjectTile size={200} />
+								<ProjectTile
+									size={200}
+									identifier={projectsData[project].pagePath + '-projects-tile'}
+								/>
 							</ProjectContextProvider>
 						</Box>
 						<p>{projectsData[project].description}</p>

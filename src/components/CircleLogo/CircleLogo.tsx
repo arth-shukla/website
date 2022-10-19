@@ -11,10 +11,11 @@ interface CircleLogoProps {
 	logo: string | React.ReactElement
 	size: number
 	className?: string
+	identifier: string
 	[x: string]: any
 }
 
-function CircleLogo({ logo, size = 100, className = '', ...rest }: CircleLogoProps) {
+function CircleLogo({ logo, size = 100, className = '', identifier = '', ...rest }: CircleLogoProps) {
 	const theme = useTheme()
 
 	return (
@@ -25,11 +26,12 @@ function CircleLogo({ logo, size = 100, className = '', ...rest }: CircleLogoPro
 					maxWidth: `min(100%, ${size}px)`,
 				}}
 				width={size}
+				key={identifier}
 				{...rest}
 			>
 				<defs>
 					<pattern
-						id={`image-${className}`}
+						id={`image-${identifier}`}
 						x='0%'
 						y='0%'
 						height='100%'
@@ -53,7 +55,7 @@ function CircleLogo({ logo, size = 100, className = '', ...rest }: CircleLogoPro
 					cx='50%'
 					cy='50%'
 					r={`calc((100% / 2) - ${strokeWidth}px * 2)`}
-					fill={`url(#${`image-${className}`})`}
+					fill={`url(#${`image-${identifier}`})`}
 					stroke={theme.palette.mode === 'dark' ? '#121212' : '#fff'}
 					strokeWidth={strokeWidth}
 				/>

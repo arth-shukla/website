@@ -108,6 +108,7 @@ function SelfIntroSection() {
 							className='lt-md'
 							size={300}
 							logo={profilePic}
+							identifier='home-profile-lt-md'
 						/>
 					</p>
 					<p>I'm Arth. I'm a second-year Math-Computer Science major at UCSD, and I'm looking for new opportunities to gain experience.</p>
@@ -127,6 +128,7 @@ function SelfIntroSection() {
 						className='ge-md'
 						size={250}
 						logo={profilePic}
+						identifier='home-profile-ge-md'
 					/>
 				</Grid>
 			</Grid>
