@@ -78,10 +78,7 @@ function Home({ winHeight }: HomeProps) {
 				className='text-section'
 			>
 				<SelfIntroSection />
-				<Section>
-					<h1>You are smelly</h1>
-					<p>Go take a shower</p>
-				</Section>
+				<ProjectsInfoSection />
 			</Box>
 		</Box>
 	)
@@ -133,6 +130,15 @@ function SelfIntroSection() {
 					/>
 				</Grid>
 			</Grid>
+		</Section>
+	)
+}
+
+function ProjectsInfoSection() {
+	return (
+		<Section>
+			<h1>I like making stuff</h1>
+			<p>I'm into web dev and AI/ML. Here are some projects of mine that I like.</p>
 		</Section>
 	)
 }
