@@ -3,7 +3,6 @@ import useTheme from '@mui/material/styles/useTheme'
 import Box from '@mui/material/Box'
 import MobileStepper from '@mui/material/MobileStepper'
 import Paper from '@mui/material/Paper'
-import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft'
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight'
@@ -24,7 +23,6 @@ function Carousel({ slides, maxHeight, width }: CarouselProps) {
 	const [activeStep, setActiveStep] = useState<number>(0)
 	const [prevBtnEnabled, setPrevBtnEnabled] = useState<boolean>(true)
 	const [nextBtnEnabled, setNextBtnEnabled] = useState<boolean>(true)
-	const [scrollSnaps, setScrollSnaps] = useState<any>([])
 
 	const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi])
 	const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi])
@@ -32,16 +30,15 @@ function Carousel({ slides, maxHeight, width }: CarouselProps) {
 	const onSelect = useCallback(() => {
 		if (!emblaApi) return
 		setActiveStep(emblaApi.selectedScrollSnap())
-		setPrevBtnEnabled(!emblaApi.canScrollPrev() && scrollSnaps)
+		setPrevBtnEnabled(!emblaApi.canScrollPrev())
 		setNextBtnEnabled(!emblaApi.canScrollNext())
-	}, [emblaApi, setActiveStep, scrollSnaps])
+	}, [emblaApi, setActiveStep])
 
 	useEffect(() => {
 		if (!emblaApi) return
 		onSelect()
-		setScrollSnaps(emblaApi.scrollSnapList())
 		emblaApi.on('select', onSelect)
-	}, [emblaApi, setScrollSnaps, onSelect])
+	}, [emblaApi, onSelect])
 
 	return (
 		<Box
@@ -56,9 +53,10 @@ function Carousel({ slides, maxHeight, width }: CarouselProps) {
 					alignItems: 'center',
 					pl: 2,
 					bgcolor: 'background.default',
+					fontSize: '18px',
 				}}
 			>
-				<Typography>{slides[activeStep].label}</Typography>
+				{slides[activeStep].label}
 			</Paper>
 			<div
 				className='embla'
@@ -73,9 +71,9 @@ function Carousel({ slides, maxHeight, width }: CarouselProps) {
 							<div
 								className='embla__slide'
 								key={k}
-								style={{ padding: '0 1em' }}
+								style={{ padding: '0 1em', fontSize: '16px' }}
 							>
-								<Typography>{v.content}</Typography>
+								{v.content}
 							</div>
 						))}
 					</div>

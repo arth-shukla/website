@@ -27,8 +27,10 @@ export interface Project {
 	logo: any
 	deployment: URL
 	description: React.ReactElement | string
-	motivation: React.ReactElement | string
-	features: React.ReactElement | string
+	carouselSlides: Array<{
+		label: React.ReactElement | string
+		content: React.ReactElement | string
+	}>
 }
 
 const DiceRollerData: Project = {
@@ -38,43 +40,51 @@ const DiceRollerData: Project = {
 	logo: ProjectIcons.DiceRollerLogo,
 	deployment: new URL('https://arth-shukla.github.io/dice-roller/'),
 	description: "This is a dice roller made for quick rolling and an aesthetically pleasing, accessible design. It's great for TTRPGS like D&D, Cyberpunk Red, and more.",
-	motivation: (
-		<>
-			Most Dice Rollers suffer from the same three problems:
-			<ol>
-				<li>
-					<b>Efficiency</b>: Most dice rollers have clunky UIs or unnecessary forms; as a result, it takes several button presses to roll a single dice.
-				</li>
-				<li>
-					<b>Aesthetically Pleasing</b>: Many dice roller UIs are unattractive, poorly layed out, or don't support mobile/tablet screens very well. However, the most likely use case for a dice roller would be one's phone/tablet!
-				</li>
-				<li>
-					<b>Accessibility</b>: D&amp;D and TTRPGs shoud be inclusive to everyone, but some websites aren't made with certain accessiblity needs in mind.
-				</li>
-			</ol>
-		</>
-	),
-	features: (
-		<>
-			To solve these issues, I implemented the following features:
-			<ol>
-				<li>
-					<b>Efficiency</b>: Buttons are available to quickly roll 1-8 of a standard D&amp;D dice set (d4, d6, d8, d10, d12, d20) with a single button press. While this should cover most use cases, the user can also enter a custom number of dice as well.
-				</li>
-				<li>
-					<b>Aesthetically Pleasing</b>: Create interface which is
-					<ul>
-						<li>simple,</li>
-						<li>supports dark/light mode and different color themes, and</li>
-						<li>supports mobile, tablet, and computer browsers and screen sizes.</li>
-					</ul>
-				</li>
-				<li>
-					<b>Accessibility</b>: This dice roller is compatible with the Web Content Accessibility Guidelines (WCAG) 2.1 AA standards and uses the ARIA Authoring Practices Guide (APG) as a foundation for more complicated components.
-				</li>
-			</ol>
-		</>
-	),
+	carouselSlides: [
+		{
+			label: <h2>Motivation</h2>,
+			content: (
+				<>
+					Most Dice Rollers suffer from the same three problems:
+					<ol>
+						<li>
+							<b>Efficiency</b>: Most dice rollers have clunky UIs or unnecessary forms; as a result, it takes several button presses to roll a single dice.
+						</li>
+						<li>
+							<b>Aesthetically Pleasing</b>: Many dice roller UIs are unattractive, poorly layed out, or don't support mobile/tablet screens very well. However, the most likely use case for a dice roller would be one's phone/tablet!
+						</li>
+						<li>
+							<b>Accessibility</b>: D&amp;D and TTRPGs shoud be inclusive to everyone, but some websites aren't made with certain accessiblity needs in mind.
+						</li>
+					</ol>
+				</>
+			),
+		},
+		{
+			label: <h2>Features</h2>,
+			content: (
+				<>
+					To solve these issues, I implemented the following features:
+					<ol>
+						<li>
+							<b>Efficiency</b>: Buttons are available to quickly roll 1-8 of a standard D&amp;D dice set (d4, d6, d8, d10, d12, d20) with a single button press. While this should cover most use cases, the user can also enter a custom number of dice as well.
+						</li>
+						<li>
+							<b>Aesthetically Pleasing</b>: Create interface which is
+							<ul>
+								<li>simple,</li>
+								<li>supports dark/light mode and different color themes, and</li>
+								<li>supports mobile, tablet, and computer browsers and screen sizes.</li>
+							</ul>
+						</li>
+						<li>
+							<b>Accessibility</b>: This dice roller is compatible with the Web Content Accessibility Guidelines (WCAG) 2.1 AA standards and uses the ARIA Authoring Practices Guide (APG) as a foundation for more complicated components.
+						</li>
+					</ol>
+				</>
+			),
+		},
+	],
 }
 
 export interface ProjectsDataType {

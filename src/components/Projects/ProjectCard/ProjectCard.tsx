@@ -8,7 +8,7 @@ import LaunchIcon from '@mui/icons-material/Launch'
 
 import './ProjectCard.scss'
 
-function ProjectCard({ projectCarousel }: { projectCarousel: any }) {
+function ProjectCard() {
 	return (
 		<ProjectContextConsumer>
 			{project =>
@@ -76,8 +76,8 @@ function ProjectCard({ projectCarousel }: { projectCarousel: any }) {
 								/>
 							</Box>
 							<Carousel
-								slides={projectCarousel}
-								maxHeight={300}
+								slides={project.carouselSlides}
+								maxHeight={400}
 							/>
 						</Box>
 						<Box
