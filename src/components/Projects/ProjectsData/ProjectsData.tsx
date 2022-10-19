@@ -42,6 +42,16 @@ const DiceRollerData: Project = {
 	description: "This is a dice roller made for quick rolling and an aesthetically pleasing, accessible design. It's great for TTRPGS like D&D, Cyberpunk Red, and more.",
 	carouselSlides: [
 		{
+			label: <h2>Description and Purpose</h2>,
+			content: (
+				<>
+					<p>In TTRPGs like D&amp;D, rolling dice is essential to the game. I have sets of physical dice, but sometimes I forget them, and sometimes I can't bring the dice with me.</p>
+					<p>Furthermore, most existing online dice rollers are slow or hard to use, so my options are limited.</p>
+					<p>So, I made a dice roller for myself and my friends which is aesthetically pleasing, accessible design. It's great for TTRPGS like D&amp;D, Cyberpunk Red, and more.</p>
+				</>
+			),
+		},
+		{
 			label: <h2>Motivation</h2>,
 			content: (
 				<>
