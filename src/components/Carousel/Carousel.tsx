@@ -44,7 +44,7 @@ function Carousel({ showFloatOnHover = false, floatStepper = false, slides, maxH
 
 	return (
 		<Box
-			className='carousel carousel-show-float-on-hover'
+			className={'carousel ' + (floatStepper && showFloatOnHover ? 'carousel-show-float-on-hover' : '')}
 			{...rest}
 			sx={{ width: width, ...rest.sx }}
 		>
@@ -89,6 +89,9 @@ function Carousel({ showFloatOnHover = false, floatStepper = false, slides, maxH
 					onClick={scrollPrev}
 					disabled={prevBtnEnabled}
 					className={'carousel-step-button-float carousel-step-button-float-left'}
+					sx={{
+						visibility: floatStepper ? undefined : 'hidden',
+					}}
 				>
 					<ArrowBackIosNew />
 				</IconButton>
@@ -96,6 +99,9 @@ function Carousel({ showFloatOnHover = false, floatStepper = false, slides, maxH
 					onClick={scrollNext}
 					disabled={nextBtnEnabled}
 					className={'carousel-step-button-float carousel-step-button-float-right'}
+					sx={{
+						visibility: floatStepper ? undefined : 'hidden',
+					}}
 				>
 					<ArrowForwardIos />
 				</IconButton>
