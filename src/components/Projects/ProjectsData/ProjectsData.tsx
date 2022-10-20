@@ -1,7 +1,5 @@
 import React from 'react'
 
-import './ProjectsData.scss'
-
 const ProjectIcons = {
 	DiceRollerLogo: (size: number, color: string) => {
 		const r = ((size / 2) * Math.sqrt(2)) / 2
@@ -37,24 +35,19 @@ const ProjectIcons = {
 					rx='10'
 					ry='10'
 					fill={primary}
-					className='anim-library-icon-rect'
-					fillOpacity='80%'
+					fillOpacity='60%'
 				/>
 				<circle
 					cx='103'
 					cy='55'
 					r='20'
 					strokeWidth={18}
-					stroke={dark ? '#fff' : primary}
-					className={'anim-library-icon-circle' + (dark ? '-dark' : '-light')}
-					// style={{ filter: dark ? 'brightness(87%)' : 'brightness(50%)', WebkitFilter: dark ? 'brightness(87%)' : 'brightness(50%)' }}
+					stroke={primary}
 					fill='none'
 				/>
 				<path
 					d='M118,150 h40 a10,10 0 0 0 8,-14 l -25,-40 a6,6 0 0 0 -10,0 l-23,40 a10,10 0 0 0 8, 14 Z'
-					fill={primary}
-					className={'anim-library-icon-path' + (dark ? '-dark' : '-light')}
-					// style={{ filter: dark ? 'brightness(70%)' : 'brightness(90%)', WebkitFilter: dark ? 'brightness(70%)' : 'brightness(90%)' }}
+					fill={primary + 'ff'}
 					points='30,50 60,50 45,25'
 				/>
 			</svg>
