@@ -154,7 +154,7 @@ function ProjectsInfoSection() {
 					lg={12}
 				>
 					<h1>I like making stuff</h1>
-					<p>Right now I'm very interested in web dev and AI/ML. Most of my experience with web dev is in front-end, while I've been trying to learn different things in AI.</p>
+					<p>Right now I'm very interested in web dev and AI/ML. Most of my experience with web dev is in front-end, and I've been learning NLP and the math behind optimization on the AI side.</p>
 					<p>Here are some projects I've worked on that I had fun building.</p>
 				</Grid>
 				<Grid
