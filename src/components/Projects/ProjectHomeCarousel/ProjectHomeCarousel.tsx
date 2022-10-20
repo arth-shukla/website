@@ -27,10 +27,12 @@ function ProjectHomeCarousel({ width, height, logoSize, logosPerSlide, projects,
 
 			for (const project in projectsData) {
 				logos.push(
-					<ProjectContextProvider value={projectsData[project]}>
+					<ProjectContextProvider
+						value={projectsData[project]}
+						key={`${projectsData[project].pagePath}-home-carousel-card-provider`}
+					>
 						<ProjectTile
 							size={logoSize}
-							className='project-tile-md-scr'
 							identifier={`${projectsData[project].pagePath}-home-carousel-card`}
 						/>
 					</ProjectContextProvider>,
