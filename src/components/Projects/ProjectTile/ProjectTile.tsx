@@ -5,8 +5,9 @@ import useTheme from '@mui/material/styles/useTheme'
 import { useNavigate } from 'react-router-dom'
 
 import './ProjectTile.scss'
+import { Project } from '../ProjectsData'
 
-function ProjectTile({ size, identifier, ...rest }: { size: number; identifier?: string; [x: string]: any }) {
+function ProjectTile({ size, identifier, linkOverride, ...rest }: { size: number; identifier?: string; linkOverride?: URL; [x: string]: any }) {
 	const theme = useTheme()
 	const navigate = useNavigate()
 
@@ -30,6 +31,11 @@ function ProjectTile({ size, identifier, ...rest }: { size: number; identifier?:
 		return `${parseInt(r, 16)}, ${parseInt(g, 16)}, ${parseInt(b, 16)}`
 	}
 
+	const goto = (project: Project) => {
+		if (linkOverride) window.open(linkOverride, '_blank')
+		else navigate(`/projects/${project.pagePath}`)
+	}
+
 	return (
 		<ProjectContextConsumer>
 			{project =>
@@ -39,7 +45,7 @@ function ProjectTile({ size, identifier, ...rest }: { size: number; identifier?:
 						style={{ height: size * 1.3, width: size * 1.3 }}
 					>
 						<button
-							onClick={() => navigate(`/projects/${project.pagePath}`)}
+							onClick={() => goto(project)}
 							className='project-tile'
 							aria-label={`Deployment for ${project.name}`}
 							title={`Deployment for ${project.name}`}

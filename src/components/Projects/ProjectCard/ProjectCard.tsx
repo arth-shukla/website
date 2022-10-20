@@ -67,6 +67,7 @@ function ProjectCard() {
 										size={100}
 										className='project-tile-md-scr'
 										identifier={`${project.pagePath}-card-md`}
+										linkOverride={project.deployment}
 									/>
 								</Box>
 							</Box>
@@ -78,6 +79,7 @@ function ProjectCard() {
 									size={200}
 									className='project-tile-sm-scr'
 									identifier={`${project.pagePath}-card-sm`}
+									linkOverride={project.deployment}
 								/>
 							</Box>
 							<Carousel
@@ -93,6 +95,7 @@ function ProjectCard() {
 								size={300}
 								className='project-tile-lg-scr'
 								identifier={`${project.pagePath}-card-lg`}
+								linkOverride={project.deployment}
 							/>
 						</Box>
 					</Box>
