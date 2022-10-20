@@ -21,7 +21,7 @@ function CircleLogo({ logo, size = 100, className = '', identifier = '', ...rest
 	return (
 		<ThemeProvider theme={theme}>
 			<svg
-				className={`circle-logo ${className}`}
+				className={`circle-logo ${className} MuiSvgIcon-root`}
 				style={{
 					maxWidth: `min(100%, ${size}px)`,
 				}}
@@ -50,13 +50,12 @@ function CircleLogo({ logo, size = 100, className = '', identifier = '', ...rest
 					</pattern>
 				</defs>
 				{typeof logo !== 'string' && logo}
-
 				<circle
-					id='sd'
+					id='inner'
 					cx='50%'
 					cy='50%'
 					r={`calc((100% / 2) - ${strokeWidth}px * 2)`}
-					fill={`url(#${`image-${identifier}`})`}
+					fill={typeof logo === 'string' ? `url(#${`image-${identifier}`})` : 'none'}
 					stroke={theme.palette.mode === 'dark' ? '#121212' : '#fff'}
 					strokeWidth={strokeWidth}
 				/>

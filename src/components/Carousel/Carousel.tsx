@@ -55,6 +55,7 @@ function Carousel({ slides, maxHeight, width }: CarouselProps) {
 					bgcolor: 'background.default',
 					fontSize: '18px',
 				}}
+				className='carousel-label'
 			>
 				{slides[activeStep].label}
 			</Paper>
@@ -88,6 +89,7 @@ function Carousel({ slides, maxHeight, width }: CarouselProps) {
 						size='small'
 						onClick={scrollNext}
 						disabled={nextBtnEnabled}
+						className='carousel-step-button'
 					>
 						Next
 						<KeyboardArrowRight />
@@ -98,11 +100,13 @@ function Carousel({ slides, maxHeight, width }: CarouselProps) {
 						size='small'
 						onClick={scrollPrev}
 						disabled={prevBtnEnabled}
+						className='carousel-step-button'
 					>
 						<KeyboardArrowLeft />
 						Back
 					</Button>
 				}
+				className='carousel-stepper'
 			/>
 		</Box>
 	)

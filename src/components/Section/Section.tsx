@@ -4,16 +4,18 @@ import useTheme from '@mui/material/styles/useTheme'
 import './Section.scss'
 
 interface SectionProps {
+	className?: string
 	children: any
 	sx?: any
+	[x: string]: any
 }
 
-function Section({ children, sx, ...rest }: SectionProps) {
+function Section({ className = '', children, sx, ...rest }: SectionProps) {
 	const theme = useTheme()
 
 	return (
 		<section
-			className='section'
+			className={'section ' + className}
 			style={{
 				color: theme.palette.text.primary,
 				...sx,

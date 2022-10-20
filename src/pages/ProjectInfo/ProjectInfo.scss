@@ -1,0 +1,12 @@
+@use '../../variables' as v;
+
+.project-info-breadcrumbs {
+	transition: v.$default-transition;
+
+	#project-info-breadcrumbs-1 {
+		transition: inherit;
+	}
+	#project-info-breadcrumbs-2 {
+		transition: v.$default-transition;
+	}
+}

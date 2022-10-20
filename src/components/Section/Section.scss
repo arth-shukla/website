@@ -24,6 +24,9 @@
 		padding: 30px 10% !important;
 	}
 
-	a {
-	}
+	transition: v.$default-transition;
+
+	// a {
+	// 	transition: v.$default-transition;
+	// }
 }

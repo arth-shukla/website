@@ -1,4 +1,76 @@
 @use '../../../variables' as v;
 
-.project-tile {
+.project-tile-wrapper {
+	height: calc(var(--project-tile-size) * 1.2);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.project-tile {
+		border: none;
+		cursor: pointer;
+		border-radius: var(--project-tile-size);
+		justify-content: center;
+		align-items: center;
+		// background-size: 0px 0px;
+		// background-color: rgba(var(--project-tile-primary-main), var(--project-tile-dim-factor));
+		background-color: transparent;
+	}
+
+	.project-tile:hover {
+		outline: none;
+
+		background-color: rgba(var(--project-tile-primary-main), var(--project-tile-dim-factor));
+		padding: calc(var(--project-tile-size) * 0.1);
+
+		transition: all calc(v.$tr-sec / 2) ease-in-out;
+	}
+
+	.project-tile:focus:not(:hover) {
+		background-color: rgba(var(--project-tile-primary-main), calc(var(--project-tile-dim-factor) * 2));
+		transition: background-color 150ms ease-in-cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+		outline: none;
+		animation-name: breathe;
+		animation-duration: 4s;
+		animation-timing-function: ease-in-out;
+		animation-iteration-count: infinite;
+	}
+
+	.project-tile:focus:not(:focus-visible):not(:hover) {
+		animation: none !important;
+		background-color: transparent !important;
+	}
+
+	.project-tile:active,
+	.project-tile:active:focus {
+		background-color: rgba(var(--project-tile-primary-main), calc(var(--project-tile-dim-factor) * 3));
+		transition: all calc(v.$tr-sec / 2) ease-in-out;
+	}
+}
+
+@keyframes select {
+	0% {
+		background-size: 0% 100%;
+	}
+	100% {
+		background-size: 100% 100%;
+	}
+}
+
+@keyframes breathe {
+	0% {
+		padding: calc(var(--project-tile-size) * 0.1);
+	}
+	10% {
+		padding: calc(var(--project-tile-size) * 0.1);
+	}
+	45% {
+		padding: 0;
+	}
+	55% {
+		padding: 0;
+	}
+	100% {
+		padding: calc(var(--project-tile-size) * 0.1);
+	}
 }

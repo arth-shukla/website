@@ -26,4 +26,16 @@
 		overflow-y: auto;
 		overflow-x: hidden;
 	}
+
+	.carousel-label,
+	.carousel-stepper {
+		transition: v.$default-transition;
+		.carousel-step-button {
+			transition: inherit;
+		}
+
+		.MuiMobileStepper-dot {
+			transition: v.$default-transition;
+		}
+	}
 }

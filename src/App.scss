@@ -11,15 +11,17 @@
 	}
 }
 
-:root[data-theme='light'] {
-	background-color: #fff !important;
-}
-:root[data-theme='dark'] {
-	background-color: #121212 !important;
+:root {
+	[data-theme='light'] {
+		background-color: #fff !important;
+	}
+	[data-theme='dark'] {
+		background-color: #121212 !important;
+	}
+	transition: v.$default-transition;
 }
 
-body {
-}
-
+body,
 .MuiPaper-root {
+	transition: v.$default-transition;
 }

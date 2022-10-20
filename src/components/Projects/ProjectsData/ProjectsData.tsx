@@ -11,6 +11,7 @@ const ProjectIcons = {
 				x={size / 2 - r}
 				y={size / 2 - r}
 				viewBox={`0 0 512.021 512.021`}
+				className='circle-logo'
 			>
 				<path
 					fill={color}
@@ -26,6 +27,7 @@ const ProjectIcons = {
 				height={size}
 				viewBox='0 0 200 200'
 				y={4}
+				className='circle-logo'
 			>
 				<rect
 					x='43'
