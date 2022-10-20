@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import { Routes, Route, HashRouter } from 'react-router-dom'
+import { Routes, Route, BrowserRouter } from 'react-router-dom'
 
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
@@ -100,7 +100,7 @@ function App() {
 	}, [])
 
 	return (
-		<HashRouter>
+		<BrowserRouter>
 			<ThemeProvider theme={theme}>
 				<CssBaseline />
 				<WebsiteToolbar
@@ -142,7 +142,7 @@ function App() {
 					setMenu={setMenu}
 				/>
 			</ThemeProvider>
-		</HashRouter>
+		</BrowserRouter>
 	)
 }
 
