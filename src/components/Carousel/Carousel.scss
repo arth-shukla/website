@@ -1,9 +1,6 @@
 @use '../../variables' as v;
 
 .carousel {
-	.MuiPaper-root {
-		transition: inherit;
-	}
 	.embla {
 		overflow: hidden;
 
@@ -29,6 +26,4 @@
 		overflow-y: auto;
 		overflow-x: hidden;
 	}
-
-	transition: v.$default-transition;
 }

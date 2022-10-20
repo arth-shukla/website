@@ -21,7 +21,7 @@ function CircleLogo({ logo, size = 100, className = '', identifier = '', ...rest
 	return (
 		<ThemeProvider theme={theme}>
 			<svg
-				className={`profile-pic ${className}`}
+				className={`circle-logo ${className}`}
 				style={{
 					maxWidth: `min(100%, ${size}px)`,
 				}}
@@ -47,9 +47,10 @@ function CircleLogo({ logo, size = 100, className = '', identifier = '', ...rest
 								href={logo}
 							/>
 						)}
-						{typeof logo !== 'string' && logo}
 					</pattern>
 				</defs>
+				{typeof logo !== 'string' && logo}
+
 				<circle
 					id='sd'
 					cx='50%'

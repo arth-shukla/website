@@ -20,13 +20,10 @@
 		line-height: 1.25;
 	}
 
-	transition: inherit;
-
 	@media screen and (max-width: 400px) {
 		padding: 30px 10% !important;
 	}
 
 	a {
-		transition: v.$default-transition;
 	}
 }

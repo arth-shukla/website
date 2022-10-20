@@ -13,17 +13,13 @@
 
 :root[data-theme='light'] {
 	background-color: #fff !important;
-	transition: v.$default-transition;
 }
 :root[data-theme='dark'] {
 	background-color: #121212 !important;
-	transition: v.$default-transition;
 }
 
 body {
-	transition: v.$default-transition;
 }
 
 .MuiPaper-root {
-	transition: v.$default-transition;
 }
