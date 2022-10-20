@@ -86,7 +86,8 @@ const DiceRollerData: Project = {
 			content: (
 				<>
 					<p>In TTRPGs like D&amp;D, rolling dice is essential to the game. I have sets of physical dice, but sometimes I forget them, and sometimes I can't bring the dice with me.</p>
-					<p>Furthermore, most existing online dice rollers are slow or hard to use, so my options are limited.</p>
+					<p>However, most online rollers are a nightmare to use on phones. even the nicer options still have flaws.</p>
+					<p>The Google roller is simple and looks nice, but is slow to roll many different dice. The D&amp;D Beyond roller is perfect in almost every way, but it only works on chracters made in D&amp;D Beyond&mdash;sometimes I want to play other TTRPGs.</p>
 					<p>So, I made a dice roller for myself and my friends which is aesthetically pleasing, accessible design. It's great for TTRPGS like D&amp;D, Cyberpunk Red, and more.</p>
 				</>
 			),
