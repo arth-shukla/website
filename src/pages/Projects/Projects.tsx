@@ -33,7 +33,18 @@ function Projects() {
 			<h1>Projects</h1>
 
 			<p>Here are some projects I found interesting and informative. To see more information, please click on the project icon.</p>
-			<Carousel slides={[...renderProjectsSlide(ProjectsData)]} />
+			<Box
+				sx={{
+					display: 'flex',
+					justifyContent: 'center',
+					alignItems: 'center',
+				}}
+			>
+				<Carousel
+					slides={[...renderProjectsSlide(ProjectsData)]}
+					sx={{ maxWidth: 'min(100%, 1200px)' }}
+				/>
+			</Box>
 		</Section>
 	)
 }
