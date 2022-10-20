@@ -86,6 +86,7 @@ function ProjectHomeCarousel({ width, height, logoSize, logosPerSlide, projects,
 			}}
 			slides={[...generateCarouselData(projects)]}
 			floatStepper
+			showFloatOnHover
 			{...rest}
 		/>
 	)
