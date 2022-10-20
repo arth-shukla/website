@@ -36,7 +36,7 @@ function ProjectTile({ size, identifier, ...rest }: { size: number; identifier?:
 				project && (
 					<div
 						className='project-tile-wrapper'
-						style={{ height: size * 1.2 }}
+						style={{ height: size * 1.4, width: size * 1.3 }}
 					>
 						<button
 							onClick={() => navigate(`/projects/${project.pagePath}`)}

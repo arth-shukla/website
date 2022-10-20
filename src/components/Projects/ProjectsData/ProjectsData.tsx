@@ -12,6 +12,7 @@ const ProjectIcons = {
 				y={size / 2 - r}
 				viewBox={`0 0 512.021 512.021`}
 				className='circle-logo'
+				aria-hidden={true}
 			>
 				<path
 					fill={color}
@@ -23,11 +24,13 @@ const ProjectIcons = {
 	AnimLibraryIcon: (size: number, color: string, primary: string, dark: boolean) => {
 		return (
 			<svg
-				width={size}
-				height={size}
+				width='100%'
+				// height={size}
 				viewBox='0 0 200 200'
-				y={4}
+				y='4%'
 				className='circle-logo'
+				style={{ maxWidth: '100%' }}
+				aria-hidden={true}
 			>
 				<rect
 					x='43'
@@ -48,7 +51,7 @@ const ProjectIcons = {
 					fill='none'
 				/>
 				<path
-					d='M118,150 h40 a10,10 0 0 0 8,-14 l -25,-40 a6,6 0 0 0 -10,0 l-23,40 a10,10 0 0 0 8, 14 Z'
+					d='M115,145 h40 a10,10 0 0 0 8,-14 l -25,-40 a6,6 0 0 0 -10,0 l-23,40 a10,10 0 0 0 8, 14 Z'
 					fill={primary + 'ff'}
 					points='30,50 60,50 45,25'
 				/>

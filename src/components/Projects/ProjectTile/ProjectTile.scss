@@ -1,7 +1,6 @@
 @use '../../../variables' as v;
 
 .project-tile-wrapper {
-	height: calc(var(--project-tile-size) * 1.2);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -15,6 +14,8 @@
 		// background-size: 0px 0px;
 		// background-color: rgba(var(--project-tile-primary-main), var(--project-tile-dim-factor));
 		background-color: transparent;
+
+		transition: all calc(v.$tr-sec / 2) ease-in-out;
 	}
 
 	.project-tile:hover {
