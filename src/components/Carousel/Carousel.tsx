@@ -82,60 +82,65 @@ function Carousel({ showFloatOnHover = false, floatStepper = false, slides, maxH
 						))}
 					</div>
 				</div>
-				<IconButton
-					onClick={scrollPrev}
-					disabled={prevBtnEnabled}
-					className={'carousel-step-button-float carousel-step-button-float-left'}
-					sx={{
-						visibility: floatStepper ? undefined : 'hidden',
-					}}
-				>
-					<ArrowBackIosNew />
-				</IconButton>
-				<IconButton
-					onClick={scrollNext}
-					disabled={nextBtnEnabled}
-					className={'carousel-step-button-float carousel-step-button-float-right'}
-					sx={{
-						visibility: floatStepper ? undefined : 'hidden',
-					}}
-				>
-					<ArrowForwardIos />
-				</IconButton>
+				{floatStepper && (
+					<>
+						<IconButton
+							onClick={scrollPrev}
+							disabled={prevBtnEnabled}
+							className={'carousel-step-button-float carousel-step-button-float-left'}
+						>
+							<ArrowBackIosNew />
+						</IconButton>
+						<IconButton
+							onClick={scrollNext}
+							disabled={nextBtnEnabled}
+							className={'carousel-step-button-float carousel-step-button-float-right'}
+						>
+							<ArrowForwardIos />
+						</IconButton>
+					</>
+				)}
 			</div>
 			<MobileStepper
 				steps={slides.length}
 				position='static'
 				activeStep={activeStep}
 				nextButton={
-					<Button
-						size='small'
-						onClick={scrollNext}
-						disabled={nextBtnEnabled}
-						className='carousel-step-button'
-						sx={{
-							visibility: floatStepper ? 'hidden' : undefined,
-						}}
-					>
-						Next
-						<KeyboardArrowRight />
-					</Button>
+					!floatStepper && (
+						<Button
+							size='small'
+							onClick={scrollNext}
+							disabled={nextBtnEnabled}
+							className='carousel-step-button'
+						>
+							Next
+							<KeyboardArrowRight />
+						</Button>
+					)
 				}
 				backButton={
-					<Button
-						size='small'
-						onClick={scrollPrev}
-						disabled={prevBtnEnabled}
-						className='carousel-step-button'
-						sx={{
-							visibility: floatStepper ? 'hidden' : undefined,
-						}}
-					>
-						<KeyboardArrowLeft />
-						Back
-					</Button>
+					!floatStepper && (
+						<Button
+							size='small'
+							onClick={scrollPrev}
+							disabled={prevBtnEnabled}
+							className='carousel-step-button'
+						>
+							<KeyboardArrowLeft />
+							Back
+						</Button>
+					)
 				}
 				className='carousel-stepper'
+				sx={
+					floatStepper
+						? {
+								display: 'flex',
+								alignItems: 'center',
+								justifyContent: 'center',
+						  }
+						: undefined
+				}
 			/>
 		</Box>
 	)
