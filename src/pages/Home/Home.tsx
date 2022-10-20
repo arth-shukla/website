@@ -101,6 +101,7 @@ function SelfIntroSection() {
 					item
 					sm={12}
 					md={8}
+					// lg={12}
 				>
 					<h1>Hi there!</h1>
 					<p style={flexBoxMiddleAlign}>
@@ -118,6 +119,7 @@ function SelfIntroSection() {
 					item
 					sm={0}
 					md={4}
+					// lg={0}
 					sx={flexBoxMiddleAlign}
 				>
 					<CircleLogo
@@ -125,6 +127,12 @@ function SelfIntroSection() {
 						size={250}
 						logo={profilePic}
 						identifier='home-profile-lt-lg'
+					/>
+					<CircleLogo
+						className='ge-lg'
+						size={300}
+						logo={profilePic}
+						identifier='home-profile-ge-lg'
 					/>
 				</Grid>
 			</Grid>
@@ -142,7 +150,7 @@ function ProjectsInfoSection() {
 				<Grid
 					item
 					sm={12}
-					md={7}
+					md={8}
 					lg={12}
 				>
 					<h1>I like making stuff</h1>
@@ -152,7 +160,7 @@ function ProjectsInfoSection() {
 				<Grid
 					item
 					sm={0}
-					md={5}
+					md={4}
 					lg={0}
 					sx={flexBoxMiddleAlign}
 					className='lt-lg'
@@ -164,7 +172,8 @@ function ProjectsInfoSection() {
 						logosPerSlide={1}
 					/>
 				</Grid>
-				<Box
+				<Grid
+					item
 					className='lt-md'
 					sx={{ width: '100%', ...flexBoxMiddleAlign }}
 				>
@@ -174,8 +183,9 @@ function ProjectsInfoSection() {
 						logoSize={200}
 						logosPerSlide={1}
 					/>
-				</Box>
-				<Box
+				</Grid>
+				<Grid
+					item
 					className='ge-lg'
 					sx={{ width: '100%', ...flexBoxMiddleAlign }}
 				>
@@ -185,7 +195,7 @@ function ProjectsInfoSection() {
 						logoSize={200}
 						logosPerSlide={3}
 					/>
-				</Box>
+				</Grid>
 			</Grid>
 		</Section>
 	)
