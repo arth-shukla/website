@@ -1,22 +1,21 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import useTheme from '@mui/material/styles/useTheme'
-import Box from '@mui/material/Box'
-import MobileStepper from '@mui/material/MobileStepper'
-import Paper from '@mui/material/Paper'
-import Button from '@mui/material/Button'
-import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft'
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight'
+import { Paper, Button, MobileStepper, Box, IconButton } from '@mui/material'
 import useEmblaCarousel from 'embla-carousel-react'
+import { KeyboardArrowLeft, KeyboardArrowRight, ArrowForwardIos, ArrowBackIosNew } from '@mui/icons-material'
 
 import './Carousel.scss'
 
 interface CarouselProps {
+	showFloatOnHover?: boolean
+	showOnHover?: boolean
 	slides: Array<any>
 	maxHeight?: number
-	width?: number
+	width?: number | string
+	[x: string]: any
 }
 
-function Carousel({ slides, maxHeight, width }: CarouselProps) {
+function Carousel({ showFloatOnHover = false, floatStepper = false, slides, maxHeight, width, ...rest }: CarouselProps) {
 	const theme = useTheme()
 
 	const [emblaRef, emblaApi] = useEmblaCarousel({ direction: theme.direction })
@@ -40,10 +39,14 @@ function Carousel({ slides, maxHeight, width }: CarouselProps) {
 		emblaApi.on('select', onSelect)
 	}, [emblaApi, onSelect])
 
+	console.log('1', { flexGrow: 1, width: width, ...rest.sx })
+	console.log('2', { flexGrow: 1, width: width })
+
 	return (
 		<Box
-			className='carousel'
-			sx={{ flexGrow: 1 }}
+			className='carousel carousel-show-float-on-hover'
+			{...rest}
+			sx={{ width: width, ...rest.sx }}
 		>
 			<Paper
 				square
@@ -61,7 +64,10 @@ function Carousel({ slides, maxHeight, width }: CarouselProps) {
 			</Paper>
 			<div
 				className='embla'
-				style={{ maxHeight: maxHeight }}
+				style={{
+					position: 'relative',
+					maxHeight: maxHeight,
+				}}
 			>
 				<div
 					className='embla__viewport'
@@ -72,13 +78,27 @@ function Carousel({ slides, maxHeight, width }: CarouselProps) {
 							<div
 								className='embla__slide'
 								key={k}
-								style={{ padding: '0 1em', fontSize: '16px' }}
+								style={{ padding: floatStepper ? '0 calc(1em + 40px)' : '0 1em', fontSize: '16px' }}
 							>
 								{v.content}
 							</div>
 						))}
 					</div>
 				</div>
+				<IconButton
+					onClick={scrollPrev}
+					disabled={prevBtnEnabled}
+					className={'carousel-step-button-float carousel-step-button-float-left'}
+				>
+					<ArrowBackIosNew />
+				</IconButton>
+				<IconButton
+					onClick={scrollNext}
+					disabled={nextBtnEnabled}
+					className={'carousel-step-button-float carousel-step-button-float-right'}
+				>
+					<ArrowForwardIos />
+				</IconButton>
 			</div>
 			<MobileStepper
 				steps={slides.length}
@@ -90,6 +110,9 @@ function Carousel({ slides, maxHeight, width }: CarouselProps) {
 						onClick={scrollNext}
 						disabled={nextBtnEnabled}
 						className='carousel-step-button'
+						sx={{
+							visibility: floatStepper ? 'hidden' : undefined,
+						}}
 					>
 						Next
 						<KeyboardArrowRight />
@@ -101,6 +124,9 @@ function Carousel({ slides, maxHeight, width }: CarouselProps) {
 						onClick={scrollPrev}
 						disabled={prevBtnEnabled}
 						className='carousel-step-button'
+						sx={{
+							visibility: floatStepper ? 'hidden' : undefined,
+						}}
 					>
 						<KeyboardArrowLeft />
 						Back

@@ -1,6 +1,7 @@
 @use '../../variables' as v;
 
 .carousel {
+	position: relative;
 	.embla {
 		overflow: hidden;
 
@@ -36,6 +37,34 @@
 
 		.MuiMobileStepper-dot {
 			transition: v.$default-transition;
+		}
+	}
+
+	.carousel-step-button-float {
+		position: absolute;
+		top: calc(50% - 20px);
+		transition: v.$default-transition;
+	}
+
+	.carousel-step-button-float-left {
+		left: 0;
+	}
+
+	.carousel-step-button-float-right {
+		right: 0;
+	}
+}
+
+.carousel-show-float-on-hover {
+	.carousel-step-button-float {
+		visibility: hidden;
+		opacity: 0;
+	}
+
+	:hover {
+		.carousel-step-button-float {
+			visibility: visible;
+			opacity: 100;
 		}
 	}
 }

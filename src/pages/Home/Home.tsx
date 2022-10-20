@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 
 import { TextTypeDelete } from '@arth-shukla/my-icons'
-import { DownButton, CircleLogo, Section, Socials, SocialsContext, SocialsContextProvider } from '../../components'
+import { DownButton, CircleLogo, Section, Socials, SocialsContext, SocialsContextProvider, ProjectHomeCarousel, ProjectsData } from '../../components'
 
 import useTheme from '@mui/system/useTheme'
 import Box from '@mui/system/Box'
@@ -32,6 +32,12 @@ const HomeSocials: SocialsContext = {
 		include: false,
 		text: false,
 	},
+}
+
+const flexBoxMiddleAlign = {
+	display: 'flex',
+	justifyContent: 'center',
+	alignItems: 'center',
 }
 
 function Home({ winHeight }: HomeProps) {
@@ -97,13 +103,7 @@ function SelfIntroSection() {
 					md={8}
 				>
 					<h1>Hi there!</h1>
-					<p
-						style={{
-							display: 'flex',
-							justifyContent: 'center',
-							alignItems: 'center',
-						}}
-					>
+					<p style={flexBoxMiddleAlign}>
 						<CircleLogo
 							className='lt-md'
 							size={300}
@@ -118,17 +118,13 @@ function SelfIntroSection() {
 					item
 					sm={0}
 					md={4}
-					sx={{
-						display: 'flex',
-						justifyContent: 'center',
-						alignItems: 'center',
-					}}
+					sx={flexBoxMiddleAlign}
 				>
 					<CircleLogo
-						className='ge-md'
+						className='lt-lg'
 						size={250}
 						logo={profilePic}
-						identifier='home-profile-ge-md'
+						identifier='home-profile-lt-lg'
 					/>
 				</Grid>
 			</Grid>
@@ -139,8 +135,58 @@ function SelfIntroSection() {
 function ProjectsInfoSection() {
 	return (
 		<Section>
-			<h1>I like making stuff</h1>
-			<p>I'm into web dev and AI/ML. Here are some projects of mine that I like.</p>
+			<Grid
+				container
+				spacing={3}
+			>
+				<Grid
+					item
+					sm={12}
+					md={7}
+					lg={12}
+				>
+					<h1>I like making stuff</h1>
+					<p>Right now I'm very interested in web dev and AI/ML. Most of my experience with web dev is in front-end, while I've been trying to learn different things in AI.</p>
+					<p>Here are some projects I've worked on that I had fun building.</p>
+				</Grid>
+				<Grid
+					item
+					sm={0}
+					md={5}
+					lg={0}
+					sx={flexBoxMiddleAlign}
+					className='lt-lg'
+				>
+					<ProjectHomeCarousel
+						projects={ProjectsData}
+						width={330}
+						logoSize={200}
+						logosPerSlide={1}
+					/>
+				</Grid>
+				<Box
+					className='lt-md'
+					sx={{ width: '100%', ...flexBoxMiddleAlign }}
+				>
+					<ProjectHomeCarousel
+						projects={ProjectsData}
+						width={330}
+						logoSize={200}
+						logosPerSlide={1}
+					/>
+				</Box>
+				<Box
+					className='ge-lg'
+					sx={{ width: '100%', ...flexBoxMiddleAlign }}
+				>
+					<ProjectHomeCarousel
+						projects={ProjectsData}
+						width={700}
+						logoSize={200}
+						logosPerSlide={3}
+					/>
+				</Box>
+			</Grid>
 		</Section>
 	)
 }

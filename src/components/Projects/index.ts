@@ -6,3 +6,5 @@ export { default as ProjectCard } from './ProjectCard'
 export { default as ProjectTile } from './ProjectTile'
 
 export { ProjectContextProvider } from './ProjectContext'
+
+export { default as ProjectHomeCarousel } from './ProjectHomeCarousel'
