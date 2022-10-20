@@ -39,9 +39,6 @@ function Carousel({ showFloatOnHover = false, floatStepper = false, slides, maxH
 		emblaApi.on('select', onSelect)
 	}, [emblaApi, onSelect])
 
-	console.log('1', { flexGrow: 1, width: width, ...rest.sx })
-	console.log('2', { flexGrow: 1, width: width })
-
 	return (
 		<Box
 			className={'carousel ' + (floatStepper && showFloatOnHover ? 'carousel-show-float-on-hover' : '')}
