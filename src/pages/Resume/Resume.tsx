@@ -109,10 +109,13 @@ function ResumeSection({ style, ...rest }: any) {
 
 function RFloat(props: any) {
 	return (
-		<span
-			style={{ float: 'right' }}
-			{...props}
-		/>
+		<>
+			<span
+				style={{ float: 'right' }}
+				{...props}
+			/>
+			<ClrDiv />
+		</>
 	)
 }
 
@@ -216,26 +219,24 @@ function Resume() {
 								<b>University of California, San Diego</b>
 								<RFloat>September 2021 - June 2025</RFloat>
 							</PSlim>
-							<ClrDiv />
+
 							<PSlim>
 								<i>Bachelor of Science in Mathematics-Computer Science</i>
 								<RFloat>GPA - 4.0</RFloat>
 							</PSlim>
-							<ClrDiv />
 						</DivBP>
 						<DivBP>
 							<PSlim>
 								<b>Sequoia High School</b>
 								<RFloat>August 2017 - June 2021</RFloat>
 							</PSlim>
-							<ClrDiv />
+
 							<PSlim>
 								<i>IB Diploma Recipient, Honor Roll, Track &amp; Field, Cross Country, Model UN, Debate Team</i>
 								<RFloat>GPA - 4.6</RFloat>
 							</PSlim>
-							<ClrDiv />
 						</DivBP>
-						<ClrDiv />
+
 						<DivBP>
 							<PSlim>
 								<b>Relevant Coursework</b>
@@ -266,7 +267,7 @@ function Resume() {
 									<i>Software Developer</i>
 								</b>
 								<RFloat>August 2022 - Present</RFloat>
-								<ClrDiv />
+
 								<ULSlim>
 									<li>Develop component library and enterprise web application using React and SCSS</li>
 									<li>Manage DevOps and CI/CD pipeline using GitLab</li>
@@ -278,7 +279,7 @@ function Resume() {
 									<i>Software Engineering Intern</i>
 								</b>
 								<RFloat>January 2021 - August 2022</RFloat>
-								<ClrDiv />
+
 								<ULSlim>
 									<li>Web development, QA, and devops of over 10 education interactive projects in React</li>
 									<li>Manage and train two interns to complete projects using React and SCSS, GitLab, Git, and WSL</li>
@@ -291,7 +292,7 @@ function Resume() {
 									<i>Media Group Intern</i>
 								</b>
 								<RFloat>November 2019 - January 2021</RFloat>
-								<ClrDiv />
+
 								<ULSlim>
 									<li>Code questions into over 15 textbooks on Norton's online textbook platform, PCAT, using HTML</li>
 									<li>Independent project involving automation of over 10 spreadsheet and data entry tasks using Java improving efficiency by over 90%</li>
@@ -310,7 +311,7 @@ function Resume() {
 									<i>Independent Developer</i>
 								</b>
 								<RFloat>January 2022 - Present</RFloat>
-								<ClrDiv />
+
 								<ULSlim>
 									<li>
 										GitHub: <A>https://github.com/arth-shukla</A>
@@ -337,7 +338,7 @@ function Resume() {
 									<i>Board – Director of Events</i>
 								</b>
 								<RFloat>May 2022 - Present</RFloat>
-								<ClrDiv />
+
 								<ULSlim>
 									<li>Lead team of 7 event leads in creation of competitions, workshops, and socials related to ML/AI</li>
 									<li>Coordinate with marketing and development teams to market events and create competitions</li>
@@ -348,7 +349,7 @@ function Resume() {
 									<i>Board – Developer</i>
 								</b>
 								<RFloat>April 2022 - Present</RFloat>
-								<ClrDiv />
+
 								<ULSlim>
 									<li>Front-end website and AI competition development using React and TypeScript and LESS for ACM AI</li>
 									<li>Develop component library, create and alter pages, and manage issues/pull requests on GitHub</li>
@@ -359,7 +360,7 @@ function Resume() {
 									<i>Board – Event Lead </i>
 								</b>
 								<RFloat>January 2022 - May 2022</RFloat>
-								<ClrDiv />
+
 								<ULSlim>
 									<li>Ideate, create, and host workshops on NLP, deep learning, and ML topics</li>
 									<li>Develop and organize competitions run by ACM AI (100-200 submissions on average)</li>
@@ -373,7 +374,7 @@ function Resume() {
 									<i>Machine Learning Engineer</i>
 								</b>
 								<RFloat>September 2021 - January 2022</RFloat>
-								<ClrDiv />
+
 								<ULSlim>
 									<li>Create model to convert human faces to Cat-Human hybrid using DCGAN, PatchGAN, CycleGAN, and StyleGAN</li>
 									<li>Coordinate with team of 3 front- and back-end devs to implement model into user-friendly tool</li>

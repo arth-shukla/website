@@ -65,7 +65,7 @@ export interface Project {
 	pagePath: string
 	GitHub?: URL
 	logo: any
-	deployment: URL
+	deployment: URL | undefined
 	description: React.ReactElement | string
 	carouselSlides: Array<{
 		label: React.ReactElement | string
@@ -194,6 +194,83 @@ const AnimationLibrary: Project = {
 	],
 }
 
+const NLPWorkshopSeries: Project = {
+	name: 'ACM AI NLP Workshop Series (Spring 2022)',
+	pagePath: 'nlp-series',
+	GitHub: new URL('https://github.com/acmucsd/acm-ai-workshops/tree/main/2022/SP22/nlp-series'),
+	logo: ProjectIcons.AnimLibraryIcon,
+	deployment: undefined,
+	description: 'This is a workshop series on NLP topics I worked for for ACM AI at UCSD. The workshop was held during Spring quarter 2022.',
+	carouselSlides: [
+		{
+			label: <h2>Description</h2>,
+			content: (
+				<>
+					<p>The series consists of 3 workshops:</p>
+					<ol>
+						<li>
+							<b>Workshop 1: Intro to NLP</b>: For the first workshop, we introduce the basics of NLP (vectorization, lemmatization, etc) by solving a binary classification problem: labeling Tweets as Hate Speech or Not Hate Speech.
+						</li>
+						<li>
+							<b>Workshop 2: RNNs for Multiclassification</b>: In the second workshop, we discuss a more challenging problem for NLP: multiclassification. We tackle classifying phrases into different emotions using an RNN.
+						</li>
+						<li>
+							<b>Workshop 3: Seq2Seq RNNs for Translation</b>: For the final workshop, we build a machine translation model with an encoder/decoder architecture to translate between English and French.
+						</li>
+					</ol>
+				</>
+			),
+		},
+		{
+			label: <h2>Topics Covered</h2>,
+			content: (
+				<>
+					<ol>
+						<li>
+							<b>Workshop 1: Intro to NLP</b>:
+							<ul>
+								<li>Bag of Words</li>
+								<li>Logistic Regression</li>
+								<li>Neural Networks</li>
+								<li>Accuracy, Precision, and Recall</li>
+							</ul>
+						</li>
+						<li>
+							<b>Workshop 2: RNNs for Multiclassification</b>:
+							<ul>
+								<li>Data Cleaning and Processing (Stop Words, Stemming, One-Hot Encoding)</li>
+								<li>Recurrent Neural Netowrks (RNNs) and Sequential Data</li>
+							</ul>
+						</li>
+						<li>
+							<b>Workshop 3: Seq2Seq RNNs for Machine Translation</b>:
+							<ul>
+								<li>Encoder/Decoder Architecture</li>
+								<li>LSTMs</li>
+							</ul>
+						</li>
+					</ol>
+				</>
+			),
+		},
+		{
+			label: <h2>Reflection</h2>,
+			content: (
+				<>
+					<p>This was my first workshop series for ACM AI. It was very fun to communicate the NLP ideas I'd learned during high school to make Workshop 1 and Workshop 2, and I had a great time learning about LSTMs, attention, and more to prepare workshop 3.</p>
+					<p>
+						If I could go back in time, I would make two major improvements:
+						<ol>
+							<li>Start workshop development sooner. By the third workshop, we were very stressed for time, resulting in an overall less-developed workshop. For example, we were unable to make an Interactive Notebook for this workshop.</li>
+							<li>Scale the workshop time for each successive workshop. The topics were increasingly complicated, with each set of topics requiring more time to explain. Longer workshops would allow us to dive deeper into the workshop content.</li>
+						</ol>
+					</p>
+				</>
+			),
+		},
+	],
+}
+
 export interface ProjectsDataType {
 	[x: string]: Project
 }
@@ -201,6 +278,7 @@ export interface ProjectsDataType {
 const ProjectsData = {
 	'Dice Roller': DiceRollerData,
 	'Animation Library': AnimationLibrary,
+	'NLP Workshop Series': NLPWorkshopSeries,
 }
 
 export default ProjectsData

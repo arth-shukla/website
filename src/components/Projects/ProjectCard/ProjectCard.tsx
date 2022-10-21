@@ -33,30 +33,34 @@ function ProjectCard() {
 										direction='row'
 										spacing={1}
 									>
-										<IconButton
-											component={Link}
-											href={String(project.deployment)}
-											target='_blank'
-											size='large'
-											edge='start'
-											color='inherit'
-											aria-label={'Deployment page for ' + project.name}
-											title={'Deployment page for ' + project.name}
-										>
-											<LaunchIcon fontSize='large' />
-										</IconButton>
-										<IconButton
-											component={Link}
-											href={String(project.GitHub)}
-											target='_blank'
-											size='large'
-											edge='start'
-											color='inherit'
-											aria-label={'GitHub page for ' + project.name}
-											title={'GitHub page for ' + project.name}
-										>
-											<GitHubIcon fontSize='large' />
-										</IconButton>
+										{project.deployment && (
+											<IconButton
+												component={Link}
+												href={String(project.deployment)}
+												target='_blank'
+												size='large'
+												edge='start'
+												color='inherit'
+												aria-label={'Deployment page for ' + project.name}
+												title={'Deployment page for ' + project.name}
+											>
+												<LaunchIcon fontSize='large' />
+											</IconButton>
+										)}
+										{project.GitHub && (
+											<IconButton
+												component={Link}
+												href={String(project.GitHub)}
+												target='_blank'
+												size='large'
+												edge='start'
+												color='inherit'
+												aria-label={'GitHub page for ' + project.name}
+												title={'GitHub page for ' + project.name}
+											>
+												<GitHubIcon fontSize='large' />
+											</IconButton>
+										)}
 									</Stack>
 								</Box>
 								<Box
@@ -67,7 +71,7 @@ function ProjectCard() {
 										size={100}
 										className='project-tile-md-scr'
 										identifier={`${project.pagePath}-card-md`}
-										linkOverride={project.deployment}
+										linkOverride={project.deployment || project.GitHub || project.deployment}
 									/>
 								</Box>
 							</Box>
@@ -79,7 +83,7 @@ function ProjectCard() {
 									size={200}
 									className='project-tile-sm-scr'
 									identifier={`${project.pagePath}-card-sm`}
-									linkOverride={project.deployment}
+									linkOverride={project.deployment || project.GitHub || project.deployment}
 								/>
 							</Box>
 							<Carousel
@@ -95,7 +99,7 @@ function ProjectCard() {
 								size={300}
 								className='project-tile-lg-scr'
 								identifier={`${project.pagePath}-card-lg`}
-								linkOverride={project.deployment}
+								linkOverride={project.deployment || project.GitHub || project.deployment}
 							/>
 						</Box>
 					</Box>

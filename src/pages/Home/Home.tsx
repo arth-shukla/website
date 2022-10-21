@@ -191,7 +191,7 @@ function ProjectsInfoSection() {
 				>
 					<ProjectHomeCarousel
 						projects={ProjectsData}
-						width={700}
+						width={825}
 						logoSize={200}
 						logosPerSlide={3}
 					/>
