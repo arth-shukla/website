@@ -11,7 +11,7 @@ function Projectnfo({ project }: { project: Project }) {
 	return (
 		<Section>
 			<Breadcrumbs
-				sx={{ paddingBottom: '1em' }}
+				// sx={{ paddingBottom: '1em' }}
 				className='project-info-breadcrumbs'
 			>
 				<MUILink
