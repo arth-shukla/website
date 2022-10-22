@@ -110,26 +110,55 @@ const ProjectIcons = {
 					rx='10'
 					{...cpuOuterProps}
 				/>
-				{[1, 2, 3].map((v, k) => (
-					<>
-						<path
-							d={`M${(v * 54) / 4 + 113},${98 - 2} v-${cpuOuterLinesLength}`}
-							{...cpuOuterProps}
-						/>
-						<path
-							d={`M${(v * 54) / 4 + 113},${98 + 2 + cpuOuterLinesLength + 54} v-${cpuOuterLinesLength}`}
-							{...cpuOuterProps}
-						/>
-						<path
-							d={`M${113 - 2},${(v * 54) / 4 + 98} h-${cpuOuterLinesLength}`}
-							{...cpuOuterProps}
-						/>
-						<path
-							d={`M${113 + 2 + cpuOuterLinesLength + 54},${(v * 54) / 4 + 98} h-${cpuOuterLinesLength}`}
-							{...cpuOuterProps}
-						/>
-					</>
-				))}
+
+				<path
+					d={`M${(1 * 54) / 4 + 113},${98 - 2} v-${cpuOuterLinesLength}`}
+					{...cpuOuterProps}
+				/>
+				<path
+					d={`M${(1 * 54) / 4 + 113},${98 + 2 + cpuOuterLinesLength + 54} v-${cpuOuterLinesLength}`}
+					{...cpuOuterProps}
+				/>
+				<path
+					d={`M${113 - 2},${(1 * 54) / 4 + 98} h-${cpuOuterLinesLength}`}
+					{...cpuOuterProps}
+				/>
+				<path
+					d={`M${113 + 2 + cpuOuterLinesLength + 54},${(1 * 54) / 4 + 98} h-${cpuOuterLinesLength}`}
+					{...cpuOuterProps}
+				/>
+				<path
+					d={`M${(2 * 54) / 4 + 113},${98 - 2} v-${cpuOuterLinesLength}`}
+					{...cpuOuterProps}
+				/>
+				<path
+					d={`M${(2 * 54) / 4 + 113},${98 + 2 + cpuOuterLinesLength + 54} v-${cpuOuterLinesLength}`}
+					{...cpuOuterProps}
+				/>
+				<path
+					d={`M${113 - 2},${(2 * 54) / 4 + 98} h-${cpuOuterLinesLength}`}
+					{...cpuOuterProps}
+				/>
+				<path
+					d={`M${113 + 2 + cpuOuterLinesLength + 54},${(2 * 54) / 4 + 98} h-${cpuOuterLinesLength}`}
+					{...cpuOuterProps}
+				/>
+				<path
+					d={`M${(3 * 54) / 4 + 113},${98 - 2} v-${cpuOuterLinesLength}`}
+					{...cpuOuterProps}
+				/>
+				<path
+					d={`M${(3 * 54) / 4 + 113},${98 + 2 + cpuOuterLinesLength + 54} v-${cpuOuterLinesLength}`}
+					{...cpuOuterProps}
+				/>
+				<path
+					d={`M${113 - 2},${(3 * 54) / 4 + 98} h-${cpuOuterLinesLength}`}
+					{...cpuOuterProps}
+				/>
+				<path
+					d={`M${113 + 2 + cpuOuterLinesLength + 54},${(3 * 54) / 4 + 98} h-${cpuOuterLinesLength}`}
+					{...cpuOuterProps}
+				/>
 				<rect
 					x='128'
 					y='113'
