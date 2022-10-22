@@ -1,0 +1,8 @@
+@use '../../variables' as v;
+
+.contact {
+	#contact-email-mailto,
+	#contact-form {
+		transition: v.$default-transition;
+	}
+}
