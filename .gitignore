@@ -150,3 +150,6 @@ yarn-debug.log*
 yarn-error.log*
 
 backup/
+
+.vscode/
+.prettierrc
