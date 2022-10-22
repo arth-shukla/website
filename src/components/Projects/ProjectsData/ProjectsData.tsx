@@ -61,7 +61,7 @@ const ProjectIcons = {
 	NLPSeriesLogo: (size: number, theme: string, primary: string, dark: boolean) => {
 		const svgProps = {
 			fill: 'none',
-			strokeWidth: 4,
+			strokeWidth: 6,
 			strokeLinecap: 'round' as 'round',
 		}
 
