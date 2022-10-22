@@ -1,0 +1,8 @@
+@use '../../variables' as v;
+
+.website-code-field {
+	padding: 2px;
+	border-radius: 5px;
+	// line-height: 1.8;
+	transition: v.$default-transition;
+}

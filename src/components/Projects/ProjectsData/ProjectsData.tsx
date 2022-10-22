@@ -1,4 +1,5 @@
 import React from 'react'
+import { Code } from 'components'
 
 const ProjectIcons = {
 	DiceRollerLogo: (size: number, theme: string) => {
@@ -264,7 +265,7 @@ const AnimationLibrary: Project = {
 				<>
 					<p>I often want similar functionality across different projects. So, I made a React component library with animations and icons which I use frequently. Many of those components are used in this website!</p>
 					<p>
-						The library can be installed by running <code>npm i @arth-shukla/my-icons</code>.
+						The library can be installed by running <Code>npm i @arth-shukla/my-icons</Code>.
 					</p>
 				</>
 			),
@@ -291,7 +292,7 @@ const AnimationLibrary: Project = {
 					<p>To meet development needs, I made each component in this library so that they are:</p>
 					<ol>
 						<li>
-							<b>Adaptable</b>: The component can interact with external state variables via the <code>onClick</code> (e.g. once a light/dark mode button is clicked, change the state of the page).
+							<b>Adaptable</b>: The component can interact with external state variables via the <Code>onClick</Code> prop (e.g. once a light/dark mode button is clicked, change the state of the page).
 						</li>
 						<li>
 							<b>Self-Reliant</b>: Should maintain internal state (e.g. when left on its own, a light/dark mode button will still switch between light/dark animations when clicked, even if the site is not 'connected'.)

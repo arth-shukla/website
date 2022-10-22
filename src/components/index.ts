@@ -1,6 +1,7 @@
 export { default as Card } from './Card'
 export { default as Carousel } from './Carousel'
 export { default as CircleLogo } from './CircleLogo'
+export { default as Code } from './Code'
 export { default as DownButton } from './DownButton'
 export { default as Section } from './Section'
 export { default as Socials } from './Socials'
