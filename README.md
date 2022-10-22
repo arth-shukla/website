@@ -1,46 +1,37 @@
-# Getting Started with Create React App
+# Link
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://arth.website
 
-## Available Scripts
+# Technologies Used
 
-In the project directory, you can run:
+Web Development: React, TypeScript, SCSS
 
-### `npm start`
+DevOps: Git, Netlify
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Development Standards: Web Content Accessibility Guidelines (WCAG) 2.1, Aria Authoring Practices Guide (APG)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Description and Motivation
 
-### `npm test`
+This repo holds the code for my personal website.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The final product
+1. contains a home page, a projects page (along with subpages for each project), a resume page, and a "Contact Me" page.
+2. has code split into components pages (for the main website pages), (components used multiple times), and assets (images and the like).
+3. Is deployed to Netlify so it is accessible at [arth.website](https://arth.website). (Also, all traffic is routed to https).
+4. Is built using Material UI for consistency and its breadth of premade components.
 
-### `npm run build`
+# Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Themeing**: Website supports light and dark mode, as well as blue and pink color themes.
+2. **Consistent Components and Clean Animations**: Thanks to the Material UI component library, as well as [my own component library](https://github.com/arth-shukla/my-icons), the website feels consistent and looks pretty neat (imo).
+3. **Accessibility**: The website meets WCAG 2.1 AA Standards
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Related Projects
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The Dark Mode and Color Switch buttons, the homepage text animation, and the toolbar's color-changing line are all taken from my library https://github.com/arth-shukla/my-icons.
 
-### `npm run eject`
+Demos and documentation for the above library are available here: https://arth-shukla.github.io/my-icons-documentation/.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# About Me
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Arth Shukla [GitHub](https://github.com/arth-shukla) | [LinkedIn](https://www.linkedin.com/in/arth-shukla/)
