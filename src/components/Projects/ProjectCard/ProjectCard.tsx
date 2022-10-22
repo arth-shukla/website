@@ -1,14 +1,16 @@
 import React from 'react'
 import { Carousel, ProjectTile } from '../..'
 import { ProjectContextConsumer } from '../ProjectContext'
-import { Box, Link, Stack } from '@mui/material'
+import { Box, Link, Stack, Breadcrumbs, useTheme } from '@mui/material'
 import IconButton from '@mui/material/IconButton'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import LaunchIcon from '@mui/icons-material/Launch'
+import { Link as RouterLink } from 'react-router-dom'
 
 import './ProjectCard.scss'
 
 function ProjectCard() {
+	const theme = useTheme()
 	return (
 		<ProjectContextConsumer>
 			{project =>
@@ -28,6 +30,29 @@ function ProjectCard() {
 								sx={{ display: 'flex' }}
 							>
 								<Box sx={{ width: '80%' }}>
+									<Breadcrumbs
+										// sx={{ paddingBottom: '1em' }}
+										className='project-info-breadcrumbs'
+									>
+										<Link
+											component={RouterLink}
+											to='/projects'
+											underline='hover'
+											color='inherit'
+											id='project-info-breadcrumbs-1'
+										>
+											Project
+										</Link>
+										<Link
+											component={RouterLink}
+											to={`/projects/${project.pagePath}`}
+											underline='hover'
+											color={theme.palette.mode === 'dark' ? '#fff' : '#000'}
+											id='project-info-breadcrumbs-2'
+										>
+											{project.name}
+										</Link>
+									</Breadcrumbs>
 									<h1 style={{ margin: 0 }}>{project.name}</h1>
 									<Stack
 										direction='row'
@@ -68,7 +93,7 @@ function ProjectCard() {
 									sx={{ width: '20%' }}
 								>
 									<ProjectTile
-										size={100}
+										size={125}
 										className='project-tile-md-scr'
 										identifier={`${project.pagePath}-card-md`}
 										linkOverride={project.deployment || project.GitHub || project.deployment}
@@ -96,9 +121,20 @@ function ProjectCard() {
 							className='project-tile-lg-scr'
 						>
 							<ProjectTile
-								size={300}
+								size={200}
 								className='project-tile-lg-scr'
 								identifier={`${project.pagePath}-card-lg`}
+								linkOverride={project.deployment || project.GitHub || project.deployment}
+							/>
+						</Box>
+						<Box
+							sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexGrow: 1 }}
+							className='project-tile-xl-scr'
+						>
+							<ProjectTile
+								size={300}
+								className='project-tile-xl-scr'
+								identifier={`${project.pagePath}-card-xl`}
 								linkOverride={project.deployment || project.GitHub || project.deployment}
 							/>
 						</Box>

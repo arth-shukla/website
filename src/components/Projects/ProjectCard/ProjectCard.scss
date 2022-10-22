@@ -1,5 +1,6 @@
 $proj-card-md-scr: 750px;
 $proj-card-lg-scr: 1000px;
+$proj-card-xl-scr: 1150px;
 
 .project-card {
 	li {
@@ -21,6 +22,10 @@ $proj-card-lg-scr: 1000px;
 			display: none;
 			visibility: hidden;
 		}
+		.project-tile-xl-scr {
+			display: none;
+			visibility: hidden;
+		}
 	}
 	@media screen
 		and (min-width: #{$proj-card-md-scr})
@@ -33,13 +38,14 @@ $proj-card-lg-scr: 1000px;
 			display: none;
 			visibility: hidden;
 		}
+		.project-tile-xl-scr {
+			display: none;
+			visibility: hidden;
+		}
 	}
-	@media screen and (min-width: #{$proj-card-lg-scr}) {
-		display: 'flex';
-		flex-direction: 'row';
-		align-items: 'stretch';
-		justify-content: 'space-evenly';
-
+	@media screen
+		and (min-width: #{$proj-card-lg-scr})
+		and (max-width: #{$proj-card-xl-scr - 1px}) {
 		.project-tile-sm-scr {
 			display: none;
 			visibility: hidden;
@@ -48,8 +54,26 @@ $proj-card-lg-scr: 1000px;
 			display: none;
 			visibility: hidden;
 		}
+		.project-tile-xl-scr {
+			display: none;
+			visibility: hidden;
+		}
 		.info-container {
 			width: 70%;
+		}
+	}
+	@media screen and (min-width: #{$proj-card-xl-scr}) {
+		.project-tile-sm-scr {
+			display: none;
+			visibility: hidden;
+		}
+		.project-tile-md-scr {
+			display: none;
+			visibility: hidden;
+		}
+		.project-tile-lg-scr {
+			display: none;
+			visibility: hidden;
 		}
 	}
 }
