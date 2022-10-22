@@ -169,9 +169,9 @@ const DiceRollerData: Project = {
 			content: (
 				<>
 					<p>In TTRPGs like D&amp;D, rolling dice is essential to the game. I have sets of physical dice, but sometimes I forget them, and sometimes I can't bring the dice with me.</p>
-					<p>However, most online rollers are a nightmare to use on phones. even the nicer options still have flaws.</p>
-					<p>The Google roller is simple and looks nice, but is slow to roll many different dice. The D&amp;D Beyond roller is perfect in almost every way, but it only works on chracters made in D&amp;D Beyond&mdash;sometimes I want to play other TTRPGs.</p>
-					<p>So, I made a dice roller for myself and my friends which is aesthetically pleasing, accessible design. It's great for TTRPGS like D&amp;D, Cyberpunk Red, and more.</p>
+					<p>However, most online rollers are a nightmare to use on phones; even the nicer options still have flaws.</p>
+					<p>For example, the Google roller is simple and looks nice, but is slow when rolling many different dice. The D&amp;D Beyond roller allows you to roll the exact dice you need for an action, but it only works on chracters made in D&amp;D Beyond&mdash;sometimes I want to play other TTRPGs.</p>
+					<p>So, I made a dice roller for myself and my friends which is aesthetically pleasing and has an accessible design. It's great for TTRPGS like D&amp;D, Cyberpunk Red, and more.</p>
 				</>
 			),
 		},
@@ -233,7 +233,7 @@ const AnimationLibrary: Project = {
 			label: <h2>Description and Purpose</h2>,
 			content: (
 				<>
-					<p>I often want similar functionality across different websites I make. So, I made a React component library with animations and icons which I use frequently. Many of those components are used in this website!</p>
+					<p>I often want similar functionality across different projects. So, I made a React component library with animations and icons which I use frequently. Many of those components are used in this website!</p>
 					<p>
 						The library can be installed by running <code>npm i @arth-shukla/my-icons</code>.
 					</p>
@@ -251,7 +251,7 @@ const AnimationLibrary: Project = {
 						<li>animations to add extra flare.</li>
 					</ul>
 					<p>I didn't want to keep re-making these components, and I wanted flexibility with how I could use these components.</p>
-					<p>If I want, I should be able to change the state of component using an external state variable (e.g. change light/dark mode button along with page), but I shouldn't need have access to essential functions of a component (e.g. the animation of a light/dark mode button when selected).</p>
+					<p>Furthermore, I should be able to change the state of component using an external state variable (e.g. change light/dark mode button along with page), but I shouldn't have access to essential functions of a component (e.g. the animation of a light/dark mode button when selected).</p>
 				</>
 			),
 		},
@@ -262,10 +262,10 @@ const AnimationLibrary: Project = {
 					<p>To meet development needs, I made each component in this library so that they are:</p>
 					<ol>
 						<li>
-							<b>Adaptable</b>: The component can interact with external state variables (e.g. once a light/dark mode button is clicked, change the state of the page).
+							<b>Adaptable</b>: The component can interact with external state variables via the <code>onClick</code> (e.g. once a light/dark mode button is clicked, change the state of the page).
 						</li>
 						<li>
-							<b>Self-Reliant</b>: Should maintain internal state (e.g. when left on its own, a light/dark mode button will still switch between light/dark animations, even if the site is not 'connected'.)
+							<b>Self-Reliant</b>: Should maintain internal state (e.g. when left on its own, a light/dark mode button will still switch between light/dark animations when clicked, even if the site is not 'connected'.)
 						</li>
 						<li>
 							<b>Accessible</b>: Compatible with Web Content Accessibility Guidelines (WCAG) 2.1 AA standards.
@@ -292,7 +292,7 @@ const NLPWorkshopSeries: Project = {
 					<p>This workshop series for ACM AI from Spring 2022 consists of 3 workshops:</p>
 					<ol>
 						<li>
-							<b>Workshop 1: Intro to NLP</b>: For the first workshop, we introduce the basics of NLP (vectorization, lemmatization, etc) by solving a binary classification problem: labeling Tweets as Hate Speech or Not Hate Speech.
+							<b>Workshop 1: Intro to NLP</b>: For the first workshop, we introduce the basics of NLP (bag of words, logistic regression, etc) by solving a binary classification problem: labeling Tweets as Hate Speech or Not Hate Speech.
 						</li>
 						<li>
 							<b>Workshop 2: RNNs for Multiclassification</b>: In the second workshop, we discuss a more challenging problem for NLP: multiclassification. We tackle classifying phrases into different emotions using an RNN.
