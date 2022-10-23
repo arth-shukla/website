@@ -112,30 +112,37 @@ function App() {
 					darkMode={darkMode}
 					setDarkMode={setDarkMode}
 				/>
-				<Box sx={{ paddingBottom: '50px', minHeight: window.innerHeight - 67 }}>
-					<Routes>
-						<Route
-							index
-							element={<Home winHeight={winHeight} />}
-						/>
-						<Route
-							path='projects'
-							element={<Projects />}
-						/>
-						{generateProjectRoutes()}
-						<Route
-							path='resume'
-							element={<Resume />}
-						/>
-						<Route
-							path='contact'
-							element={<Contact />}
-						/>
-						<Route
-							path='*'
-							element={<Error404 />}
-						/>
-					</Routes>
+				<Box
+					minHeight={window.innerHeight - 67}
+					paddingBottom={50}
+					display='flex'
+					justifyContent='center'
+				>
+					<Box maxWidth={2000}>
+						<Routes>
+							<Route
+								index
+								element={<Home winHeight={winHeight} />}
+							/>
+							<Route
+								path='projects'
+								element={<Projects />}
+							/>
+							{generateProjectRoutes()}
+							<Route
+								path='resume'
+								element={<Resume />}
+							/>
+							<Route
+								path='contact'
+								element={<Contact />}
+							/>
+							<Route
+								path='*'
+								element={<Error404 />}
+							/>
+						</Routes>
+					</Box>
 				</Box>
 				<WebsiteDrawer
 					open={menu}
