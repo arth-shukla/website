@@ -112,7 +112,7 @@ function App() {
 					darkMode={darkMode}
 					setDarkMode={setDarkMode}
 				/>
-				<Box sx={{ paddingBottom: '50px' }}>
+				<Box sx={{ paddingBottom: '50px', minHeight: window.innerHeight - 67 }}>
 					<Routes>
 						<Route
 							index
