@@ -118,7 +118,10 @@ function App() {
 					display='flex'
 					justifyContent='center'
 				>
-					<Box maxWidth={2000}>
+					<Box
+						width='100%'
+						maxWidth={2000}
+					>
 						<Routes>
 							<Route
 								index
