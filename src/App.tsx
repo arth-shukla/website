@@ -114,7 +114,7 @@ function App() {
 				/>
 				<Box
 					minHeight={window.innerHeight - 67}
-					paddingBottom={50}
+					paddingBottom='50px'
 					display='flex'
 					justifyContent='center'
 				>
