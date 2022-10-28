@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import './ProjectTile.scss'
 import { Project } from '../ProjectsData'
 
-function ProjectTile({ size, identifier, linkOverride, ...rest }: { size: number; identifier?: string; linkOverride?: URL; [x: string]: any }) {
+function ProjectTile({ size, identifier, linkOverride, page, ...rest }: { size: number; identifier?: string; linkOverride?: URL; page?: boolean; [x: string]: any }) {
 	const theme = useTheme()
 	const navigate = useNavigate()
 
@@ -47,8 +47,8 @@ function ProjectTile({ size, identifier, linkOverride, ...rest }: { size: number
 						<button
 							onClick={() => goto(project)}
 							className='project-tile'
-							aria-label={`Deployment for ${project.name}`}
-							title={`Deployment for ${project.name}`}
+							aria-label={`${page ? 'Info Page' : 'Deployment'} for ${project.name}`}
+							title={`${page ? 'Info Page' : 'Deployment'} for ${project.name}`}
 							style={
 								{
 									'--project-tile-primary-main': hexToRGB(theme.palette.primary.main),

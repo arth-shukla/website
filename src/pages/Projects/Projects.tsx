@@ -16,6 +16,7 @@ function Projects() {
 								<ProjectTile
 									size={200}
 									identifier={projectsData[project].pagePath + '-projects-tile'}
+									page
 								/>
 							</ProjectContextProvider>
 						</Box>

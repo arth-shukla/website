@@ -34,6 +34,7 @@ function ProjectHomeCarousel({ width, height, logoSize, logosPerSlide, projects,
 						<ProjectTile
 							size={logoSize}
 							identifier={`${projectsData[project].pagePath}-home-carousel-card`}
+							page
 						/>
 					</ProjectContextProvider>,
 				)
