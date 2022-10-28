@@ -41,7 +41,7 @@ function ProjectCard() {
 											color='inherit'
 											id='project-info-breadcrumbs-1'
 										>
-											Project
+											Projects
 										</Link>
 										<Link
 											component={RouterLink}
