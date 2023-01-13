@@ -242,11 +242,11 @@ function Resume() {
 								<b>Relevant Coursework</b>
 							</PSlim>
 							<PSlim>
-								<i>Completed</i>: Computer Organization and Systems Programming, Enumerative Combinatorics, Data Structures and Object-Oriented Design, Computer Science and Object-Oriented Programming - Java, Multivariable Calculus, Vector Calculus, Statistical Methods and Probability, Linear Algebra, Differential Equations, Networks and Digital Communications, Data Warehousing to Big Data
+								<i>Completed</i>: Advanced Data Structures, Optimizations for Data Science I, Computer Organization and Systems Programming, Data Structures and Object-Oriented Design, Computer Science and Object-Oriented Programming - Java, Networks and Digital Communications, Data Warehousing to Big Data, Enumerative Combinatorics, Abstract Algebra I, Statistical Methods and Probability, Linear Algebra, Multivariable Calculus, Vector Calculus, Differential Equations
 								<br />
 							</PSlim>
 							<PSlim>
-								<i>Planned for Fall 2022</i>: Optimizations for Data Science I, Advanced Data Structures, Abstract Algebra I, and Physics/Mechanics I
+								<i>Planned for Fall 2022</i>: Design and Analysis of Algorithms, Optimizations for Data Science II, Modern Algebra II, Synthesis II
 							</PSlim>
 						</DivBP>
 					</ResumeSection>
