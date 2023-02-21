@@ -3,7 +3,7 @@ import useTheme from '@mui/material/styles/useTheme'
 
 import './Code.scss'
 
-function Code({ className, style, children, rest }: { className?: string | undefined; style?: any; children?: any; rest?: any }) {
+function Code({ className, style, children, noBorder, rest }: { className?: string | undefined; style?: any; children?: any; noBorder?: boolean; rest?: any }) {
 	const theme = useTheme()
 
 	return (
@@ -11,8 +11,8 @@ function Code({ className, style, children, rest }: { className?: string | undef
 			className={'website-code-field ' + className}
 			style={{
 				color: theme.palette.primary.main,
-				border: `1px solid ${theme.palette.primary.main}`,
-				backgroundColor: theme.palette.primary.main + (20).toString(16),
+				border: !noBorder && `1px solid ${theme.palette.primary.main}`,
+				backgroundColor: !noBorder && theme.palette.primary.main + (20).toString(16),
 				...style,
 			}}
 			{...rest}

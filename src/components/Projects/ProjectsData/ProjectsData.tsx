@@ -1,6 +1,10 @@
 import React from 'react'
 import { A, Code } from 'components'
 
+const CodeNB = ({ children }: any) => {
+	return <Code noBorder>{children}</Code>
+}
+
 const ProjectIcons = {
 	DiceRollerLogo: (size: number, theme: string) => {
 		const r = ((size / 2) * Math.sqrt(2)) / 2
@@ -213,12 +217,90 @@ const ElementAI: Project = {
 					<p>
 						All game rules are explained in the <A href='https://github.com/acmucsd/Element.AI/blob/main/documentation/Element.AI%20Documentation.pdf'>graphic documentation</A>, and the environment was inspired by PaperIO (though the rules and setup were altered significantly to fit a 6-hour timeframe).
 					</p>
+					<p>
+						The environment has four major components:{' '}
+						<ol>
+							<li>
+								<b>Environment</b>: The environment is a PettingZoo Parallel Environment. For each environment step, all agents return their actions, and all actions are processed at the same time.
+							</li>
+							<li>
+								<b>Kits</b>: The Python and Java kits both communicate with the runner using stdout to support multiple languages and avoid the need for code jailing.
+							</li>
+							<li>
+								<b>Replay Video Generator</b>: The environment saves json files containing observations at each timestep. The replay video generators (simple and fancy) both process this json data and create an output video.
+							</li>
+							<li>
+								<b>LuxAI Runner</b>: We use the Lux AI 2022 runner to facilitate communication between the environment and the kits, while also offering features like environment configuration adjustment, verbosity, and replay generation. <CodeNB>Bot</CodeNB> communicates with the player kits. <CodeNB>Episode</CodeNB> gets observations from <CodeNB>PaperIO</CodeNB> (the environment) and sends them to the <CodeNB>Bot</CodeNB> instances through stdout. It then sends the resultant actions from the <CodeNB>Bot</CodeNB> instances to <CodeNB>PaperIO</CodeNB>. This loops until terminal state.
+							</li>
+						</ol>
+					</p>
 				</>
 			),
 		},
 		{
-			label: <h2>Environment Development</h2>,
-			content: <></>,
+			label: <h2>On-Premise System Requirements</h2>,
+			content: (
+				<>
+					<p>At sponsor request, the competition was run in-person in the UCSD CSE Basement Labs. We had 198 linux machines, and 200 RSVPs. Students could enter alone or in pairs.</p>
+					<p>
+						We had a few requirements for these systems:
+						<ol>
+							<li>
+								<b>Feature</b>: Egress needed to be blocked for all domains except our api <CodeNB>api.ai.acmucsd.com</CodeNB> and our locally-run image of our website (some IP address of a basement lab machine).
+								<br />
+								<b>Reason</b>: Our sponsor wanted the competition to be wifi-free, but we needed our api available so students could upload submissions during the competition.
+							</li>
+							<li>
+								<b>Feature</b>: Participant accounts to access the machines which came preloaded with Conda, Maven, and several VSCode extensions.
+								<br />
+								<b>Reason</b>: Conda and Maven were necessary for the environment and kits, and VSCode extensions allowed for autocomplete, code lookup, linting, and other features which would be helpful for participants.
+							</li>
+							<li>
+								<b>Feature</b>: An instructor account which had easy access to all participant accounts, and could achieve the following:
+								<ol type='a'>
+									<li>
+										<b>Feature</b>: Copy any file/directory to any participant account.
+										<br />
+										<b>Reason</b>: If we needed to fix any bug, we could easily reclone and recopy the environment to all participant accounts. Further, if a student accidentally deleted essential files, we could restore them with little effort.
+									</li>
+									<li>
+										<b>Feature</b>: Give/remove access to any file/directory to any participant account.
+										<br />
+										<b>Reason</b>: Prevent students from coding before the competition started or after it ended.
+									</li>
+									<li>
+										<b>Feature</b>: Give/remove access to wifi to specific lab machines.
+										<br />
+										<b>Reason</b>: Wifi might have been necessary if the above tools were insufficient, e.g. if the VSCode extensions didn’t load properly on a specific machine, we’d need wifi to install them.
+									</li>
+								</ol>
+								<b>Reason</b>: To make the competition run smoothly and easily deal with any issues that came up, we needed some way to control any aspect of our on-premise setup.
+							</li>
+						</ol>
+					</p>
+				</>
+			),
+		},
+		{
+			label: <h2>On-Premise System Solutions</h2>,
+			content: (
+				<>
+					<p>
+						IT set up a squid proxy along with some iptables rules to block all domains except <CodeNB>api.ai.acmucsd.com</CodeNB>. Our regular website didn’t work since our CDN changed DNS very quickly, causing https requests to hang frequently. However, direct IP connections went through the proxy just fine, so we kept our website running locally. However, we also needed to block all IPs for popular websites like Google or YouTube since websites like Firefox sometimes directly connect to their IPs rather than through DNS. Finally, we kept logs of all egress to make sure participants didn’t bypass the proxy (e.g. some other IP, ssh traffic, etc).
+					</p>
+					<p>We created a public directory which was read/execute-accessible by all users. Here, we kept our Conda environment and Maven installation, so all users could read the same installation without duplicating files unnecessarily. Finally, we gave each participant 10GB so that they had more than enough space for swap files, saving game replays, and any other files they may need.</p>
+					<p>
+						Here, we made bash scripts for each function. These scripts could be accessed by SSHing into UCSD’s ieng6 system with an external device using instructor credentials. The scripts are as follows:
+						<ol>
+							<li>Simple recursive copy script.</li>
+							<li>Two simple recursive chmod scripts. While we could not alter files created by participants (since they had ownership and our instructor account had restricted access to sudo), we could remove access to at least the competition directory and any installations necessary to run the environment.</li>
+							<li>
+								First, we made an RSA key collector using <CodeNB>ssh-keyscan</CodeNB>. Then, after saving these RSA keys, we could ssh into each machine through the instructor account and turn on the iptables rules.
+							</li>
+						</ol>
+					</p>
+				</>
+			),
 		},
 	],
 }
