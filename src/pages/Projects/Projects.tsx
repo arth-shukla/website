@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react'
-import { Carousel, ProjectContextProvider, ProjectsData, ProjectsDataType, ProjectTile, Section } from '../../components'
+import { Carousel, ProjectContextProvider, ProjectsData, ProjectsDataType, ProjectTile, Section } from 'components'
 import Box from '@mui/material/Box'
 
 function Projects() {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Section, Socials, SocialsContextProvider } from '../../components'
+import { Section, Socials, SocialsContextProvider } from 'components'
 import { Alert, AlertTitle, Button, FormControl, Grid, Snackbar, TextField, useTheme } from '@mui/material'
 import Box from '@mui/system/Box'
 import emailjs from 'emailjs-com'

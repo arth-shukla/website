@@ -1,5 +1,5 @@
 import React from 'react'
-import { Section } from '../../components'
+import { Section } from 'components'
 
 function Error404() {
 	return (

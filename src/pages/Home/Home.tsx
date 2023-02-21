@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 
 import { TextTypeDelete } from '@arth-shukla/my-icons'
-import { DownButton, CircleLogo, Section, Socials, SocialsContext, SocialsContextProvider, ProjectHomeCarousel, ProjectsData } from '../../components'
+import { DownButton, CircleLogo, Section, Socials, SocialsContext, SocialsContextProvider, ProjectHomeCarousel, ProjectsData } from 'components'
 
 import useTheme from '@mui/system/useTheme'
 import Box from '@mui/system/Box'

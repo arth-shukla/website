@@ -1,6 +1,6 @@
 import React from 'react'
 import Box from '@mui/system/Box'
-import { Section, Socials, SocialsContext, SocialsContextProvider } from '../../components'
+import { Section, Socials, SocialsContext, SocialsContextProvider, A } from 'components'
 
 import useTheme from '@mui/material/styles/useTheme'
 import ThemeProvider from '@mui/material/styles/ThemeProvider'
@@ -152,24 +152,6 @@ function DivBP({ style, ...rest }: any) {
 			style={{ paddingBottom: '1em', ...style }}
 			{...rest}
 		/>
-	)
-}
-
-function A({ style, href, children, target = '_blank', ...rest }: any) {
-	const theme = useTheme()
-
-	return (
-		<ThemeProvider theme={theme}>
-			<a
-				href={href ?? children}
-				style={{ color: theme.palette.primary.main, ...style }}
-				target={target}
-				className='resume-text-link'
-				{...rest}
-			>
-				{children}
-			</a>
-		</ThemeProvider>
 	)
 }
 

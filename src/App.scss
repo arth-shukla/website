@@ -23,5 +23,8 @@
 
 body,
 .MuiPaper-root {
+	.text-link {
+		transition: v.$default-transition;
+	}
 	transition: v.$default-transition;
 }

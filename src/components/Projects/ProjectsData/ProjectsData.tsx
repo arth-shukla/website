@@ -1,5 +1,5 @@
 import React from 'react'
-import { Code } from 'components'
+import { A, Code } from 'components'
 
 const ProjectIcons = {
 	DiceRollerLogo: (size: number, theme: string) => {
@@ -184,6 +184,43 @@ export interface Project {
 		label: React.ReactElement | string
 		content: React.ReactElement | string
 	}>
+}
+
+const ElementAI: Project = {
+	name: 'Element.AI Competition',
+	pagePath: 'element-ai',
+	GitHub: new URL('https://github.com/acmucsd/ai-competition-winter-23'),
+	logo: ProjectIcons.NLPSeriesLogo,
+	deployment: new URL('https://ai.acmucsd.com/competitions/Element.AI'),
+	description: "I led environment development, on-premise systems management, and planning/logistics for ACM AI's Element.AI competition. We amassed $8000 in funding and 200 participants!",
+	carouselSlides: [
+		{
+			label: <h2>Summary</h2>,
+			content: (
+				<>
+					<p>Element.AI was ACM AI's winter 2023 AI competition, with $8000 in funding, 200 participants (limited only by the number of UCSD lab linux machines), and hundreds of creative, well-designed submissions.</p>
+					<p>As Director of Events, I headed environment development, led on-premise systems setup in coordination with UCSD ITS, and planning and logistics.</p>
+					<p>The environment is made primarily with Python in Conda, while also offering a Java kit through Maven. The environment uses popular packages like OpenAI Gym, PettingZoo, OpenCV, and PyGame, and the Java kit uses Jackson.</p>
+					<p>As for the on-premise setup, participants were given an account to access the UCSD CSE lab computers with all code and dependencies already set up. We created several tools to manage and fix the accounts as needed day-of.</p>
+				</>
+			),
+		},
+		{
+			label: <h2>Environment Development</h2>,
+			content: (
+				<>
+					<p>The environment was built using Python in Conda, supporting Python and Java kits (the latter set up with Maven). It handles 1-4 agents whose goal is to enclose territory to gain points.</p>
+					<p>
+						All game rules are explained in the <A href='https://github.com/acmucsd/Element.AI/blob/main/documentation/Element.AI%20Documentation.pdf'>graphic documentation</A>, and the environment was inspired by PaperIO (though the rules and setup were altered significantly to fit a 6-hour timeframe).
+					</p>
+				</>
+			),
+		},
+		{
+			label: <h2>Environment Development</h2>,
+			content: <></>,
+		},
+	],
 }
 
 const DiceRollerData: Project = {
@@ -384,6 +421,7 @@ export interface ProjectsDataType {
 }
 
 const ProjectsData = {
+	'Element AI': ElementAI,
 	'Dice Roller': DiceRollerData,
 	'Animation Library': AnimationLibrary,
 	'NLP Workshop Series': NLPWorkshopSeries,
