@@ -40,6 +40,12 @@
 		}
 	}
 
+	.top-stepper-header {
+		h2 {
+			margin-bottom: 0;
+		}
+	}
+
 	.carousel-step-button-float {
 		position: absolute;
 		top: calc(50% - 20px);

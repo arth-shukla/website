@@ -258,21 +258,9 @@ const ElementAI: Project = {
 							<li>
 								<b>Feature</b>: An instructor account which had easy access to all participant accounts, and could achieve the following:
 								<ol type='a'>
-									<li>
-										<b>Feature</b>: Copy any file/directory to any participant account.
-										<br />
-										<b>Reason</b>: If we needed to fix any bug, we could easily reclone and recopy the environment to all participant accounts. Further, if a student accidentally deleted essential files, we could restore them with little effort.
-									</li>
-									<li>
-										<b>Feature</b>: Give/remove access to any file/directory to any participant account.
-										<br />
-										<b>Reason</b>: Prevent students from coding before the competition started or after it ended.
-									</li>
-									<li>
-										<b>Feature</b>: Give/remove access to wifi to specific lab machines.
-										<br />
-										<b>Reason</b>: Wifi might have been necessary if the above tools were insufficient, e.g. if the VSCode extensions didn’t load properly on a specific machine, we’d need wifi to install them.
-									</li>
+									<li>Copy any file/directory to any participant account.</li>
+									<li>Give/remove access to any file/directory to any participant account.</li>
+									<li>Give/remove access to wifi to specific lab machines.</li>
 								</ol>
 								<b>Reason</b>: To make the competition run smoothly and easily deal with any issues that came up, we needed some way to control any aspect of our on-premise setup.
 							</li>

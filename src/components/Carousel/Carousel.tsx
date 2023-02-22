@@ -8,14 +8,15 @@ import './Carousel.scss'
 
 interface CarouselProps {
 	showFloatOnHover?: boolean
-	showOnHover?: boolean
+	stepperTop?: boolean
+	floatStepper?: boolean
 	slides: Array<any>
 	maxHeight?: number
 	width?: number | string
 	[x: string]: any
 }
 
-function Carousel({ showFloatOnHover = false, floatStepper = false, slides, maxHeight, width, ...rest }: CarouselProps) {
+function Carousel({ showFloatOnHover = false, stepperTop = false, floatStepper = false, slides, maxHeight, width, ...rest }: CarouselProps) {
 	const theme = useTheme()
 
 	const [emblaRef, emblaApi] = useEmblaCarousel({ direction: theme.direction })
@@ -55,10 +56,43 @@ function Carousel({ showFloatOnHover = false, floatStepper = false, slides, maxH
 					bgcolor: 'background.default',
 					fontSize: '18px',
 				}}
-				className='carousel-label'
+				className={'carousel-label' + stepperTop ? ' top-stepper-header' : ''}
 			>
 				{slides[activeStep].label}
 			</Paper>
+			{stepperTop && (
+				<MobileStepper
+					steps={slides.length}
+					position='static'
+					activeStep={activeStep}
+					sx={{
+						margin: '0 0 .5em',
+					}}
+					nextButton={
+						<Button
+							size='small'
+							onClick={scrollNext}
+							disabled={nextBtnEnabled}
+							className='carousel-step-button'
+						>
+							Next
+							<KeyboardArrowRight />
+						</Button>
+					}
+					backButton={
+						<Button
+							size='small'
+							onClick={scrollPrev}
+							disabled={prevBtnEnabled}
+							className='carousel-step-button'
+						>
+							<KeyboardArrowLeft />
+							Back
+						</Button>
+					}
+					className='carousel-stepper'
+				/>
+			)}
 			<div
 				className='embla'
 				style={{
@@ -101,47 +135,51 @@ function Carousel({ showFloatOnHover = false, floatStepper = false, slides, maxH
 					</>
 				)}
 			</div>
-			<MobileStepper
-				steps={slides.length}
-				position='static'
-				activeStep={activeStep}
-				nextButton={
-					!floatStepper && (
-						<Button
-							size='small'
-							onClick={scrollNext}
-							disabled={nextBtnEnabled}
-							className='carousel-step-button'
-						>
-							Next
-							<KeyboardArrowRight />
-						</Button>
-					)
-				}
-				backButton={
-					!floatStepper && (
-						<Button
-							size='small'
-							onClick={scrollPrev}
-							disabled={prevBtnEnabled}
-							className='carousel-step-button'
-						>
-							<KeyboardArrowLeft />
-							Back
-						</Button>
-					)
-				}
-				className='carousel-stepper'
-				sx={
-					floatStepper
-						? {
-								display: 'flex',
-								alignItems: 'center',
-								justifyContent: 'center',
-						  }
-						: undefined
-				}
-			/>
+			{!stepperTop && (
+				<MobileStepper
+					steps={slides.length}
+					position='static'
+					activeStep={activeStep}
+					nextButton={
+						!floatStepper && (
+							<Button
+								size='small'
+								onClick={scrollNext}
+								disabled={nextBtnEnabled}
+								className='carousel-step-button'
+							>
+								Next
+								<KeyboardArrowRight />
+							</Button>
+						)
+					}
+					backButton={
+						!floatStepper && (
+							<Button
+								size='small'
+								onClick={scrollPrev}
+								disabled={prevBtnEnabled}
+								className='carousel-step-button'
+							>
+								<KeyboardArrowLeft />
+								Back
+							</Button>
+						)
+					}
+					className='carousel-stepper'
+					sx={
+						floatStepper
+							? {
+									display: 'flex',
+									alignItems: 'center',
+									justifyContent: 'center',
+							  }
+							: {
+									padding: '1em',
+							  }
+					}
+				/>
+			)}
 		</Box>
 	)
 }

@@ -113,7 +113,7 @@ function ProjectCard() {
 							</Box>
 							<Carousel
 								slides={project.carouselSlides}
-								maxHeight={400}
+								stepperTop
 							/>
 						</Box>
 						<Box
