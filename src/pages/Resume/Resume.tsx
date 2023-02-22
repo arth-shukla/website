@@ -286,7 +286,7 @@ function Resume() {
 								<b>Personal Web Development Projects</b>
 							</PSlim>
 							<PSlim>
-								<b>Technologies Used</b>: <u>Web Development</u>: TypeScript, React, Storybook, SCSS; <u>DevOps</u>: Git, GitHub Pages, GitHub Packages; <u>Development Standards</u>: Web Content Accessibility Guidelines (WCAG) 2.1 AAA, Aria Authoring Practices Guide (APG)
+								<b>Technologies Used</b>: <u>Web Development</u>: TypeScript, React, Storybook, SCSS; <u>DevOps</u>: Netlify, Git, GitHub Pages, GitHub Packages; <u>Development Standards</u>: Web Content Accessibility Guidelines (WCAG) 2.1 AAA, Aria Authoring Practices Guide (APG)
 							</PSlim>
 							<PSlim>
 								<b>
@@ -297,6 +297,9 @@ function Resume() {
 								<ULSlim>
 									<li>
 										GitHub: <A>https://github.com/arth-shukla</A>
+									</li>
+									<li>
+										Create personal website using React Typescript, SCSS, and Material UI, accessible by WCAG 2.1 AA standard, and publish to custom domain using Netlify: <A>https://arth.website</A>
 									</li>
 									<li>
 										Code mobile-compatible Dice Roller web app with React and SCSS, accessible by WCAG 2.1 AA standards and publish to GitHub Pages: <A>https://arth-shukla.github.io/dice-roller</A>
@@ -313,7 +316,21 @@ function Resume() {
 							</PSlim>
 							<PSlim>ACM AI is UCSD’s largest AI student org which fosters a community for those interested in AI and research.</PSlim>
 							<PSlim>
-								<b>Technologies Used</b>: <u>AI/ML Workshops and Projects</u>: Python, PyTorch, TensorFlow, Google Colab; <u>Web Development</u>: TypeScript, React, LESS
+								<b>Technologies Used</b>: <u>Element.AI</u>: Python, Conda, Java, Maven, OpenAI Gym, PettingZoo, PyGame, Jackson, Squid, Bash; <u>AI/ML Workshops and Projects</u>: Python, PyTorch, TensorFlow, Google Colab; <u>Web Development</u>: TypeScript, React, LESS
+							</PSlim>
+							<PSlim>
+								<b>
+									<i>Element.AI Competition — Lead Environment Development</i>
+								</b>
+								<RFloat>July 2022 - Feb 2023</RFloat>
+
+								<ULSlim>
+									<li>GitHub (open to public): https://github.com/acmucsd/Element.AI</li>
+									<li>Use Python with Conda and PettngZoo ParrallelEnv to create multi-agent gym environment as the core game the participants' bots solved</li>
+									<li>Use Java with Maven and Jackson to create Java sdk for 45 participants (~22.5% of all participants)</li>
+									<li>In coordination with IT, use Squid proxy, IPTables and bash scripts to create instructor tools, allowing us to enable/revoke access to wifi, whitelist sites, enable/revoke access to files, and in general control the competition accounts with granularity, both targeted and en masse</li>
+									<li>Write proposals and attend meetings to obtain $8000 in sponsorships, attracting 200 participants (limited primarily by the number of UCSD linux lab machines) with hundreds of submissions</li>
+								</ULSlim>
 							</PSlim>
 							<PSlim>
 								<b>
@@ -392,45 +409,6 @@ function Resume() {
 							</PSlim>
 							<PSlim>
 								<i>Program Participant and Inspirit AI End-of-Program Project Lead</i> - Learn AI Fundamentals (neural nets and backprop, computer vision,etc) and develop model to identify pro- and anti-refugee tweets using sentiment analysis
-							</PSlim>
-						</DivBP>
-						<DivBP>
-							<PSlim>
-								<b>Sequoia Robotics</b>
-							</PSlim>
-							<PSlim>
-								<i>Club President (August 2020 - June 2021); Team Head and Lead Software Engineer</i> - Organize club participation in tournaments and lead Sequoia’s Purple Pi team
-							</PSlim>
-						</DivBP>
-						<DivBP>
-							<PSlim>
-								<b>Cañada College Mathematics Instructional Assistant</b>
-							</PSlim>
-							<PSlim>
-								<i>Calculus I Instructional Assistant</i> - Design and grade 5 bi-weekly tests and final exam and weekly homework assignments, Tutor 26 students via Zoom and email for 3 hrs/week
-							</PSlim>
-						</DivBP>
-						<DivBP>
-							<PSlim>
-								<b>STEM Tutoring</b>
-							</PSlim>
-							<PSlim>
-								<b>
-									<i>Advance Math Tutorials</i>
-								</b>{' '}
-								- Lecture and tutor groups of upwards of 20 AP Calculus and IB Math students
-							</PSlim>
-							<PSlim>
-								<b>
-									<i>AVID Program Tutoring</i>
-								</b>{' '}
-								- Lecture and tutor groups of 7 first-gen students at varying levels of Math, Physics, and Chemistry
-							</PSlim>
-							<PSlim>
-								<b>
-									<i>Redwood City Library Tutoring</i>
-								</b>{' '}
-								- Tutor groups of 5 elementary and middle school students in Math and Science
 							</PSlim>
 						</DivBP>
 					</ResumeSection>

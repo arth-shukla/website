@@ -219,7 +219,7 @@ const ElementAI: Project = {
 			label: <h2>Summary</h2>,
 			content: (
 				<>
-					<p>Element.AI was ACM AI's winter 2023 AI competition, with $8000 in funding, 200 participants (limited only by the number of UCSD lab linux machines), and hundreds of creative, well-designed submissions.</p>
+					<p>Element.AI was ACM AI's winter 2023 AI competition, with $8000 in funding, 200 participants (limited only by the number of UCSD lab linux machines), and hundreds of creative submissions.</p>
 					<p>As Director of Events, I headed environment development, led on-premise systems setup in coordination with UCSD ITS, and planning and logistics.</p>
 					<p>The environment is made primarily with Python in Conda, while also offering a Java kit through Maven. The environment uses popular packages like OpenAI Gym, PettingZoo, OpenCV, and PyGame, and the Java kit uses Jackson.</p>
 					<p>As for the on-premise setup, participants were given an account to access the UCSD CSE lab computers with all code and dependencies already set up. We created several tools to manage and fix the accounts as needed day-of.</p>
