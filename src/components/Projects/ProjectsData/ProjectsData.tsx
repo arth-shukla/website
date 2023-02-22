@@ -212,7 +212,7 @@ const ElementAI: Project = {
 	pagePath: 'element-ai',
 	GitHub: new URL('https://github.com/acmucsd/ai-competition-winter-23'),
 	logo: ProjectIcons.ElementAILogo,
-	deployment: new URL('https://ai.acmucsd.com/competitions/Element.AI'),
+	deployment: undefined, //new URL('https://ai.acmucsd.com/competitions/Element.AI'),
 	description: "I led environment development, on-premise systems management, and planning/logistics for ACM AI's Element.AI competition. We amassed $8000 in funding and 200 participants!",
 	carouselSlides: [
 		{
