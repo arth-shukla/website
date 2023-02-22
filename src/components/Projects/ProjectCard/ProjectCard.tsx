@@ -29,7 +29,7 @@ function ProjectCard() {
 								className='project-card-header'
 								sx={{ display: 'flex' }}
 							>
-								<Box sx={{ width: '80%' }}>
+								<Box sx={{ width: '80%', marginLeft: '.5em', marginRight: '.5em' }}>
 									<Breadcrumbs
 										// sx={{ paddingBottom: '1em' }}
 										className='project-info-breadcrumbs'
@@ -90,7 +90,7 @@ function ProjectCard() {
 								</Box>
 								<Box
 									className='project-tile-md-scr'
-									sx={{ width: '20%' }}
+									sx={{ width: '20%', marginRight: '.5em' }}
 								>
 									<ProjectTile
 										size={125}
