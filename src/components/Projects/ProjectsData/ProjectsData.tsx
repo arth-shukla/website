@@ -1,6 +1,5 @@
 import React from 'react'
 import { A, Code } from 'components'
-import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
 
 const CodeNB = ({ children }: any) => {
 	return <Code noBorder>{children}</Code>
