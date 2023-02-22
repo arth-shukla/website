@@ -1,11 +1,29 @@
 import React from 'react'
 import { A, Code } from 'components'
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
 
 const CodeNB = ({ children }: any) => {
 	return <Code noBorder>{children}</Code>
 }
 
 const ProjectIcons = {
+	ElementAILogo: (size: number, theme: string, primary: string, dark: boolean) => {
+		// const r = ((size / 2) * Math.sqrt(2)) / 2
+
+		return (
+			<svg
+				viewBox={`0 0 35 35`}
+				style={{ padding: 10 }}
+				x='15.5%'
+				y='16%'
+			>
+				<path
+					fill={theme}
+					d='M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z'
+				></path>
+			</svg>
+		)
+	},
 	DiceRollerLogo: (size: number, theme: string) => {
 		const r = ((size / 2) * Math.sqrt(2)) / 2
 
@@ -194,7 +212,7 @@ const ElementAI: Project = {
 	name: 'Element.AI Competition',
 	pagePath: 'element-ai',
 	GitHub: new URL('https://github.com/acmucsd/ai-competition-winter-23'),
-	logo: ProjectIcons.NLPSeriesLogo,
+	logo: ProjectIcons.ElementAILogo,
 	deployment: new URL('https://ai.acmucsd.com/competitions/Element.AI'),
 	description: "I led environment development, on-premise systems management, and planning/logistics for ACM AI's Element.AI competition. We amassed $8000 in funding and 200 participants!",
 	carouselSlides: [
