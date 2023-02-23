@@ -247,7 +247,7 @@ const ElementAI: Project = {
 								<b>Replay Video Generator</b>: The environment saves json files containing observations at each timestep. The replay video generators (simple and fancy) both process this json data and create an output video.
 							</li>
 							<li>
-								<b>LuxAI Runner</b>: We use the Lux AI 2022 runner to facilitate communication between the environment and the kits, while also offering features like environment configuration adjustment, verbosity, and replay generation. <CodeNB>Bot</CodeNB> communicates with the player kits. <CodeNB>Episode</CodeNB> gets observations from <CodeNB>PaperIO</CodeNB> (the environment) and sends them to the <CodeNB>Bot</CodeNB> instances through stdout. It then sends the resultant actions from the <CodeNB>Bot</CodeNB> instances to <CodeNB>PaperIO</CodeNB>. This loops until terminal state.
+								<b>LuxAI Runner</b>: We use the <A href='https://github.com/Lux-AI-Challenge/Lux-Design-S2'>Lux AI 2022 runner</A> to facilitate communication between the environment and the kits, while also offering features like environment configuration adjustment, verbosity, and replay generation. <CodeNB>Bot</CodeNB> communicates with the player kits. <CodeNB>Episode</CodeNB> gets observations from <CodeNB>PaperIO</CodeNB> (the environment) and sends them to the <CodeNB>Bot</CodeNB> instances through stdout. It then sends the resultant actions from the <CodeNB>Bot</CodeNB> instances to <CodeNB>PaperIO</CodeNB>. This loops until terminal state.
 							</li>
 						</ol>
 					</p>
