@@ -283,6 +283,31 @@ function Resume() {
 						</DivBP>
 						<DivBP>
 							<PSlim>
+								<b>ACM AI’s Element.AI Competition</b>
+							</PSlim>
+							<PSlim>I led development and organization of Element.AI, an $8000 competition at UCSD with 200 participants.</PSlim>
+							<PSlim>
+								<b>Technologies Used</b>: <u>Element.AI</u>: Python, Conda, Java, Maven, OpenAI Gym, PettingZoo, PyGame, Jackson, Squid, Bash
+							</PSlim>
+							<PSlim>
+								<b>
+									<i>Lead Developer</i>
+								</b>
+								<RFloat>July 2022 - Feb 2023</RFloat>
+
+								<ULSlim>
+									<li>
+										GitHub (open to public): <A>https://github.com/acmucsd/Element.AI</A>
+									</li>
+									<li>Use Python with Conda and PettngZoo ParrallelEnv to create multi-agent gym environment as the core game the participants' bots solved</li>
+									<li>Use Java with Maven and Jackson to create Java sdk for 45 participants (~22.5% of all participants)</li>
+									<li>In coordination with IT, use Squid proxy, IPTables and bash scripts to create instructor tools, allowing us to enable/revoke access to wifi, whitelist sites, enable/revoke access to files, and in general control the competition accounts with granularity, both targeted and en masse</li>
+									<li>Write proposals and attend meetings to obtain $8000 in sponsorships, attracting 200 participants (limited primarily by the number of UCSD linux lab machines) with hundreds of submissions</li>
+								</ULSlim>
+							</PSlim>
+						</DivBP>
+						<DivBP>
+							<PSlim>
 								<b>Personal Web Development Projects</b>
 							</PSlim>
 							<PSlim>
@@ -320,21 +345,7 @@ function Resume() {
 							</PSlim>
 							<PSlim>
 								<b>
-									<i>Element.AI Competition — Lead Environment Development</i>
-								</b>
-								<RFloat>July 2022 - Feb 2023</RFloat>
-
-								<ULSlim>
-									<li>GitHub (open to public): https://github.com/acmucsd/Element.AI</li>
-									<li>Use Python with Conda and PettngZoo ParrallelEnv to create multi-agent gym environment as the core game the participants' bots solved</li>
-									<li>Use Java with Maven and Jackson to create Java sdk for 45 participants (~22.5% of all participants)</li>
-									<li>In coordination with IT, use Squid proxy, IPTables and bash scripts to create instructor tools, allowing us to enable/revoke access to wifi, whitelist sites, enable/revoke access to files, and in general control the competition accounts with granularity, both targeted and en masse</li>
-									<li>Write proposals and attend meetings to obtain $8000 in sponsorships, attracting 200 participants (limited primarily by the number of UCSD linux lab machines) with hundreds of submissions</li>
-								</ULSlim>
-							</PSlim>
-							<PSlim>
-								<b>
-									<i>Board – Director of Events</i>
+									<i>Board – Director of Operations</i>
 								</b>
 								<RFloat>May 2022 - Present</RFloat>
 
