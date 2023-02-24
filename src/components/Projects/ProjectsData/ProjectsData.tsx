@@ -16,6 +16,7 @@ const ProjectIcons = {
 				x='15.5%'
 				y='16%'
 				className='circle-logo'
+				aria-hidden={true}
 			>
 				<path
 					fill={theme}
