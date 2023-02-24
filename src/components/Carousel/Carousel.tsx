@@ -56,7 +56,7 @@ function Carousel({ showFloatOnHover = false, stepperTop = false, floatStepper =
 					bgcolor: 'background.default',
 					fontSize: '18px',
 				}}
-				className={'carousel-label' + stepperTop ? ' top-stepper-header' : ''}
+				className={'carousel-label' + (stepperTop ? ' top-stepper-header' : '')}
 			>
 				{slides[activeStep].label}
 			</Paper>

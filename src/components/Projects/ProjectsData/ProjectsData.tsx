@@ -15,6 +15,7 @@ const ProjectIcons = {
 				style={{ padding: 10 }}
 				x='15.5%'
 				y='16%'
+				className='circle-logo'
 			>
 				<path
 					fill={theme}
