@@ -224,11 +224,11 @@ function Resume() {
 								<b>Relevant Coursework</b>
 							</PSlim>
 							<PSlim>
-								<i>Completed</i>: Advanced Data Structures, Optimizations for Data Science I, Computer Organization and Systems Programming, Data Structures and Object-Oriented Design, Computer Science and Object-Oriented Programming - Java, Networks and Digital Communications, Data Warehousing to Big Data, Enumerative Combinatorics, Abstract Algebra I, Statistical Methods and Probability, Linear Algebra, Multivariable Calculus, Vector Calculus, Differential Equations
+								<i>Completed</i>: Design and Analysis of Algorithms, Advanced Data Structures, Optimizations for Data Science I and II, Computer Organization and Systems Programming, Data Structures and Object-Oriented Design, Computer Science and Object-Oriented Programming - Java, Networks and Digital Communications, Data Warehousing to Big Data, Statistical Methods and Probability, Enumerative Combinatorics, Abstract Algebra I and II, Linear Algebra, Multivariable Calculus, Vector Calculus, Differential Equations
 								<br />
 							</PSlim>
 							<PSlim>
-								<i>Planned for Fall 2022</i>: Design and Analysis of Algorithms, Optimizations for Data Science II, Modern Algebra II, Synthesis II
+								<i>Ongoing in Spring 2023</i>: Supervised Machine Learning, Theory of Computation, Intro to Computational Statistics, Synthesis 100
 							</PSlim>
 						</DivBP>
 					</ResumeSection>
@@ -283,7 +283,7 @@ function Resume() {
 						</DivBP>
 						<DivBP>
 							<PSlim>
-								<b>ACM AI’s Element.AI Competition</b>
+								<b>ACM AI's Element.AI Competition</b>
 							</PSlim>
 							<PSlim>I led development and organization of Element.AI, an $8000 competition at UCSD with 200 participants.</PSlim>
 							<PSlim>
