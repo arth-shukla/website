@@ -315,7 +315,7 @@ const ElementAI: Project = {
 const ComponentLibrary: Project = {
 	name: 'Component Library',
 	pagePath: 'component-library',
-	GitHub: new URL('https://github.com/arth-shukla/my-icons'),
+	GitHub: new URL('https://github.com/arth-shukla/arth-components'),
 	logo: ProjectIcons.AnimLibraryIcon,
 	deployment: new URL('https://arth-shukla.github.io/my-icons-documentation/'),
 	description: 'This is a React component library with compoennts which I use frequently. Many of those components are used in this website!',
@@ -326,7 +326,7 @@ const ComponentLibrary: Project = {
 				<>
 					<p>I often want similar functionality across different projects. So, I made a React component library with components which I use frequently. Many of those components are used in this website!</p>
 					<p>
-						The library can be installed by running <Code>npm i @arth-shukla/my-icons</Code>.
+						The library can be installed by running <Code>npm i @arth-shukla/arth-components</Code>.
 					</p>
 				</>
 			),

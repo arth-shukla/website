@@ -330,7 +330,7 @@ function Resume() {
 										Code mobile-compatible Dice Roller web app with React and SCSS, accessible by WCAG 2.1 AA standards and publish to GitHub Pages: <A>https://arth-shukla.github.io/dice-roller</A>
 									</li>
 									<li>
-										Create Icon Library with React TypeScript and SCSS, publish to GitHub packages: <A>https://github.com/arth-shukla/my-icons</A>; code demos and documentation published on GitHub Pages: <A>https://arth-shukla.github.io/my-icons-documentation</A>
+										Create Icon Library with React TypeScript and SCSS, publish to GitHub packages: <A>https://github.com/arth-shukla/arth-components</A>; code demos and documentation published on GitHub Pages: <A>https://arth-shukla.github.io/my-icons-documentation</A>
 									</li>
 								</ULSlim>
 							</PSlim>
