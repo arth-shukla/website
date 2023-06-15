@@ -1,5 +1,5 @@
 import { Toolbar, useTheme } from '@mui/material'
-import { ColorSwitch, DarkModeSwitch, LineSheen } from '@arth-shukla/my-icons'
+import { ColorSwitch, DarkModeSwitch, LineSheen } from '@arth-shukla/arth-components'
 import { Stack } from '@mui/system'
 import IconButton from '@mui/material/IconButton'
 

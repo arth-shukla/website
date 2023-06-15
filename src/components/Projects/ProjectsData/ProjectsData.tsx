@@ -1,6 +1,14 @@
 import React from 'react'
 import { A, Code } from 'components'
 
+import mario14 from 'assets/mario1-4.mp4'
+import mario11 from 'assets/mario1-1.mp4'
+import marioStdRun from 'assets/1-1_std_run.png'
+import marioAdvNorm from 'assets/1-1_adv_norm.png'
+import marioEarlyStop from 'assets/1-1_early_stop.png'
+import marioAllTests from 'assets/1-1_all_tests.png'
+import marioHardLR from 'assets/1-4_hard_lr_shift.png'
+
 const CodeNB = ({ children }: any) => {
 	return <Code noBorder>{children}</Code>
 }
@@ -207,6 +215,127 @@ export interface Project {
 		label: React.ReactElement | string
 		content: React.ReactElement | string
 	}>
+}
+
+const RunVid = ({ src, width = 256, height = 240, style, ...rest }: { src: string; width?: number; height?: number; style?: any; [x: string]: any }) => {
+	return (
+		<video
+			width={width}
+			height={height}
+			autoPlay
+			loop
+			muted
+			style={{
+				paddingBottom: '1em',
+				flex: '0 1 auto',
+				...style,
+			}}
+			{...rest}
+		>
+			<source
+				src={src}
+				type='video/mp4'
+			/>
+		</video>
+	)
+}
+
+const MarioPPO: Project = {
+	name: 'Mario PPO',
+	pagePath: 'mario-ppo',
+	GitHub: new URL('https://github.com/arth-shukla/ppo-mario'),
+	logo: ProjectIcons.ElementAILogo,
+	deployment: new URL('https://wandb.ai/arth-shukla/Mario-PPO'),
+	description: 'I wrote (from scratch) a PPO Agent to beat Mario NES.',
+	carouselSlides: [
+		{
+			label: <h2>Summary</h2>,
+			content: (
+				<>
+					<p>I used PyTorch and Gymnasium to train a PPO agent which could beat different Mario NES levels.</p>
+					<div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
+						<RunVid src={mario11} />
+						<RunVid src={mario14} />
+					</div>
+					<p>
+						I based the image processing based on the original <A href='https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf'>DeepMind Atari Game DQN paper</A> (I've previously implemented the <A href='https://arth.website/mario-ddqn'>full DDQN as well</A>). I also expanded on the PPO code I wrote for my <A href='https://arth.website/cartpole-ppo'>CartPole project</A> to include:
+						<ul>
+							<li>early stop based on approx kl</li>
+							<li>advantage normalization</li>
+							<li>entropy regularization</li>
+							<li>Generalized Advantage Estimation (GAE)</li>
+							<li>normal DL techniques like grad normalization and lr scheduling</li>
+						</ul>
+					</p>
+					<p>The result is a bot which is able to consistently beat Mario levels after ony about 1500 episodes of training.</p>
+				</>
+			),
+		},
+		{
+			label: <h2>Testing PPO Convergence Tricks on Level 1-1</h2>,
+			content: (
+				<>
+					<p>
+						First, I wanted to see which tricks were most/least helpful for world 1-1, a very simple level. The best results came from the following three:
+						<ol>
+							<li>Simple, standard PPO run</li>
+							<li>PPO with early stopping using approx KL divergence</li>
+							<li>PPO with advantage norming</li>
+						</ol>
+					</p>
+					<p>
+						Different combinations of different techniques might help (or harm) training performance as well. Image charts can be seen below for the three runs mentioned below, as well as all the other tests I ran. Interactive charts are available on <A href='https://wandb.ai/arth-shukla/Mario-PPO'>WandB</A>. Each run was capped at 2000 episodes, which is 6.5x fewer iterations than my <A href='https://arth.website/mario-ddqn'>DDQN required</A> to acheive similar results!
+					</p>
+					<p style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', paddingRight: '1em' }}>
+						{[marioStdRun, marioAdvNorm, marioEarlyStop, marioAllTests].map(src => (
+							<A
+								href='https://wandb.ai/arth-shukla/Mario-PPO'
+								style={{ display: 'inline-block', width: 'calc(50% - 5px)', padding: '2.5px 0' }}
+							>
+								<img
+									src={src}
+									alt=''
+									width='100%'
+								/>
+							</A>
+						))}
+					</p>
+					<p>
+						Note that <CodeNB>run_name_1.0</CodeNB> indicates a run with <CodeNB>policy_clip=1.0</CodeNB>; likewise for <CodeNB>run_name_2.0</CodeNB>.
+					</p>
+				</>
+			),
+		},
+		{
+			label: <h2>Improving Training on Level 1-4 With Hard LR Shift</h2>,
+			content: (
+				<>
+					<p>Level 1-4 is much more difficult than 1-1 since it is a boss castle. While the standard run resulted in a more stable policy, using different tricks led to reaching a peak in average reward much faster.</p>
+					<p>
+						However, after reaching a peak in average reward, the policies would often catastrophically forget whatever they had previously learned. To try mitigating this, I added params <CodeNB>shift_lr_when_avg_rew_is</CodeNB> and <CodeNB>shifted_lr</CodeNB>. The idea here is to chop the learning rate down after the policy reaches some desired average reward so updates to model paramteres are less extreme, lessening the chances of updating into a much worse policy space.
+					</p>
+					<p>
+						Thus, this test on Level 1-4 was run with
+						<ul>
+							<li>entropy regularization</li>
+							<li>gradient and advantage normalization</li>
+							<li>hard LR shift after high reward (heurisitc)</li>
+						</ul>
+					</p>
+					<p style={{ display: 'flex', justifyContent: 'center' }}>
+						<A href='https://wandb.ai/arth-shukla/Mario-PPO'>
+							<img
+								src={marioHardLR}
+								width='100%'
+							/>
+						</A>
+					</p>
+					<p>The policy remained stable and was able to "focus on" winning the level more frequently, and it only took one run with a little over 1600 episodes to reach an optimal policy.</p>
+					<p>Note that the max reward for level 1-4 is about 2000, while the max reward for 1-1 is about 2500. Additionally, this agent is very likely highly overfit on this level! It will certainly not generalize well.</p>
+				</>
+			),
+		},
+	],
 }
 
 const ElementAI: Project = {
@@ -510,6 +639,7 @@ export interface ProjectsDataType {
 }
 
 const ProjectsData = {
+	'Mario PPO': MarioPPO,
 	'Element AI': ElementAI,
 	'Component Library': ComponentLibrary,
 	'Dice Roller': DiceRollerData,

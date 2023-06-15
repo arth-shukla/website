@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 
-import { TextTypeDelete } from '@arth-shukla/my-icons'
+import { TextTypeDelete } from '@arth-shukla/arth-components'
 import { DownButton, CircleLogo, Section, Socials, SocialsContext, SocialsContextProvider, ProjectHomeCarousel, ProjectsData } from 'components'
 
 import useTheme from '@mui/system/useTheme'

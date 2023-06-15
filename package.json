@@ -3,7 +3,7 @@
 	"version": "0.1.0",
 	"private": false,
 	"dependencies": {
-		"@arth-shukla/my-icons": "^2.1.14",
+		"@arth-shukla/arth-components": "^2.1.17",
 		"@emotion/react": "^11.10.0",
 		"@emotion/styled": "^11.10.0",
 		"@mui/icons-material": "^5.8.4",
@@ -49,6 +49,7 @@
 		]
 	},
 	"devDependencies": {
+		"@babel/plugin-proposal-private-property-in-object": "^7.21.11",
 		"sass": "^1.54.5"
 	}
 }
