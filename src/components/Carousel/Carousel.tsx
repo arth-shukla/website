@@ -27,13 +27,11 @@ function Carousel({ showFloatOnHover = false, stepperTop = false, floatStepper =
 	const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi])
 	const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi])
 
-	const handleResize = () => {
-		emblaApi?.reInit()
-	}
+	const handleResize = useCallback(() => emblaApi?.reInit(), [emblaApi])
 
 	useEffect(() => {
 		window.addEventListener('resize', handleResize, { passive: true })
-	}, [])
+	}, [handleResize])
 
 	const onSelect = useCallback(() => {
 		if (!emblaApi) return

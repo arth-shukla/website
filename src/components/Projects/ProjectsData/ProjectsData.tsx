@@ -8,12 +8,16 @@ import marioAdvNorm from 'assets/1-1_adv_norm.png'
 import marioEarlyStop from 'assets/1-1_early_stop.png'
 import marioAllTests from 'assets/1-1_all_tests.png'
 import marioHardLR from 'assets/1-4_hard_lr_shift.png'
+import marioPPOLogo from './MarioPPOLogo'
 
 const CodeNB = ({ children }: any) => {
 	return <Code noBorder>{children}</Code>
 }
 
 const ProjectIcons = {
+	MarioPPOLogo: (size: number, theme: string, primary: string, dark: boolean) => {
+		return marioPPOLogo(size, theme, primary, dark)
+	},
 	ElementAILogo: (size: number, theme: string, primary: string, dark: boolean) => {
 		// const r = ((size / 2) * Math.sqrt(2)) / 2
 
@@ -244,9 +248,9 @@ const MarioPPO: Project = {
 	name: 'Mario PPO',
 	pagePath: 'mario-ppo',
 	GitHub: new URL('https://github.com/arth-shukla/ppo-mario'),
-	logo: ProjectIcons.ElementAILogo,
+	logo: ProjectIcons.MarioPPOLogo,
 	deployment: new URL('https://wandb.ai/arth-shukla/Mario-PPO'),
-	description: 'I wrote (from scratch) a PPO Agent to beat Mario NES.',
+	description: 'I used Pytorch to make a PPO Agent (w/ entropy regularization, advantage normalization, early stop w/ approx. KL Div, GAE, etc) and Gymnasium to consistently beat Mario level 1-1 and 1-4 in under 1600-2000 episodes of training.',
 	carouselSlides: [
 		{
 			label: <h2>Summary</h2>,
@@ -327,6 +331,7 @@ const MarioPPO: Project = {
 							<img
 								src={marioHardLR}
 								width='100%'
+								alt=''
 							/>
 						</A>
 					</p>
