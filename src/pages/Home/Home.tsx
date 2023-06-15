@@ -159,11 +159,8 @@ function ProjectsInfoSection() {
 				</Grid>
 				<Grid
 					item
-					sm={0}
-					md={4}
-					lg={0}
-					sx={flexBoxMiddleAlign}
-					className='lt-lg'
+					className='lt-sm'
+					sx={{ width: '100%', ...flexBoxMiddleAlign }}
 				>
 					<ProjectHomeCarousel
 						projects={ProjectsData}
@@ -176,6 +173,21 @@ function ProjectsInfoSection() {
 					item
 					className='lt-md'
 					sx={{ width: '100%', ...flexBoxMiddleAlign }}
+				>
+					<ProjectHomeCarousel
+						projects={ProjectsData}
+						width={660}
+						logoSize={200}
+						logosPerSlide={2}
+					/>
+				</Grid>
+				<Grid
+					item
+					sm={0}
+					md={4}
+					lg={0}
+					sx={flexBoxMiddleAlign}
+					className='lt-lg'
 				>
 					<ProjectHomeCarousel
 						projects={ProjectsData}
@@ -193,7 +205,7 @@ function ProjectsInfoSection() {
 						projects={ProjectsData}
 						width={825}
 						logoSize={200}
-						logosPerSlide={Math.min(3, Math.floor(Object.keys(ProjectsData).length / Math.ceil(Object.keys(ProjectsData).length / 3)))}
+						logosPerSlide={Math.min(3, Math.ceil(Object.keys(ProjectsData).length / Math.ceil(Object.keys(ProjectsData).length / 3)))}
 					/>
 				</Grid>
 			</Grid>
