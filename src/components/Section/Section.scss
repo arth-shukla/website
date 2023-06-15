@@ -5,7 +5,7 @@
 	line-height: 1.1em;
 
 	margin: 0 !important;
-	padding: 30px 70px !important;
+	padding: 30px 70px;
 
 	h1 {
 		font-size: 40px;
@@ -21,7 +21,7 @@
 	}
 
 	@media screen and (max-width: 600px) {
-		padding: 30px 10% !important;
+		padding: 30px 10%;
 	}
 
 	transition: v.$default-transition;

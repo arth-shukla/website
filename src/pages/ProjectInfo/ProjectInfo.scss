@@ -10,3 +10,8 @@
 		transition: v.$default-transition;
 	}
 }
+.project-info {
+	@media screen and (max-width: 600px) {
+		padding: 30px 5% !important;
+	}
+}

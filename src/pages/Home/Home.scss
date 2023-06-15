@@ -10,7 +10,7 @@
 		}
 	}
 
-	--main-page-intro-font-size: clamp(45px, 8vw, 80px);
+	--main-page-intro-font-size: clamp(45px, 7.7vw, 80px);
 	--main-page-intro-cursor-height: clamp(47px, 8vw, 82px);
 
 	@media screen and (max-width: v.$sm) {
@@ -24,19 +24,29 @@
 	@media screen and (max-width: v.$sm) {
 		min-height: 0;
 	}
-	@media screen and (max-width: #{v.$mui-md - 1px}) {
+	@media screen and (max-width: #{v.$mui-sm - 1px}) {
+		.lt-lg,
+		.lt-md,
+		.ge-lg {
+			display: none !important;
+		}
+	}
+	@media screen and (min-width: v.$mui-sm) and (max-width: #{v.$mui-md - 1px}) {
+		.lt-sm,
 		.lt-lg,
 		.ge-lg {
 			display: none !important;
 		}
 	}
 	@media screen and (min-width: v.$mui-md) and (max-width: #{v.$mui-lg - 1}) {
+		.lt-sm,
 		.lt-md,
 		.ge-lg {
 			display: none !important;
 		}
 	}
 	@media screen and (min-width: v.$mui-lg) {
+		.lt-sm,
 		.lt-md,
 		.lt-lg {
 			display: none !important;

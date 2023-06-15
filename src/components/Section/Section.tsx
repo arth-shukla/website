@@ -4,14 +4,16 @@ import useTheme from '@mui/material/styles/useTheme'
 import './Section.scss'
 
 interface SectionProps {
-	className?: string
 	children: any
+	className?: string
 	sx?: any
 	[x: string]: any
 }
 
-function Section({ className = '', children, sx, ...rest }: SectionProps) {
+function Section({ children, className = '', sx, ...rest }: SectionProps) {
 	const theme = useTheme()
+
+	console.log(className)
 
 	return (
 		<section

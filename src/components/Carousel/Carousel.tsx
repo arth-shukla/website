@@ -27,6 +27,12 @@ function Carousel({ showFloatOnHover = false, stepperTop = false, floatStepper =
 	const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi])
 	const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi])
 
+	const handleResize = useCallback(() => emblaApi?.reInit(), [emblaApi])
+
+	useEffect(() => {
+		window.addEventListener('resize', handleResize, { passive: true })
+	}, [handleResize])
+
 	const onSelect = useCallback(() => {
 		if (!emblaApi) return
 		setActiveStep(emblaApi.selectedScrollSnap())
@@ -37,6 +43,7 @@ function Carousel({ showFloatOnHover = false, stepperTop = false, floatStepper =
 	useEffect(() => {
 		if (!emblaApi) return
 		onSelect()
+		setTimeout(emblaApi.reInit, 1000)
 		emblaApi.on('select', onSelect)
 	}, [emblaApi, onSelect])
 

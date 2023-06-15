@@ -30,10 +30,7 @@ function ProjectCard() {
 								sx={{ display: 'flex' }}
 							>
 								<Box sx={{ width: '80%', marginLeft: '.5em', marginRight: '.5em' }}>
-									<Breadcrumbs
-										// sx={{ paddingBottom: '1em' }}
-										className='project-info-breadcrumbs'
-									>
+									<Breadcrumbs className='project-info-breadcrumbs'>
 										<Link
 											component={RouterLink}
 											to='/projects'
@@ -117,7 +114,7 @@ function ProjectCard() {
 							/>
 						</Box>
 						<Box
-							sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexGrow: 1 }}
+							sx={{ display: 'flex', justifyContent: 'center', paddingTop: 'max(calc(50svh - 64px * 2 - 100px), 150px)', flexGrow: 1 }}
 							className='project-tile-lg-scr'
 						>
 							<ProjectTile
@@ -128,7 +125,7 @@ function ProjectCard() {
 							/>
 						</Box>
 						<Box
-							sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexGrow: 1 }}
+							sx={{ display: 'flex', justifyContent: 'center', paddingTop: 'max(calc(50svh - 64px * 2 - 150px), 100px)', flexGrow: 1 }}
 							className='project-tile-xl-scr'
 						>
 							<ProjectTile

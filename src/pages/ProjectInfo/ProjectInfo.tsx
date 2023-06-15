@@ -5,7 +5,7 @@ import './ProjectInfo.scss'
 
 function Projectnfo({ project }: { project: Project }) {
 	return (
-		<Section>
+		<Section className='project-info'>
 			<ProjectContextProvider value={project}>
 				<ProjectCard />
 			</ProjectContextProvider>
