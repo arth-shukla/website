@@ -772,9 +772,9 @@ const ProjectsData = {
 	'Mario PPO': MarioPPO,
 	'SQuAD 2.0 Question-Answer w/ DistilBERT': SQuAD2,
 	'Element AI': ElementAI,
+	'NLP Workshop Series': NLPWorkshopSeries,
 	'Component Library': ComponentLibrary,
 	'Dice Roller': DiceRollerData,
-	'NLP Workshop Series': NLPWorkshopSeries,
 }
 
 export default ProjectsData
