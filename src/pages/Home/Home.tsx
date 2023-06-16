@@ -113,7 +113,7 @@ function SelfIntroSection() {
 						/>
 					</p>
 					<p>I'm Arth. I'm a second-year Math-Computer Science major at UCSD, and I'm looking for new opportunities to gain experience.</p>
-					<p>I'm eager to learn new skills and technologies, and I'm especially interested in web development and AI/ML.</p>
+					<p>I'm eager to learn new skills and technologies, and I'm especially interested in AI/ML and web development.</p>
 				</Grid>
 				<Grid
 					item
@@ -154,7 +154,8 @@ function ProjectsInfoSection() {
 					lg={12}
 				>
 					<h1>I like making stuff</h1>
-					<p>Most of my experience with web dev is in front-end, and on the AI side I've been learning NLP and the math behind optimization.</p>
+					<p>I'm currently interested in training agents which can adapt to novel environments/experience acquired through general learning methodologies from different domains like NLP, RL, and CV.</p>
+					<p>On the web dev side, I've done internships in full stack web dev using React, Express, Angular, Go, etc,</p>
 					<p>I've had fun building some different projects&mdash;feel free to check them out!</p>
 				</Grid>
 				<Grid
