@@ -1,14 +1,17 @@
 import React from 'react'
 import { A, Code } from 'components'
 
-import mario14 from 'assets/mario1-4.mp4'
-import mario11 from 'assets/mario1-1.mp4'
-import marioStdRun from 'assets/1-1_std_run.png'
-import marioAdvNorm from 'assets/1-1_adv_norm.png'
-import marioEarlyStop from 'assets/1-1_early_stop.png'
-import marioAllTests from 'assets/1-1_all_tests.png'
-import marioHardLR from 'assets/1-4_hard_lr_shift.png'
+import mario14 from 'assets/mario-ppo/mario1-4.mp4'
+import mario11 from 'assets/mario-ppo/mario1-1.mp4'
+import marioStdRun from 'assets/mario-ppo/1-1_std_run.png'
+import marioAdvNorm from 'assets/mario-ppo/1-1_adv_norm.png'
+import marioEarlyStop from 'assets/mario-ppo/1-1_early_stop.png'
+import marioAllTests from 'assets/mario-ppo/1-1_all_tests.png'
+import marioHardLR from 'assets/mario-ppo/1-4_hard_lr_shift.png'
 import marioPPOLogo from './MarioPPOLogo'
+
+import squadTrainLoss from 'assets/qa-squad2/train_loss.png'
+import squadEvalLoss from 'assets/qa-squad2/eval_loss.png'
 
 const CodeNB = ({ children }: any) => {
 	return <Code noBorder>{children}</Code>
@@ -18,83 +21,7 @@ const ProjectIcons = {
 	MarioPPOLogo: (size: number, theme: string, primary: string, dark: boolean) => {
 		return marioPPOLogo(size, theme, primary, dark)
 	},
-	ElementAILogo: (size: number, theme: string, primary: string, dark: boolean) => {
-		// const r = ((size / 2) * Math.sqrt(2)) / 2
-
-		return (
-			<svg
-				viewBox={`0 0 35 35`}
-				style={{ padding: 10 }}
-				x='15.5%'
-				y='16%'
-				className='circle-logo'
-				aria-hidden={true}
-			>
-				<path
-					fill={theme}
-					d='M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z'
-				></path>
-			</svg>
-		)
-	},
-	DiceRollerLogo: (size: number, theme: string) => {
-		const r = ((size / 2) * Math.sqrt(2)) / 2
-
-		return (
-			<svg
-				width={r * 2}
-				height={r * 2}
-				x={size / 2 - r}
-				y={size / 2 - r}
-				viewBox={`0 0 512.021 512.021`}
-				className='circle-logo'
-				aria-hidden={true}
-			>
-				<path
-					fill={theme}
-					d='M490.421,137.707c-0.085-1.003-0.149-2.005-0.555-2.987c-0.107-0.256-0.32-0.427-0.448-0.683 c-0.277-0.533-0.597-0.981-0.96-1.472c-0.725-1.003-1.536-1.835-2.517-2.517c-0.256-0.171-0.363-0.491-0.64-0.64l-224-128 c-3.285-1.877-7.296-1.877-10.581,0l-224,128c-0.256,0.171-0.363,0.469-0.619,0.64c-1.024,0.704-1.899,1.557-2.645,2.624 c-0.299,0.427-0.597,0.811-0.832,1.28c-0.149,0.277-0.384,0.469-0.512,0.768c-0.469,1.173-0.619,2.389-0.661,3.584 c0,0.128-0.107,0.256-0.107,0.384v0.171c0,0.021,0,0.021,0,0.043v234.304c0,0.021,0,0.064,0,0.085v0.064 c0,0.213,0.149,0.405,0.171,0.619c0.085,1.493,0.32,2.987,1.045,4.352c0.043,0.085,0.128,0.107,0.171,0.192 c0.277,0.491,0.768,0.811,1.131,1.259c0.789,0.981,1.557,1.941,2.603,2.603c0.107,0.064,0.149,0.192,0.235,0.235l224,128 c1.664,0.939,3.477,1.408,5.312,1.408s3.648-0.469,5.291-1.408l224-128c0.107-0.064,0.149-0.192,0.256-0.256 c0.981-0.597,1.664-1.493,2.411-2.389c0.427-0.512,1.003-0.896,1.323-1.472c0.043-0.064,0.107-0.107,0.149-0.171 c0.576-1.109,0.683-2.325,0.853-3.52c0.064-0.491,0.384-0.939,0.384-1.451V138.688 C490.677,138.347,490.443,138.048,490.421,137.707z M455.52,136.981l-78.251,31.296L291.211,43.093L455.52,136.981z M256.011,29.504l97.067,141.184H158.944L256.011,29.504z M220.747,43.115l-86.037,125.163L56.48,136.981L220.747,43.115z M42.677,154.432l80.768,32.32L42.677,332.16V154.432z M138.635,203.392l98.325,178.773L49.248,364.288L138.635,203.392z M245.344,482.965l-165.12-94.336l165.12,15.573V482.965z M256.011,372.544l-99.285-180.523h198.571L256.011,372.544z M266.677,482.965v-78.571l165.035-15.723L266.677,482.965z M274.997,382.357l98.411-178.901l89.365,160.853L274.997,382.357z M469.344,332.203l-80.811-145.451l80.811-32.32V332.203z'
-				/>
-			</svg>
-		)
-	},
-	AnimLibraryIcon: (size: number, theme: string, primary: string, dark: boolean) => {
-		return (
-			<svg
-				width='100%'
-				// height={size}
-				viewBox='0 0 200 200'
-				y='4%'
-				className='circle-logo'
-				style={{ maxWidth: '100%' }}
-				aria-hidden={true}
-			>
-				<rect
-					x='43'
-					y='70'
-					width='100'
-					height='65'
-					rx='10'
-					ry='10'
-					fill={primary}
-					fillOpacity='60%'
-				/>
-				<circle
-					cx='103'
-					cy='55'
-					r='20'
-					strokeWidth={18}
-					stroke={primary}
-					fill='none'
-				/>
-				<path
-					d='M115,145 h40 a10,10 0 0 0 8,-14 l -25,-40 a6,6 0 0 0 -10,0 l-23,40 a10,10 0 0 0 8, 14 Z'
-					fill={primary}
-					points='30,50 60,50 45,25'
-				/>
-			</svg>
-		)
-	},
-	NLPSeriesLogo: (size: number, theme: string, primary: string, dark: boolean) => {
+	SQuAD2Logo: (size: number, theme: string, primary: string, dark: boolean) => {
 		const svgProps = {
 			fill: 'none',
 			strokeWidth: 6,
@@ -206,6 +133,103 @@ const ProjectIcons = {
 			</svg>
 		)
 	},
+	ElementAILogo: (size: number, theme: string, primary: string, dark: boolean) => {
+		// const r = ((size / 2) * Math.sqrt(2)) / 2
+
+		return (
+			<svg
+				viewBox={`0 0 35 35`}
+				style={{ padding: 10 }}
+				x='15.5%'
+				y='16%'
+				className='circle-logo'
+				aria-hidden={true}
+			>
+				<path
+					fill={theme}
+					d='M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z'
+				></path>
+			</svg>
+		)
+	},
+	DiceRollerLogo: (size: number, theme: string) => {
+		const r = ((size / 2) * Math.sqrt(2)) / 2
+
+		return (
+			<svg
+				width={r * 2}
+				height={r * 2}
+				x={size / 2 - r}
+				y={size / 2 - r}
+				viewBox={`0 0 512.021 512.021`}
+				className='circle-logo'
+				aria-hidden={true}
+			>
+				<path
+					fill={theme}
+					d='M490.421,137.707c-0.085-1.003-0.149-2.005-0.555-2.987c-0.107-0.256-0.32-0.427-0.448-0.683 c-0.277-0.533-0.597-0.981-0.96-1.472c-0.725-1.003-1.536-1.835-2.517-2.517c-0.256-0.171-0.363-0.491-0.64-0.64l-224-128 c-3.285-1.877-7.296-1.877-10.581,0l-224,128c-0.256,0.171-0.363,0.469-0.619,0.64c-1.024,0.704-1.899,1.557-2.645,2.624 c-0.299,0.427-0.597,0.811-0.832,1.28c-0.149,0.277-0.384,0.469-0.512,0.768c-0.469,1.173-0.619,2.389-0.661,3.584 c0,0.128-0.107,0.256-0.107,0.384v0.171c0,0.021,0,0.021,0,0.043v234.304c0,0.021,0,0.064,0,0.085v0.064 c0,0.213,0.149,0.405,0.171,0.619c0.085,1.493,0.32,2.987,1.045,4.352c0.043,0.085,0.128,0.107,0.171,0.192 c0.277,0.491,0.768,0.811,1.131,1.259c0.789,0.981,1.557,1.941,2.603,2.603c0.107,0.064,0.149,0.192,0.235,0.235l224,128 c1.664,0.939,3.477,1.408,5.312,1.408s3.648-0.469,5.291-1.408l224-128c0.107-0.064,0.149-0.192,0.256-0.256 c0.981-0.597,1.664-1.493,2.411-2.389c0.427-0.512,1.003-0.896,1.323-1.472c0.043-0.064,0.107-0.107,0.149-0.171 c0.576-1.109,0.683-2.325,0.853-3.52c0.064-0.491,0.384-0.939,0.384-1.451V138.688 C490.677,138.347,490.443,138.048,490.421,137.707z M455.52,136.981l-78.251,31.296L291.211,43.093L455.52,136.981z M256.011,29.504l97.067,141.184H158.944L256.011,29.504z M220.747,43.115l-86.037,125.163L56.48,136.981L220.747,43.115z M42.677,154.432l80.768,32.32L42.677,332.16V154.432z M138.635,203.392l98.325,178.773L49.248,364.288L138.635,203.392z M245.344,482.965l-165.12-94.336l165.12,15.573V482.965z M256.011,372.544l-99.285-180.523h198.571L256.011,372.544z M266.677,482.965v-78.571l165.035-15.723L266.677,482.965z M274.997,382.357l98.411-178.901l89.365,160.853L274.997,382.357z M469.344,332.203l-80.811-145.451l80.811-32.32V332.203z'
+				/>
+			</svg>
+		)
+	},
+	AnimLibraryIcon: (size: number, theme: string, primary: string, dark: boolean) => {
+		return (
+			<svg
+				width='100%'
+				// height={size}
+				viewBox='0 0 200 200'
+				y='4%'
+				className='circle-logo'
+				style={{ maxWidth: '100%' }}
+				aria-hidden={true}
+			>
+				<rect
+					x='43'
+					y='70'
+					width='100'
+					height='65'
+					rx='10'
+					ry='10'
+					fill={primary}
+					fillOpacity='60%'
+				/>
+				<circle
+					cx='103'
+					cy='55'
+					r='20'
+					strokeWidth={18}
+					stroke={primary}
+					fill='none'
+				/>
+				<path
+					d='M115,145 h40 a10,10 0 0 0 8,-14 l -25,-40 a6,6 0 0 0 -10,0 l-23,40 a10,10 0 0 0 8, 14 Z'
+					fill={primary}
+					points='30,50 60,50 45,25'
+				/>
+			</svg>
+		)
+	},
+	NLPSeriesLogo: (size: number, theme: string, primary: string, dark: boolean) => {
+		return (
+			<svg
+				// style='width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;'
+				viewBox='0 0 1200 1200'
+				version='1.1'
+				xmlns='http://www.w3.org/2000/svg'
+			>
+				<g transform='translate(88, 88)'>
+					<path
+						d='M695.466667 409.6c-14.933333 0-29.866667 12.8-29.866667 29.866667v38.4c-2.133333 17.066667-14.933333 29.866667-32 29.866666s-34.133333-12.8-34.133333-32v-115.2c0-14.933333-12.8-29.866667-29.866667-29.866666-14.933333 0-29.866667 12.8-29.866667 29.866666v72.533334c0 17.066667-14.933333 34.133333-34.133333 34.133333-17.066667 0-32-12.8-34.133333-32V341.333333c0-14.933333-12.8-29.866667-29.866667-29.866666-14.933333 0-29.866667 12.8-29.866667 29.866666v132.266667c0 17.066667-14.933333 34.133333-34.133333 34.133333-17.066667 0-32-12.8-32-34.133333v-34.133333c0-14.933333-12.8-29.866667-29.866667-29.866667s-29.866667 12.8-29.866666 29.866667v147.2c0 14.933333 12.8 29.866667 29.866666 29.866666s29.866667-12.8 29.866667-29.866666v-14.933334c0-17.066667 14.933333-34.133333 34.133333-34.133333 17.066667 0 34.133333 14.933333 34.133334 34.133333v55.466667c0 14.933333 12.8 29.866667 29.866666 29.866667s29.866667-12.8 29.866667-29.866667v-96c0-17.066667 14.933333-32 34.133333-32 17.066667 0 34.133333 14.933333 34.133334 34.133333v115.2c0 14.933333 12.8 29.866667 29.866666 29.866667 14.933333 0 29.866667-12.8 29.866667-29.866667v-74.666666c0-17.066667 12.8-32 34.133333-32 17.066667 0 32 12.8 32 29.866666v14.933334c0 14.933333 12.8 29.866667 29.866667 29.866666 14.933333 0 29.866667-12.8 29.866667-29.866666v-147.2c-4.266667-17.066667-17.066667-29.866667-32-29.866667zM253.866667 469.333333c-14.933333 0-29.866667 12.8-29.866667 29.866667v29.866667c0 14.933333 12.8 29.866667 29.866667 29.866666 14.933333 0 29.866667-12.8 29.866666-29.866666v-29.866667c-4.266667-17.066667-17.066667-29.866667-29.866666-29.866667zM770.133333 469.333333c-14.933333 0-29.866667 12.8-29.866666 29.866667v29.866667c0 14.933333 12.8 29.866667 29.866666 29.866666s29.866667-12.8 29.866667-29.866666v-29.866667c0-17.066667-12.8-29.866667-29.866667-29.866667z'
+						fill={primary}
+					/>
+					<path
+						d='M891.733333 637.866667V377.6c27.733333-12.8 44.8-40.533333 44.8-70.4 0-42.666667-34.133333-76.8-76.8-76.8-14.933333 0-32 4.266667-44.8 14.933333l-226.133333-128v-2.133333c0-42.666667-34.133333-76.8-76.8-76.8s-76.8 34.133333-76.8 76.8v2.133333L209.066667 249.6c-14.933333-10.666667-29.866667-14.933333-46.933334-14.933333-42.666667-2.133333-76.8 32-76.8 74.666666 0 32 19.2 59.733333 49.066667 72.533334V640c-29.866667 8.533333-49.066667 36.266667-49.066667 66.133333 0 42.666667 34.133333 76.8 76.8 76.8 14.933333 0 32-4.266667 44.8-12.8l230.4 132.266667c0 42.666667 34.133333 76.8 76.8 76.8s76.8-34.133333 76.8-76.8l228.266667-132.266667c12.8 8.533333 27.733333 12.8 42.666667 12.8 42.666667 0 76.8-34.133333 76.8-76.8-2.133333-27.733333-19.2-55.466667-46.933334-68.266666z m-49.066666-4.266667c-8.533333 2.133333-17.066667 6.4-25.6 10.666667l-57.6-32c-2.133333 0-6.4-2.133333-8.533334-2.133334-12.8 0-25.6 10.666667-25.6 25.6 0 8.533333 4.266667 14.933333 10.666667 19.2l51.2 29.866667c-2.133333 8.533333-4.266667 14.933333-4.266667 25.6s2.133333 14.933333 4.266667 25.6l-215.466667 123.733333c-8.533333-10.666667-19.2-19.2-36.266666-27.733333v-64c-2.133333-12.8-10.666667-23.466667-25.6-23.466667s-23.466667 8.533333-25.6 23.466667v61.866667c-14.933333 4.266667-29.866667 12.8-38.4 27.733333l-217.6-125.866667c2.133333-8.533333 4.266667-14.933333 4.266666-23.466666 0-6.4 0-10.666667-2.133333-14.933334l51.2-32 2.133333-2.133333c6.4-4.266667 10.666667-10.666667 10.666667-19.2 0-12.8-10.666667-25.6-25.6-25.6-4.266667 0-8.533333 2.133333-12.8 4.266667l-51.2 32c-8.533333-6.4-17.066667-10.666667-29.866667-14.933334V381.866667c10.666667-4.266667 19.2-8.533333 27.733334-14.933334l53.333333 29.866667c2.133333 2.133333 6.4 2.133333 8.533333 2.133333 12.8 0 25.6-10.666667 25.6-25.6 0-6.4-4.266667-12.8-8.533333-19.2L234.666667 324.266667c2.133333-4.266667 2.133333-10.666667 2.133333-14.933334 0-6.4 0-12.8-2.133333-19.2l217.6-125.866666c8.533333 10.666667 23.466667 19.2 36.266666 25.6v64c0 12.8 10.666667 25.6 25.6 25.6s25.6-10.666667 25.6-25.6v-64c12.8-4.266667 25.6-12.8 34.133334-25.6L789.333333 288c-2.133333 8.533333-2.133333 14.933333-2.133333 19.2v10.666667l-51.2 32c-6.4 4.266667-10.666667 10.666667-10.666667 19.2 0 12.8 10.666667 25.6 25.6 25.6 4.266667 0 6.4 0 10.666667-2.133334L810.666667 362.666667c8.533333 8.533333 23.466667 14.933333 36.266666 19.2v251.733333z'
+						fill={theme}
+					/>
+				</g>
+			</svg>
+		)
+	},
 }
 
 export interface Project {
@@ -221,14 +245,15 @@ export interface Project {
 	}>
 }
 
-const RunVid = ({ src, width = 256, height = 240, style, ...rest }: { src: string; width?: number; height?: number; style?: any; [x: string]: any }) => {
+const RunVid = ({ src, width = 100, height = 100, scale = 1, style, ...rest }: { src: string; width?: number; height?: number; scale?: number; style?: any; [x: string]: any }) => {
 	return (
 		<video
-			width={width}
-			height={height}
+			width={width * scale}
+			height={height * scale}
 			autoPlay
 			loop
 			muted
+			playsInline
 			style={{
 				paddingBottom: '1em',
 				flex: '0 1 auto',
@@ -257,9 +282,19 @@ const MarioPPO: Project = {
 			content: (
 				<>
 					<p>I used PyTorch and Gymnasium to train a PPO agent which could beat different Mario NES levels.</p>
-					<div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
-						<RunVid src={mario11} />
-						<RunVid src={mario14} />
+					<div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', maxWidth: '100%' }}>
+						<RunVid
+							src={mario11}
+							width={256}
+							height={240}
+							scale={1}
+						/>
+						<RunVid
+							src={mario14}
+							width={256}
+							height={240}
+							scale={1}
+						/>
 					</div>
 					<p>
 						I based the image processing based on the original <A href='https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf'>DeepMind Atari Game DQN paper</A> (I've previously implemented the <A href='https://arth.website/mario-ddqn'>full DDQN as well</A>). I also expanded on the PPO code I wrote for my <A href='https://arth.website/cartpole-ppo'>CartPole project</A> to include:
@@ -271,7 +306,7 @@ const MarioPPO: Project = {
 							<li>normal DL techniques like grad normalization and lr scheduling</li>
 						</ul>
 					</p>
-					<p>The result is a bot which is able to consistently beat Mario levels after ony about 1500 episodes of training.</p>
+					<p>The result is a bot which is able to consistently beat Mario levels after only about 1500 episodes of training.</p>
 				</>
 			),
 		},
@@ -337,6 +372,96 @@ const MarioPPO: Project = {
 					</p>
 					<p>The policy remained stable and was able to "focus on" winning the level more frequently, and it only took one run with a little over 1600 episodes to reach an optimal policy.</p>
 					<p>Note that the max reward for level 1-4 is about 2000, while the max reward for 1-1 is about 2500. Additionally, this agent is very likely highly overfit on this level! It will certainly not generalize well.</p>
+				</>
+			),
+		},
+		{
+			label: <h2>Future Experiments</h2>,
+			content: (
+				<>
+					<p>I want to test with more complicated control tasks like those in DM Control using unsupervised representation learning methods like TOLD. I also wonder if I could make a PPO Agent which can play any particular Mario level well by training for longer on random levels. It would also be funny to try training a "Drunk Mario" (adversarial learning) whose goal is to navigate an obstacle course while dealing with 'drunk swirls' and corrupted action inputs.</p>
+				</>
+			),
+		},
+	],
+}
+
+const SQuAD2: Project = {
+	name: 'Question-Answer on SQuAD 2.0',
+	pagePath: 'qa-squad2',
+	GitHub: new URL('https://github.com/arth-shukla/squad2.0-bert-question-answer'),
+	logo: ProjectIcons.SQuAD2Logo,
+	deployment: new URL('https://wandb.ai/arth-shukla/SQuAD2.0%20with%20Fine-Tuned%20DistilBERT'),
+	description: 'I used the HuggingFace Transformers library to fine-tune a DistilBERT model (transfer learning) trained on the Stanford Question-Answer 2.0 (SQuAD 2.0) dataset to answer a question given some context (article, paragraph, etc).',
+	carouselSlides: [
+		{
+			label: <h2>Summary</h2>,
+			content: (
+				<>
+					<p>
+						SQuAD 2.0 is a <A href='https://rajpurkar.github.io/SQuAD-explorer/'>famous supervised learning dataset from Stanford</A> which includes some context (paragraph, article, etc), a question, and an answer to the question based on the context. The goal is to train a model which can answer natural language questions if given the appropriate context. Squad2.0 in particular has some questions which are unanswerable.
+					</p>
+					<p>To accomplish this, I used PyTorch and the HuggingFace Transformers library to fine-tune a DistilBERT transformer model. DistilBERT is a transformer model trained through knowledge distillation, with BERT as the original parent model. It performs almost as well as BERT while only having about 200 million params (about 60% of BERT's 300 million) thereby being much faster to train.</p>
+					<p>
+						Below are some select output examples, more of which can be seen <A href='https://wandb.ai/arth-shukla/SQuAD2.0%20with%20Fine-Tuned%20DistilBERT'>on my WandB page</A>:
+					</p>
+					<table>
+						<thead>
+							<tr>
+								<th>Context</th>
+								<th>Question</th>
+								<th>Model Answer</th>
+							</tr>
+						</thead>
+						<tbody style={{ verticalAlign: 'top' }}>
+							<tr>
+								<td>With a worldwide box-office gross of over $2.9 billion, Avatar is proclaimed to be the "highest-grossing" film, but such claims usually refer to theatrical revenues only and do not take into account home video and television income, which can form a significant portion of a film's earnings.</td>
+								<td>How much did Avatar gross worldwide?</td>
+								<td>over $2.9 billion</td>
+							</tr>
+							<tr>
+								<td>Hozier has announced a new album called Unreal Unearth. The third full-length effort from the “Take Me to Church” artist — and his first since 2019's Wasteland, Baby! — arrives August 18.</td>
+								<td>What is Hozier's new album?</td>
+								<td>Unreal Unearth</td>
+							</tr>
+							<tr>
+								<td>As one of the busiest women in music, it'll come as no surprise that Taylor has won pretty much every award there is to win in the biz - being the proud owner of no less than 12 GRAMMY Awards.</td>
+								<td>How many Grammys has Taylor Swift won?</td>
+								<td>no less than 12 GRAMMY Awards</td>
+							</tr>
+						</tbody>
+					</table>
+				</>
+			),
+		},
+		{
+			label: <h2>Training and Future Work</h2>,
+			content: (
+				<>
+					<p>Training an LLM requires massive computational resources, even with efficient code and effective parralelization. However, despite the massive size of LLMs, fine-tuning is often very fast. As seen below, the DistilBERT models started increasing in loss immediately after its first epoch!</p>
+					<p style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', paddingRight: '1em' }}>
+						<A
+							href='https://wandb.ai/arth-shukla/SQuAD2.0%20with%20Fine-Tuned%20DistilBERT'
+							style={{ display: 'inline-block', width: 'calc(50% - 5px)', padding: '2.5px 0' }}
+						>
+							<img
+								src={squadTrainLoss}
+								alt='A chart plotting train loss aginst number of epochs. The train loss decreases over the course of three epochs.'
+								width='100%'
+							/>
+						</A>
+						<A
+							href='https://wandb.ai/arth-shukla/SQuAD2.0%20with%20Fine-Tuned%20DistilBERT'
+							style={{ display: 'inline-block', width: 'calc(50% - 5px)', padding: '2.5px 0' }}
+						>
+							<img
+								src={squadEvalLoss}
+								alt='A chart plotting eval loss against number of epochs. The eval loss is lowest during the first epoch, and it increases after it each succcessive epoch.'
+								width='100%'
+							/>
+						</A>
+					</p>
+					<p>In the future, I could try a more aggressive LR scheduler could result in improvment over multiple epochs by decreasing the LR enough to avoid too-large changes in the parameter space. I'm also interested in how cutting-edge embodied AI techniques could help improve model performance.</p>
 				</>
 			),
 		},
@@ -645,6 +770,7 @@ export interface ProjectsDataType {
 
 const ProjectsData = {
 	'Mario PPO': MarioPPO,
+	'SQuAD 2.0 Question-Answer w/ DistilBERT': SQuAD2,
 	'Element AI': ElementAI,
 	'Component Library': ComponentLibrary,
 	'Dice Roller': DiceRollerData,

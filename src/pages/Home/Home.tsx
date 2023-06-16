@@ -206,7 +206,7 @@ function ProjectsInfoSection() {
 						projects={ProjectsData}
 						width={825}
 						logoSize={200}
-						logosPerSlide={Math.min(3, Math.ceil(Object.keys(ProjectsData).length / Math.ceil(Object.keys(ProjectsData).length / 3)))}
+						logosPerSlide={Math.min(3, Math.ceil(Object.keys(ProjectsData).length / Math.round(Object.keys(ProjectsData).length / 3)))}
 					/>
 				</Grid>
 			</Grid>

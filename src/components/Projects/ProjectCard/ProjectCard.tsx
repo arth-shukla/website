@@ -21,7 +21,7 @@ function ProjectCard() {
 							display: 'flex',
 							flexDirection: 'row',
 							alignItems: 'stretch',
-							justifyContent: 'space-evenly',
+							justifyContent: 'space-between',
 						}}
 					>
 						<Box className='info-container'>
@@ -114,7 +114,8 @@ function ProjectCard() {
 							/>
 						</Box>
 						<Box
-							sx={{ display: 'flex', justifyContent: 'center', paddingTop: 'max(calc(50svh - 64px * 2 - 100px), 150px)', flexGrow: 1 }}
+							sx={{ display: 'flex', justifyContent: 'center', paddingTop: 'min(max(calc(50svh - 64px * 2 - 100px), 150px), 200px)' }}
+							flexGrow='1'
 							className='project-tile-lg-scr'
 						>
 							<ProjectTile
@@ -125,7 +126,8 @@ function ProjectCard() {
 							/>
 						</Box>
 						<Box
-							sx={{ display: 'flex', justifyContent: 'center', paddingTop: 'max(calc(50svh - 64px * 2 - 150px), 100px)', flexGrow: 1 }}
+							sx={{ display: 'flex', justifyContent: 'center', paddingTop: 'min(max(calc(50svh - 64px * 2 - 150px), 100px), 200px)' }}
+							flexGrow='1'
 							className='project-tile-xl-scr'
 						>
 							<ProjectTile

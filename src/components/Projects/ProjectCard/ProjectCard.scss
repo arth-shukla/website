@@ -30,6 +30,7 @@ $proj-card-xl-scr: 1150px;
 	@media screen
 		and (min-width: #{$proj-card-md-scr})
 		and (max-width: #{$proj-card-lg-scr - 1px}) {
+		display: block !important;
 		.project-tile-sm-scr {
 			display: none;
 			visibility: hidden;
@@ -74,6 +75,9 @@ $proj-card-xl-scr: 1150px;
 		.project-tile-lg-scr {
 			display: none;
 			visibility: hidden;
+		}
+		.info-container {
+			width: 65%;
 		}
 	}
 }
