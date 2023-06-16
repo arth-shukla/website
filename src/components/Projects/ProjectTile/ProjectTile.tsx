@@ -34,6 +34,7 @@ function ProjectTile({ size, identifier, linkOverride, page, ...rest }: { size: 
 	const goto = (project: Project) => {
 		if (linkOverride) window.open(linkOverride, '_blank')
 		else navigate(`/projects/${project.pagePath}`)
+		window.scrollTo(0, 0)
 	}
 
 	return (
