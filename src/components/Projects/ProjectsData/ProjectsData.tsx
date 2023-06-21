@@ -216,6 +216,7 @@ const ProjectIcons = {
 				viewBox='0 0 1200 1200'
 				version='1.1'
 				xmlns='http://www.w3.org/2000/svg'
+				className='circle-logo'
 			>
 				<g transform='translate(88, 88)'>
 					<path
@@ -375,14 +376,14 @@ const MarioPPO: Project = {
 				</>
 			),
 		},
-		{
-			label: <h2>Future Experiments</h2>,
-			content: (
-				<>
-					<p>I want to test with more complicated control tasks like those in DM Control using unsupervised representation learning methods like TOLD. I also wonder if I could make a PPO Agent which can play any particular Mario level well by training for longer on random levels. It would also be funny to try training a "Drunk Mario" (adversarial learning) whose goal is to navigate an obstacle course while dealing with 'drunk swirls' and corrupted action inputs.</p>
-				</>
-			),
-		},
+		// {
+		// 	label: <h2>Future Experiments</h2>,
+		// 	content: (
+		// 		<>
+		// 			<p>I want to test with more complicated control tasks like those in DM Control using unsupervised representation learning methods like TOLD. I also wonder if I could make a PPO Agent which can play any particular Mario level well by training for longer on random levels. It would also be funny to try training a "Drunk Mario" (adversarial learning) whose goal is to navigate an obstacle course while dealing with 'drunk swirls' and corrupted action inputs.</p>
+		// 		</>
+		// 	),
+		// },
 	],
 }
 
