@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 
 import { TextTypeDelete } from '@arth-shukla/arth-components'
-import { DownButton, CircleLogo, Section, Socials, SocialsContext, SocialsContextProvider, ProjectHomeCarousel, ProjectsData } from 'components'
+import { DownButton, CircleLogo, Section, Socials, SocialsContext, SocialsContextProvider, ProjectHomeCarousel, ProjectsData, A } from 'components'
 
 import useTheme from '@mui/system/useTheme'
 import Box from '@mui/system/Box'
@@ -106,14 +106,22 @@ function SelfIntroSection() {
 					<h1>Hi there!</h1>
 					<p style={flexBoxMiddleAlign}>
 						<CircleLogo
+							className='lt-sm'
+							size={300}
+							logo={profilePic}
+							identifier='home-profile-lt-sm'
+						/>
+						<CircleLogo
 							className='lt-md'
 							size={300}
 							logo={profilePic}
 							identifier='home-profile-lt-md'
 						/>
 					</p>
-					<p>I'm Arth. I'm a second-year Math-Computer Science major at UCSD, and I'm looking for new opportunities to gain experience.</p>
-					<p>I'm eager to learn new skills and technologies, and I'm especially interested in AI/ML and web development.</p>
+					<p>
+						I'm Arth. I'm a third-year Math-Computer Science major at UCSD, and I'm researching robotics and reinforcement learning in the <A href='http://ai.ucsd.edu/~haosu/'>Hao Su Lab @ UCSD</A>, with papers on the way (stay tuned!)
+					</p>
+					<p>I'm passionate about AI/ML and I'm eager to learn new skills and technologies.</p>
 				</Grid>
 				<Grid
 					item
@@ -154,9 +162,9 @@ function ProjectsInfoSection() {
 					lg={12}
 				>
 					<h1>I like making stuff</h1>
-					<p>I'm currently interested in training agents which can adapt to novel environments/experience acquired through general learning methodologies from different domains like NLP, RL, and CV.</p>
-					<p>On the web dev side, I've done internships in full stack web dev using React, Express, Angular, Go, etc,</p>
-					<p>I've had fun building some different projects&mdash;feel free to check them out!</p>
+					<p>My current research interests are in embodied AI and reinforcement learning, as well as some intersetcions with CV/Visual RL. I'm generally interested in how AI can learn from diverse data, experiences, and representations acquired through general learning methodologies to create agents which can adapt to novel experiences/data.</p>
+					<p>On the web dev side, I've done work in full stack web dev using React, Express, Angular, Go, etc,</p>
+					<p>While my research is under way, feel free to check out some of my past projects below!</p>
 				</Grid>
 				<Grid
 					item

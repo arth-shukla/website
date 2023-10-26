@@ -162,7 +162,7 @@ function Resume() {
 			<Section className='resume-intro-section'>
 				<h1>My Resume</h1>
 				<DivBP>
-					Below is my resume. It is also available for{' '}
+					My resume is available for{' '}
 					<A
 						href={process.env.PUBLIC_URL + '/documents/Arth_Shukla_Resume.pdf'}
 						target='_blank'
@@ -177,6 +177,7 @@ function Resume() {
 				sx={{
 					border: `${theme.palette.primary.main} solid 2px`,
 					boxShadow: `8px 8px ${theme.palette.primary.main}`,
+					display: 'none',
 				}}
 			>
 				<Box className='resume-sub'>
