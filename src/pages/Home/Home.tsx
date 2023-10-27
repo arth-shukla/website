@@ -66,7 +66,7 @@ function Home({ winHeight }: HomeProps) {
 					}
 					textAlign='left'
 					constTextColor={theme.palette.text.primary}
-					typeText={[' a researcher', ' a developer.', ' a student.', ' Arth.']}
+					typeText={[' a researcher.', ' a developer.', ' a student.', ' Arth.']}
 					typeTextColor={theme.palette.primary.main}
 					fontSize='var(--main-page-intro-font-size)'
 					fontFamily='Courier, sans-serif'
