@@ -1,6 +1,17 @@
 import React from 'react'
 import { A, Code } from 'components'
 
+import dfEstGrid from 'assets/densefusion/df_est_grid.png'
+import dfArchitecture from 'assets/densefusion/densefusion_icp_refine_architecture.png'
+import dfValCurve from 'assets/densefusion/densefusion_optimal_staged_validation.png'
+import dfICPIncorrect from 'assets/densefusion/icp_incorrect_source_targ.png'
+import dfICPCorrect from 'assets/densefusion/icp_correct_source_targ.png'
+import dfICPInit from 'assets/densefusion/icp_initialization_example.png'
+import dfAblSeg from 'assets/densefusion/ablations_segmentation.png'
+import dfAblStage1 from 'assets/densefusion/ablations_stage1.png'
+import dfAblStage2 from 'assets/densefusion/ablations_stage2.png'
+import dfVis from 'assets/densefusion/visualization.png'
+
 import mario14 from 'assets/mario-ppo/mario1-4.mp4'
 import mario11 from 'assets/mario-ppo/mario1-1.mp4'
 import marioStdRun from 'assets/mario-ppo/1-1_std_run.png'
@@ -12,12 +23,49 @@ import marioPPOLogo from './MarioPPOLogo'
 
 import squadTrainLoss from 'assets/qa-squad2/train_loss.png'
 import squadEvalLoss from 'assets/qa-squad2/eval_loss.png'
+import { Grid } from '@mui/material'
 
 const CodeNB = ({ children }: any) => {
 	return <Code noBorder>{children}</Code>
 }
 
 const ProjectIcons = {
+	DenseFusionLogo: (size: number, theme: string, primary: string, dark: boolean) => {
+		const vb = 30
+		const svgProps = {
+			fill: 'none',
+			strokeMiterlimit: 10,
+			strokeWidth: 1,
+			transform: `translate(${(vb - 24) / 2}, ${(vb - 24) / 2})`,
+		}
+
+		return (
+			<svg
+				width={size}
+				height={size}
+				viewBox={`0 0 ${vb} ${vb}`}
+				className='circle-logo'
+				style={{ maxWidth: '100%' }}
+				aria-hidden={true}
+			>
+				<path
+					d='M13.9,15.85l-.92,0-1,0-1,0a22.48,22.48,0,0,1-2.68-.23c-4.14-.53-7.09-2-7.09-3.66s3-3.13,7.09-3.66A25,25,0,0,1,12,8.09a26.79,26.79,0,0,1,3.17.18l.49.07c4.14.53,7.09,2,7.09,3.66,0,.89-.82,1.71-2.2,2.39'
+					{...svgProps}
+					stroke={theme}
+				/>
+				<path
+					d='M14.37,20.55c-.66,1.38-1.48,2.2-2.37,2.2-1.69,0-3.13-2.95-3.66-7.09A25,25,0,0,1,8.09,12a25,25,0,0,1,.25-3.66c.53-4.14,2-7.09,3.66-7.09s3.13,3,3.66,7.09A22.48,22.48,0,0,1,15.89,11'
+					{...svgProps}
+					stroke={theme}
+				/>
+				<polyline
+					points='11.2 12.98 14 15.91 11.2 18.84'
+					{...svgProps}
+					stroke={primary}
+				/>
+			</svg>
+		)
+	},
 	MarioPPOLogo: (size: number, theme: string, primary: string, dark: boolean) => {
 		return marioPPOLogo(size, theme, primary, dark)
 	},
@@ -173,10 +221,10 @@ const ProjectIcons = {
 		)
 	},
 	AnimLibraryIcon: (size: number, theme: string, primary: string, dark: boolean) => {
+		console.log(theme)
 		return (
 			<svg
 				width='100%'
-				// height={size}
 				viewBox='0 0 200 200'
 				y='4%'
 				className='circle-logo'
@@ -203,7 +251,7 @@ const ProjectIcons = {
 				/>
 				<path
 					d='M115,145 h40 a10,10 0 0 0 8,-14 l -25,-40 a6,6 0 0 0 -10,0 l-23,40 a10,10 0 0 0 8, 14 Z'
-					fill={primary}
+					fill={dark ? '#ffffff' : '#222'}
 					points='30,50 60,50 45,25'
 				/>
 			</svg>
@@ -270,11 +318,39 @@ const RunVid = ({ src, width = 100, height = 100, scale = 1, style, ...rest }: {
 	)
 }
 
+const DFFigure = ({ src, figcaption, maxWidth, noMargin }: { src: string; figcaption: React.ReactElement | string; maxWidth?: number; noMargin?: boolean }) => {
+	return (
+		<figure style={{ margin: noMargin ? 0 : undefined }}>
+			<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', paddingBottom: 5 }}>
+				<img
+					src={src}
+					alt=''
+					width='100%'
+					style={{ maxWidth: maxWidth }}
+				/>
+			</div>
+			<figcaption
+				style={
+					noMargin
+						? {
+								marginBlockEnd: '1em',
+								marginInlineStart: '40px',
+								marginInlineEnd: '40px',
+						  }
+						: undefined
+				}
+			>
+				{figcaption}
+			</figcaption>
+		</figure>
+	)
+}
+
 const DenseFusion: Project = {
 	name: 'DenseFusion 6D Pose Estimation',
 	pagePath: 'densefusion',
 	GitHub: new URL('https://github.com/arth-shukla/densefusion'),
-	logo: ProjectIcons.MarioPPOLogo,
+	logo: ProjectIcons.DenseFusionLogo,
 	deployment: undefined,
 	description: (
 		<>
@@ -284,15 +360,187 @@ const DenseFusion: Project = {
 	carouselSlides: [
 		{
 			label: <h2>Summary</h2>,
-			content: <></>,
+			content: (
+				<>
+					<p>
+						This is a DenseFusion + ICP refinement implementation which won me <b>1st place</b> in a DL 6D Pose Estimation competition for <i>CSE 275: Deep Learning for 3D Data</i> (a graduate-level course at UCSD which I took in my third year of undergrad, fall quarter).
+					</p>
+					<p>
+						<img
+							src={dfEstGrid}
+							width='100%'
+							alt=''
+						/>
+					</p>
+					<p>The class assignment contained a leaderboard for solutions over three categories: algorithmic method, learning method, and learning + refinement method. The final benchmark was on levels 1-3 of the YCB Object Dataset recreated in ManiSkill2.</p>
+					<p>
+						The solutions provided in this repo achieved the <b>top solutions per category</b>, as well as the <b>top 3 solutions overall</b>. Specifics on scores (as well as method, visualizations, ablations, etc) are available in the writeups in the GitHub repo.
+					</p>
+				</>
+			),
 		},
 		{
-			label: <h2>Testing PPO Convergence Tricks on Level 1-1</h2>,
-			content: <></>,
+			label: <h2>DenseFusion &mdash; Architecture</h2>,
+			content: (
+				<>
+					<h3>UNet Semantic Segmentation</h3>
+					<p>We use a UNet for semantic segmentation on the RGB images. In this dataset, there are at most one instance of each object in a particular scene arrangement, so semantic segmentation is sufficient, and instance segmentation is not necessary. We use the segmentation mask to get a depth-lifted point cloud (using camera intrinsic and extrinsic) and to crop the RGB image.</p>
+					<h3>DenseFusion + ICP Refinement Architecture</h3>
+					<p>
+						DenseFusion was the learning method and DenseFusion + ICP Refinement was the learning + refinement method. Please note that the PSPNet implementation is from <A>https://github.com/Lextal/pspnet-pytorch</A>.
+					</p>
+					<p>The network architecture + refinement procedure is pictured below:</p>
+					<DFFigure
+						src={dfArchitecture}
+						figcaption={
+							<>
+								Full UNet + DenseFusion + ICP Refinement architecture. The top part of the image is altered from the <A href='https://arxiv.org/abs/1901.04780'>original DenseFusion paper</A>. Note that the pre-refinement prediction shown in the figure was manually altered to make the difference more visibly noticeable. In reality, the difference is smaller, though refinement still results in improvements.
+							</>
+						}
+						noMargin
+					/>
+				</>
+			),
 		},
 		{
-			label: <h2>Improving Training on Level 1-4 With Hard LR Shift</h2>,
-			content: <></>,
+			label: <h2>DenseFusion &mdash; Loss + Two-Stage Training</h2>,
+			content: (
+				<>
+					<h3>Altered DenseFusion Loss</h3>
+					<p>
+						Unlike the original DenseFusion paper which only uses Chamfer and per-point MSE, I use <b>3 different losses</b>:
+						<ol>
+							<li>Chamfer distance for objects with infinite order symmetries</li>
+							<li>min-of-n loss for objects with finite order symmetries</li>
+							<li>simple per-point MSE for objects with no symmetries</li>
+						</ol>
+					</p>
+					<p>
+						Furthermore, since Chamfer distance is known to get stuck in suboptimal local minima, I introduce a hyperparameter <CodeNB>min_over_cham</CodeNB> between 0 and 1 which represents the probability that min-of-n loss will be used over Chamfer distance for objects with infinite order symmetries.
+					</p>
+					<h3>Adding Two-Stage Training</h3>
+					<p>
+						We train in two stages. During the first stage, <CodeNB>min_over_cham=0.3</CodeNB>, and during the second stage, <CodeNB>min_over_cham=0</CodeNB>. The first stage is meant to help avoid suboptimal local minima to reduce relative rotation error (RRE), while the second stage is to further refine results from stage 1. The values for <CodeNB>min_over_cham</CodeNB> are chosen based on ablations.
+					</p>
+					<DFFigure
+						src={dfValCurve}
+						maxWidth={400}
+						figcaption={
+							<>
+								Validation accuracy with <CodeNB>min_over_cham=0.3</CodeNB> during Stage 1 and <CodeNB>min_over_cham=0</CodeNB> during Stage 2. The blue line indicates switching from Stage 1 to Stage 2. After 300 epochs, we reach 80% validation accuracy <i>without</i> ICP refinement.
+							</>
+						}
+					/>
+				</>
+			),
+		},
+		{
+			label: <h2>Standalone ICP</h2>,
+			content: (
+				<>
+					We also run standalone ICP for the algorithmic method. In particular, because the depth-lifted point cloud suffers from heavy occlusions (as the camera can only see part of the object), using the depth cloud as source and model cloud as target fails. Thus, we use the model cloud as the target and the depth cloud as the source. Then, we invert the transformation to get the final pose estimation.
+					<Grid container>
+						<Grid
+							item
+							sm={6}
+						>
+							<DFFigure
+								src={dfICPIncorrect}
+								maxWidth={300}
+								figcaption='An example of failure when using model as source and depth cloud as target. ICP minimizes distances of all points on source cloud to target cloud. So, we end up with this odd result.'
+							/>
+						</Grid>
+						<Grid
+							item
+							sm={6}
+						>
+							<DFFigure
+								src={dfICPCorrect}
+								maxWidth={300}
+								figcaption='Correct result from using depth cloud as source and model as target. ICP finds the minimal distance between depth cloud points and model points by placing depth cloud on model cloud.'
+							/>
+						</Grid>
+					</Grid>
+					We also run multiple attempts by initializing the depth-lifted cloud on a ball around the model point cloud and applying a random rotation before running ICP.
+					<DFFigure
+						src={dfICPInit}
+						maxWidth={400}
+						figcaption='An example of our random initialization strategy. We have a ball centered at the model’s center with 2 times model radius. We move our depth cloud to somewhere on the ball, then apply a random rotation before running ICP.'
+					/>
+				</>
+			),
+		},
+		{
+			label: <h2>Ablations</h2>,
+			content: (
+				<>
+					<p>
+						We run three sets of ablations:
+						<ol>
+							<li>
+								<b>Semantic Segmentation Model</b>: UNet Transpose Convolution, UNet Bilinear Interpolation, Vanilla SegNet. We do this to show that the Vanilla Segnet from the original DenseFusion paper can be improved.
+							</li>
+							<li>
+								<b>
+									Stage 1 <CodeNB>min_over_cham</CodeNB>
+								</b>
+								: Values of 0, 0.1, 0.3, and 0.5. Stops when first curve hits 60% train accuracy. We do this to show that nonzero <CodeNB>min_over_cham</CodeNB> indeed does reduce RRE Symmetry, meaning the model better avoids suboptimal local minima.
+							</li>
+							<li>
+								<b>
+									Stage 2 <CodeNB>min_over_cham</CodeNB>
+								</b>
+								: Values of 0 and 0.3. Resumes from Stage 1 of <CodeNB>min_over_cham=0.3</CodeNB>, since that model performed the best. We do this to show that maintaining a nonzero <CodeNB>min_over_cham</CodeNB> throughout will result in a model that cannot finetune as well; hence, a second stage is necessary.
+							</li>
+						</ol>
+					</p>
+
+					<p>Ablation curves are pictured below:</p>
+
+					<p>
+						<DFFigure
+							src={dfAblSeg}
+							figcaption='Ablations for Semantic Segmentation Networks: UNet, UNet Bilinear, SegNet. Note that each image is 1280x720, totaling 921,600 pixels.'
+							noMargin
+						/>
+					</p>
+					<p>
+						<DFFigure
+							src={dfAblStage1}
+							figcaption={
+								<>
+									Ablations for DenseFusion Stage 1 training. Training stops at epoch 137, when the <CodeNB>min_over_cham=0.3</CodeNB> model achieves &gt;60% train accuracy.
+								</>
+							}
+							noMargin
+						/>
+					</p>
+					<p>
+						<DFFigure
+							src={dfAblStage2}
+							figcaption={
+								<>
+									Ablations for DenseFusion Stage 2 training. Both training curves resume from epoch 137 of the <CodeNB>min_over_cham=0.3</CodeNB> Stage 1 curve.
+								</>
+							}
+							noMargin
+						/>
+					</p>
+				</>
+			),
+		},
+		{
+			label: <h2>Visualizations</h2>,
+			content: (
+				<>
+					<p>Below we provide some visualizations for the results of this model. Results on the CSE 275 benchmarks are available and additional discussion is available in the writeups in the GitHub repo.</p>
+					<DFFigure
+						src={dfVis}
+						figcaption='Visualizations of RGB input, UNet segmentation, and Pose Estimation results from DenseFusion + ICP Refinement.'
+						noMargin
+					/>
+				</>
+			),
 		},
 	],
 }
@@ -797,7 +1045,7 @@ export interface ProjectsDataType {
 }
 
 const ProjectsData = {
-	// DenseFusion: DenseFusion,
+	DenseFusion: DenseFusion,
 	'Mario PPO': MarioPPO,
 	'SQuAD 2.0 Question-Answer w/ DistilBERT': SQuAD2,
 	'Element AI': ElementAI,

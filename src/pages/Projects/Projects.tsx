@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react'
-import { Carousel, ProjectContextProvider, ProjectsData, ProjectsDataType, ProjectTile, Section } from 'components'
-import Box from '@mui/material/Box'
+import { A, Carousel, ProjectContextProvider, ProjectsData, ProjectsDataType, ProjectTile, Section } from 'components'
+import { Box } from '@mui/material'
 
 function Projects() {
 	const renderProjectsSlide = useCallback((projectsData: ProjectsDataType) => {
@@ -33,7 +33,9 @@ function Projects() {
 		<Section>
 			<h1>Projects</h1>
 
-			<p>Here are some projects I found interesting and informative. To see more information, please click on the project icon.</p>
+			<p>
+				Here are some projects I found interesting and informative. Even more projects are listed in my <A href='/documents/Arth_Shukla_Resume.pdf'>resume</A>. To see more information, please click on the project icon.
+			</p>
 			<Box
 				sx={{
 					display: 'flex',
