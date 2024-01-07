@@ -162,7 +162,7 @@ function ProjectsInfoSection() {
 					lg={12}
 				>
 					<h1>I like making stuff</h1>
-					<p>My current research interests are in embodied AI and reinforcement learning, as well as some intersetcions with CV/Visual RL. I'm generally interested in how AI can learn from diverse data, experiences, and representations acquired through general learning methodologies to create agents which can adapt to novel experiences/data.</p>
+					<p>My current research interests are in embodied AI and reinforcement learning, as well as some intersections with CV/Visual RL. I'm generally interested in how AI can learn from diverse data, experiences, and representations acquired through general learning methodologies to create agents which can adapt to novel experiences/data.</p>
 					<p>On the web dev side, I've done work in full stack web dev using React, Express, Angular, Go, etc.</p>
 					<p>While my research is under way, feel free to check out some of my past projects below!</p>
 				</Grid>

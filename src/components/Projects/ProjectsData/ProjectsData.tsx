@@ -324,7 +324,7 @@ const MarioPPO: Project = {
 						</ol>
 					</p>
 					<p>
-						Different combinations of different techniques might help (or harm) training performance as well. Image charts can be seen below for the three runs mentioned below, as well as all the other tests I ran. Interactive charts are available on <A href='https://wandb.ai/arth-shukla/Mario-PPO'>WandB</A>. Each run was capped at 2000 episodes, which is 6.5x fewer iterations than my <A href='https://arth.website/mario-ddqn'>DDQN required</A> to acheive similar results!
+						Different combinations of different techniques might help (or harm) training performance as well. Image charts can be seen below for the three runs mentioned below, as well as all the other tests I ran. Interactive charts are available on <A href='https://wandb.ai/arth-shukla/Mario-PPO'>WandB</A>. Each run was capped at 2000 episodes, which is 6.5x fewer iterations than my <A href='https://arth.website/mario-ddqn'>DDQN required</A> to achieve similar results!
 					</p>
 					<p style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', paddingRight: '1em' }}>
 						{[marioStdRun, marioAdvNorm, marioEarlyStop, marioAllTests].map(src => (
@@ -352,14 +352,14 @@ const MarioPPO: Project = {
 				<>
 					<p>Level 1-4 is much more difficult than 1-1 since it is a boss castle. While the standard run resulted in a more stable policy, using different tricks led to reaching a peak in average reward much faster.</p>
 					<p>
-						However, after reaching a peak in average reward, the policies would often catastrophically forget whatever they had previously learned. To try mitigating this, I added params <CodeNB>shift_lr_when_avg_rew_is</CodeNB> and <CodeNB>shifted_lr</CodeNB>. The idea here is to chop the learning rate down after the policy reaches some desired average reward so updates to model paramteres are less extreme, lessening the chances of updating into a much worse policy space.
+						However, after reaching a peak in average reward, the policies would often catastrophically forget whatever they had previously learned. To try mitigating this, I added params <CodeNB>shift_lr_when_avg_rew_is</CodeNB> and <CodeNB>shifted_lr</CodeNB>. The idea here is to chop the learning rate down after the policy reaches some desired average reward so updates to model parameters are less extreme, lessening the chances of updating into a much worse policy space.
 					</p>
 					<p>
 						Thus, this test on Level 1-4 was run with
 						<ul>
 							<li>entropy regularization</li>
 							<li>gradient and advantage normalization</li>
-							<li>hard LR shift after high reward (heurisitc)</li>
+							<li>hard LR shift after high reward (heuristic)</li>
 						</ul>
 					</p>
 					<p style={{ display: 'flex', justifyContent: 'center' }}>
@@ -439,7 +439,7 @@ const SQuAD2: Project = {
 			label: <h2>Training and Future Work</h2>,
 			content: (
 				<>
-					<p>Training an LLM requires massive computational resources, even with efficient code and effective parralelization. However, despite the massive size of LLMs, fine-tuning is often very fast. As seen below, the DistilBERT models started increasing in loss immediately after its first epoch!</p>
+					<p>Training an LLM requires massive computational resources, even with efficient code and effective parallelization. However, despite the massive size of LLMs, fine-tuning is often very fast. As seen below, the DistilBERT models started increasing in loss immediately after its first epoch!</p>
 					<p style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', paddingRight: '1em' }}>
 						<A
 							href='https://wandb.ai/arth-shukla/SQuAD2.0%20with%20Fine-Tuned%20DistilBERT'
@@ -447,7 +447,7 @@ const SQuAD2: Project = {
 						>
 							<img
 								src={squadTrainLoss}
-								alt='A chart plotting train loss aginst number of epochs. The train loss decreases over the course of three epochs.'
+								alt='A chart plotting train loss against number of epochs. The train loss decreases over the course of three epochs.'
 								width='100%'
 							/>
 						</A>
@@ -457,12 +457,12 @@ const SQuAD2: Project = {
 						>
 							<img
 								src={squadEvalLoss}
-								alt='A chart plotting eval loss against number of epochs. The eval loss is lowest during the first epoch, and it increases after it each succcessive epoch.'
+								alt='A chart plotting eval loss against number of epochs. The eval loss is lowest during the first epoch, and it increases after it each successive epoch.'
 								width='100%'
 							/>
 						</A>
 					</p>
-					<p>In the future, I could try a more aggressive LR scheduler could result in improvment over multiple epochs by decreasing the LR enough to avoid too-large changes in the parameter space. I'm also interested in how cutting-edge embodied AI techniques could help improve model performance.</p>
+					<p>In the future, I could try a more aggressive LR scheduler could result in improvement over multiple epochs by decreasing the LR enough to avoid too-large changes in the parameter space. I'm also interested in how cutting-edge embodied AI techniques could help improve model performance.</p>
 				</>
 			),
 		},
@@ -578,7 +578,7 @@ const ComponentLibrary: Project = {
 	GitHub: new URL('https://github.com/arth-shukla/arth-components'),
 	logo: ProjectIcons.AnimLibraryIcon,
 	deployment: new URL('https://arth-shukla.github.io/my-icons-documentation/'),
-	description: 'This is a React component library with compoennts which I use frequently. Many of those components are used in this website!',
+	description: 'This is a React component library with components which I use frequently. Many of those components are used in this website!',
 	carouselSlides: [
 		{
 			label: <h2>Description and Purpose</h2>,
@@ -634,7 +634,7 @@ const DiceRollerData: Project = {
 	GitHub: new URL('https://github.com/arth-shukla/dice-roller'),
 	logo: ProjectIcons.DiceRollerLogo,
 	deployment: new URL('https://arth-shukla.github.io/dice-roller/'),
-	description: "This is a dice roller made for quick rolling and an aesthetically pleasing, accessible design. It's great for TTRPGS like D&D, Cyberpunk Red, and more.",
+	description: "This is a dice roller made for quick rolling and an aesthetically pleasing, accessible design. It's great for TTRPGs like D&D, Cyberpunk Red, and more.",
 	carouselSlides: [
 		{
 			label: <h2>Description and Purpose</h2>,
@@ -642,8 +642,8 @@ const DiceRollerData: Project = {
 				<>
 					<p>In TTRPGs like D&amp;D, rolling dice is essential to the game. I have sets of physical dice, but sometimes I forget them, and sometimes I can't bring the dice with me.</p>
 					<p>However, most online rollers are a nightmare to use on phones; even the nicer options still have flaws.</p>
-					<p>For example, the Google roller is simple and looks nice, but is slow when rolling many different dice. The D&amp;D Beyond roller allows you to roll the exact dice you need for an action, but it only works on chracters made in D&amp;D Beyond&mdash;sometimes I want to play other TTRPGs.</p>
-					<p>So, I made a dice roller for myself and my friends which is aesthetically pleasing and has an accessible design. It's great for TTRPGS like D&amp;D, Cyberpunk Red, and more.</p>
+					<p>For example, the Google roller is simple and looks nice, but is slow when rolling many different dice. The D&amp;D Beyond roller allows you to roll the exact dice you need for an action, but it only works on characters made in D&amp;D Beyond&mdash;sometimes I want to play other TTRPGs.</p>
+					<p>So, I made a dice roller for myself and my friends which is aesthetically pleasing and has an accessible design. It's great for TTRPGs like D&amp;D, Cyberpunk Red, and more.</p>
 				</>
 			),
 		},
@@ -660,7 +660,7 @@ const DiceRollerData: Project = {
 							<b>Aesthetically Pleasing</b>: Many dice roller UIs are unattractive, poorly layed out, or don't support mobile/tablet screens very well. However, the most likely use case for a dice roller would be one's phone/tablet!
 						</li>
 						<li>
-							<b>Accessibility</b>: D&amp;D and TTRPGs shoud be inclusive to everyone, but some websites aren't made with certain accessiblity needs in mind.
+							<b>Accessibility</b>: D&amp;D and TTRPGs should be inclusive to everyone, but some websites aren't made with certain accessibility needs in mind.
 						</li>
 					</ol>
 				</>
@@ -738,7 +738,7 @@ const NLPWorkshopSeries: Project = {
 							<b>Workshop 2: RNNs for Multiclassification</b>:
 							<ul>
 								<li>Data Cleaning and Processing (Stop Words, Stemming, One-Hot Encoding)</li>
-								<li>Recurrent Neural Netowrks (RNNs) and Sequential Data</li>
+								<li>Recurrent Neural Networks (RNNs) and Sequential Data</li>
 							</ul>
 						</li>
 						<li>
