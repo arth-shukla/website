@@ -238,7 +238,7 @@ export interface Project {
 	pagePath: string
 	GitHub?: URL
 	logo: any
-	deployment: URL | undefined
+	deployment?: URL
 	description: React.ReactElement | string
 	carouselSlides: Array<{
 		label: React.ReactElement | string
@@ -268,6 +268,33 @@ const RunVid = ({ src, width = 100, height = 100, scale = 1, style, ...rest }: {
 			/>
 		</video>
 	)
+}
+
+const DenseFusion: Project = {
+	name: 'DenseFusion 6D Pose Estimation',
+	pagePath: 'densefusion',
+	GitHub: new URL('https://github.com/arth-shukla/densefusion'),
+	logo: ProjectIcons.MarioPPOLogo,
+	deployment: undefined,
+	description: (
+		<>
+			This is a DenseFusion + ICP refinement implementation which won me <b>1st place</b> in a DL 6D Pose Estimation competition for <i>CSE 275: Deep Learning for 3D Data</i> (a graduate-level course at UCSD which I took in my third year of undergrad, fall quarter).
+		</>
+	),
+	carouselSlides: [
+		{
+			label: <h2>Summary</h2>,
+			content: <></>,
+		},
+		{
+			label: <h2>Testing PPO Convergence Tricks on Level 1-1</h2>,
+			content: <></>,
+		},
+		{
+			label: <h2>Improving Training on Level 1-4 With Hard LR Shift</h2>,
+			content: <></>,
+		},
+	],
 }
 
 const MarioPPO: Project = {
@@ -474,14 +501,14 @@ const ElementAI: Project = {
 	pagePath: 'element-ai',
 	GitHub: new URL('https://github.com/acmucsd/ai-competition-winter-23'),
 	logo: ProjectIcons.ElementAILogo,
-	deployment: undefined, //new URL('https://ai.acmucsd.com/competitions/Element.AI'),
-	description: "I led environment development, on-premise systems management, and planning/logistics for ACM AI's Element.AI competition. We amassed $8000 in funding and 200 participants!",
+	deployment: new URL('https://ai.acmucsd.com/competitions'),
+	description: "I led environment development, on-premise systems management, and planning/logistics for ACM AI's Element.AI competition. We amassed $10,000 in funding and 200 participants!",
 	carouselSlides: [
 		{
 			label: <h2>Summary</h2>,
 			content: (
 				<>
-					<p>Element.AI was ACM AI's winter 2023 AI competition, with $8000 in funding, 200 participants (limited only by the number of UCSD lab linux machines), and hundreds of creative submissions.</p>
+					<p>Element.AI was ACM AI's winter 2023 AI competition, with $10,000 in funding, 200 participants (limited only by the number of UCSD lab linux machines), and hundreds of creative submissions.</p>
 					<p>As Director of Events, I headed environment development, led on-premise systems setup in coordination with UCSD ITS, and planning and logistics.</p>
 					<p>The environment is made primarily with Python in Conda, while also offering a Java kit through Maven. The environment uses popular packages like OpenAI Gym, PettingZoo, OpenCV, and PyGame, and the Java kit uses Jackson.</p>
 					<p>As for the on-premise setup, participants were given an account to access the UCSD CSE lab computers with all code and dependencies already set up. We created several tools to manage and fix the accounts as needed day-of.</p>
@@ -770,6 +797,7 @@ export interface ProjectsDataType {
 }
 
 const ProjectsData = {
+	// DenseFusion: DenseFusion,
 	'Mario PPO': MarioPPO,
 	'SQuAD 2.0 Question-Answer w/ DistilBERT': SQuAD2,
 	'Element AI': ElementAI,
