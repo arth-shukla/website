@@ -119,7 +119,7 @@ function SelfIntroSection() {
 						/>
 					</p>
 					<p>
-						I'm Arth. I'm a third-year Math-Computer Science major at UCSD, and I'm researching robotics and reinforcement learning in the <A href='http://ai.ucsd.edu/~haosu/'>Hao Su Lab @ UCSD</A>, with papers on the way (stay tuned!)
+						I'm Arth. I'm a third-year Math-Computer Science major at UCSD, and I'm researching robotics and reinforcement learning in the <A href='https://cseweb.ucsd.edu/~haosu/index.html'>Hao Su Lab @ UCSD</A>, with papers on the way (stay tuned!)
 					</p>
 					<p>I'm passionate about AI/ML and I'm eager to learn new skills and technologies.</p>
 				</Grid>
