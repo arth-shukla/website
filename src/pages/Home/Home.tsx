@@ -6,10 +6,13 @@ import { DownButton, CircleLogo, Section, Socials, SocialsContext, SocialsContex
 import useTheme from '@mui/system/useTheme'
 import Box from '@mui/system/Box'
 import Grid from '@mui/material/Grid'
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
 
 import './Home.scss'
 
 import profilePic from '../../assets/Me_Profile.jpg'
+import rfclIcon from '../../assets/rfcl/icon.gif'
 
 interface HomeProps {
 	winHeight: number
@@ -84,6 +87,7 @@ function Home({ winHeight }: HomeProps) {
 				className='text-section'
 			>
 				<SelfIntroSection />
+				<ResarchSection />
 				<ProjectsInfoSection />
 			</Box>
 		</Box>
@@ -119,7 +123,7 @@ function SelfIntroSection() {
 						/>
 					</p>
 					<p>
-						I'm Arth. I'm a third-year Math-Computer Science major at UCSD, and I'm researching robotics and reinforcement learning in the <A href='https://cseweb.ucsd.edu/~haosu/index.html'>Hao Su Lab @ UCSD</A>, with papers on the way (stay tuned!)
+						I'm Arth. I'm a third-year Math-Computer Science major at UCSD, and I'm researching robotics and reinforcement learning in the <A href='https://cseweb.ucsd.edu/~haosu/index.html'>Hao Su Lab @ UCSD</A>.
 					</p>
 					<p>I'm passionate about AI/ML and I'm eager to learn new skills and technologies.</p>
 				</Grid>
@@ -148,6 +152,51 @@ function SelfIntroSection() {
 	)
 }
 
+function ResarchSection() {
+	return (
+		<Section>
+			<h1>Research</h1>
+			<p>My current research interests are in embodied AI and reinforcement learning, as well as some intersections with CV/Visual RL. I'm generally interested in how AI can learn from diverse data, experiences, and representations acquired through general learning methodologies to create agents which can adapt to novel experiences/data.</p>
+			<Grid
+				container
+				spacing={3}
+				margin={0}
+				marginBottom='26px'
+			>
+				<h3>RFCL: Reverse Forward Curriculum Learning for Extreme Sample and Demonstration Efficiency in RL</h3>
+				<Grid
+					item
+					sm={12}
+					md={4}
+					sx={flexBoxMiddleAlign}
+				>
+					<img
+						src={rfclIcon}
+						alt='RFCL method.'
+						width='100%'
+						style={{ maxWidth: 320 }}
+					/>
+				</Grid>
+				<Grid
+					item
+					sm={12}
+					md={8}
+				>
+					<List>
+						<ListItem>International Conference on Learning Representations (ICLR) 2024</ListItem>
+						<ListItem>
+							Stone Tao,&nbsp;<b>Arth Shukla</b>, Tse-kai Chan, Hao Su
+						</ListItem>
+						<ListItem>
+							arXiv TBA &#124;&nbsp;<A href='https://reverseforward-cl.github.io/'>Project Page</A>
+						</ListItem>
+					</List>
+				</Grid>
+			</Grid>
+		</Section>
+	)
+}
+
 function ProjectsInfoSection() {
 	return (
 		<Section>
@@ -162,9 +211,17 @@ function ProjectsInfoSection() {
 					lg={12}
 				>
 					<h1>I like making stuff</h1>
-					<p>My current research interests are in embodied AI and reinforcement learning, as well as some intersections with CV/Visual RL. I'm generally interested in how AI can learn from diverse data, experiences, and representations acquired through general learning methodologies to create agents which can adapt to novel experiences/data.</p>
-					<p>On the web dev side, I've done work in full stack web dev using React, Express, Angular, Go, etc.</p>
-					<p>While my research is under way, feel free to check out some of my past projects below!</p>
+					<p>
+						Aside from research, I've worked on a bunch of projects. Feel free to check them out by clicking on the icons or on the{' '}
+						<A
+							href='/projects'
+							target=''
+						>
+							projects page
+						</A>
+						. Even more projects are listed in my <A href='/documents/Arth_Shukla_Resume.pdf'>resume</A>.
+					</p>
+					<p>I've also done work in full stack web dev using React, Express, Angular, Go, etc.</p>
 				</Grid>
 				<Grid
 					item
