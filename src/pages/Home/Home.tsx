@@ -13,6 +13,7 @@ import './Home.scss'
 
 import profilePic from '../../assets/Me_Profile.jpg'
 import rfclIcon from '../../assets/rfcl/icon.gif'
+import { ListItemText } from '@mui/material'
 
 interface HomeProps {
 	winHeight: number
@@ -162,11 +163,12 @@ function ResarchSection() {
 				spacing={3}
 				margin={0}
 				marginBottom='26px'
+				maxWidth={'100%'}
 			>
 				<h3>RFCL: Reverse Forward Curriculum Learning for Extreme Sample and Demonstration Efficiency in RL</h3>
 				<Grid
 					item
-					sm={12}
+					xs={12}
 					md={4}
 					sx={flexBoxMiddleAlign}
 				>
@@ -174,21 +176,27 @@ function ResarchSection() {
 						src={rfclIcon}
 						alt='RFCL method.'
 						width='100%'
-						style={{ maxWidth: 320 }}
+						style={{ maxWidth: 400, marginLeft: -24 }}
 					/>
 				</Grid>
 				<Grid
 					item
-					sm={12}
+					xs={12}
 					md={8}
 				>
-					<List>
-						<ListItem>International Conference on Learning Representations (ICLR) 2024</ListItem>
+					<List sx={{ marginLeft: '-24px' }}>
 						<ListItem>
-							Stone Tao,&nbsp;<b>Arth Shukla</b>, Tse-kai Chan, Hao Su
+							<ListItemText>International Conference on Learning Representations (ICLR) 2024</ListItemText>
 						</ListItem>
 						<ListItem>
-							arXiv TBA &#124;&nbsp;<A href='https://reverseforward-cl.github.io/'>Project Page</A>
+							<ListItemText>
+								Stone Tao, <b>Arth Shukla</b>, Tse-kai Chan, Hao Su
+							</ListItemText>
+						</ListItem>
+						<ListItem>
+							<ListItemText>
+								arXiv TBA &#124;&nbsp;<A href='https://reverseforward-cl.github.io/'>Project Page</A>
+							</ListItemText>
 						</ListItem>
 					</List>
 				</Grid>
