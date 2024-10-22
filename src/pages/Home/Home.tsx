@@ -13,6 +13,7 @@ import './Home.scss'
 
 import profilePic from '../../assets/Me_Profile.jpg'
 import rfclIcon from '../../assets/rfcl/icon.gif'
+import ms3Icon from "../../assets/ms3/icon.png"
 import { ListItemText } from '@mui/material'
 
 interface HomeProps {
@@ -124,9 +125,9 @@ function SelfIntroSection() {
 						/>
 					</p>
 					<p>
-						I'm Arth. I'm a third-year Math-Computer Science major at UCSD, and I'm researching robotics and reinforcement learning in the <A href='https://cseweb.ucsd.edu/~haosu/index.html'>Hao Su Lab @ UCSD</A>.
+						I'm Arth, a research assistant at the <A href='https://cseweb.ucsd.edu/~haosu/index.html'>Hao Su Lab @ UCSD</A> and a research intern at <A href='https://www.hillbot.ai'>Hillbot Inc</A>.
 					</p>
-					<p>I'm passionate about AI/ML and I'm eager to learn new skills and technologies.</p>
+					<p>I'm passionate about embodied AI and bringing intelligence to robots!</p>
 				</Grid>
 				<Grid
 					item
@@ -157,7 +158,52 @@ function ResarchSection() {
 	return (
 		<Section>
 			<h1>Research</h1>
-			<p>My current research interests are in embodied AI and reinforcement learning, as well as some intersections with CV/Visual RL. I'm generally interested in how AI can learn from diverse data, experiences, and representations acquired through general learning methodologies to create agents which can adapt to novel experiences/data.</p>
+			<p>My current research interests are in embodied AI and robot learning, with some intersections with CV, RL, etc. I'm generally interested in how AI can learn from diverse data, experiences, and representations acquired through general learning methodologies to create agents which can adapt to novel experiences/data.</p>
+			
+			<Grid
+				container
+				spacing={3}
+				margin={0}
+				marginBottom='26px'
+				maxWidth={'100%'}
+			>
+				<h3>ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI</h3>
+				<Grid
+					item
+					xs={12}
+					md={4}
+					sx={flexBoxMiddleAlign}
+				>
+					<img
+						src={ms3Icon}
+						alt='MS3 teaser.'
+						width='100%'
+						style={{ maxWidth: 400, marginLeft: -24 }}
+					/>
+				</Grid>
+				<Grid
+					item
+					xs={12}
+					md={8}
+				>
+					<List sx={{ marginLeft: '-24px' }}>
+						<ListItem>
+							<ListItemText>Preprint (arXiv 2024)</ListItemText>
+						</ListItem>
+						<ListItem>
+							<ListItemText>
+								Stone Tao, Fanbo Xiang, <b>Arth Shukla</b>, Yuzhe Qin, Xander Hinrichsen, Xiaodi Yuan, Chen Bao, Xinsong Lin, Yulin Liu, Tse-kai Chan, Yuan Gao, Xuanlin Li, Tongzhou Mu, Nan Xiao, Arnav Gurha, Zhiao Huang, Roberto Calandra, Rui Chen, Shan Luo, Hao Su
+							</ListItemText>
+						</ListItem>
+						<ListItem>
+							<ListItemText>
+								<A href="https://arxiv.org/abs/2410.00425">arXiv</A> &#124;&nbsp;<A href='https://maniskill.ai'>Project Page</A> &#124;&nbsp;<A href='https://github.com/haosulab/ManiSkill'>Code</A>
+							</ListItemText>
+						</ListItem>
+					</List>
+				</Grid>
+			</Grid>
+			
 			<Grid
 				container
 				spacing={3}
@@ -195,7 +241,7 @@ function ResarchSection() {
 						</ListItem>
 						<ListItem>
 							<ListItemText>
-								arXiv TBA &#124;&nbsp;<A href='https://reverseforward-cl.github.io/'>Project Page</A>
+								<A href="https://arxiv.org/abs/2405.03379">arXiv</A> &#124;&nbsp;<A href='https://reverseforward-cl.github.io'>Project Page</A> &#124;&nbsp;<A href='https://github.com/stonet2000/rfcl'>Code</A>
 							</ListItemText>
 						</ListItem>
 					</List>
@@ -220,7 +266,7 @@ function ProjectsInfoSection() {
 				>
 					<h1>I like making stuff</h1>
 					<p>
-						Aside from research, I've worked on a bunch of projects. Feel free to check them out by clicking on the icons or on the{' '}
+						Aside from research, here's some past projects I had fun with. Feel free to check them out by clicking on the icons or on the{' '}
 						<A
 							href='/projects'
 							target=''
