@@ -63,3 +63,7 @@
 
 	transition: min-height 1s cubic-bezier(0.21, 0.24, 0.28, 0.8), padding v.$tr-sec cubic-bezier(0.21, 0.24, 0.28, 0.8);
 }
+
+.its-a-me {
+	transition: v.$default-transition;
+}

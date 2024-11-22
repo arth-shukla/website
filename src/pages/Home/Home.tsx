@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 
 import { TextTypeDelete } from '@arth-shukla/arth-components'
-import { DownButton, CircleLogo, Section, Socials, SocialsContext, SocialsContextProvider, ProjectHomeCarousel, ProjectsData, A } from 'components'
+import { CircleLogo, Section, Socials, SocialsContext, SocialsContextProvider, ProjectHomeCarousel, ProjectsData, A } from 'components'
 
 import useTheme from '@mui/system/useTheme'
 import Box from '@mui/system/Box'
@@ -13,8 +13,9 @@ import './Home.scss'
 
 import profilePic from '../../assets/Me_Profile.jpg'
 import rfclIcon from '../../assets/rfcl/icon.gif'
-import ms3Icon from "../../assets/ms3/icon.png"
+import ms3Icon from '../../assets/ms3/icon.png'
 import { ListItemText } from '@mui/material'
+import { ThemeProvider } from '@emotion/react'
 
 interface HomeProps {
 	winHeight: number
@@ -45,6 +46,20 @@ const flexBoxMiddleAlign = {
 	alignItems: 'center',
 }
 
+function ItsAMe() {
+	const theme = useTheme()
+
+	return (
+		<ThemeProvider theme={theme}>
+			<b
+				style={{ color: theme.palette.primary.main }}
+				className='its-a-me'
+			>
+				Arth Shukla
+			</b>
+		</ThemeProvider>
+	)
+}
 function Home({ winHeight }: HomeProps) {
 	const textRef = useRef()
 	const theme = useTheme()
@@ -55,9 +70,9 @@ function Home({ winHeight }: HomeProps) {
 				className='top-section'
 				sx={{
 					position: 'relative',
-					padding: `${winHeight / 5}px 10%`,
-					paddingBottom: '1em',
-					minHeight: `calc(${winHeight}px - 64px - 3px)`,
+					padding: `10em 10%`,
+					// paddingBottom: '1em',
+					// minHeight: `calc(${winHeight}px - 64px - 3px)`,
 				}}
 			>
 				<TextTypeDelete
@@ -82,7 +97,7 @@ function Home({ winHeight }: HomeProps) {
 				<SocialsContextProvider value={HomeSocials}>
 					<Socials justifyContent='left' />
 				</SocialsContextProvider>
-				<DownButton scrollTargRef={textRef} />
+				{/* <DownButton scrollTargRef={textRef} /> */}
 			</Box>
 			<Box
 				ref={textRef}
@@ -159,7 +174,7 @@ function ResarchSection() {
 		<Section>
 			<h1>Research</h1>
 			<p>My current research interests are in embodied AI and robot learning, with some intersections with CV, RL, etc. I'm generally interested in how AI can learn from diverse data, experiences, and representations acquired through general learning methodologies to create agents which can adapt to novel experiences/data.</p>
-			
+
 			<Grid
 				container
 				spacing={3}
@@ -192,18 +207,18 @@ function ResarchSection() {
 						</ListItem>
 						<ListItem>
 							<ListItemText>
-								Stone Tao, Fanbo Xiang, <b>Arth Shukla</b>, Yuzhe Qin, Xander Hinrichsen, Xiaodi Yuan, Chen Bao, Xinsong Lin, Yulin Liu, Tse-kai Chan, Yuan Gao, Xuanlin Li, Tongzhou Mu, Nan Xiao, Arnav Gurha, Zhiao Huang, Roberto Calandra, Rui Chen, Shan Luo, Hao Su
+								Stone Tao, Fanbo Xiang, <ItsAMe />, Yuzhe Qin, Xander Hinrichsen, Xiaodi Yuan, Chen Bao, Xinsong Lin, Yulin Liu, Tse-kai Chan, Yuan Gao, Xuanlin Li, Tongzhou Mu, Nan Xiao, Arnav Gurha, Zhiao Huang, Roberto Calandra, Rui Chen, Shan Luo, Hao Su
 							</ListItemText>
 						</ListItem>
 						<ListItem>
 							<ListItemText>
-								<A href="https://arxiv.org/abs/2410.00425">arXiv</A> &#124;&nbsp;<A href='https://maniskill.ai'>Project Page</A> &#124;&nbsp;<A href='https://github.com/haosulab/ManiSkill'>Code</A>
+								<A href='https://arxiv.org/abs/2410.00425'>arXiv</A> &#124;&nbsp;<A href='https://maniskill.ai'>Project Page</A> &#124;&nbsp;<A href='https://github.com/haosulab/ManiSkill'>Code</A>
 							</ListItemText>
 						</ListItem>
 					</List>
 				</Grid>
 			</Grid>
-			
+
 			<Grid
 				container
 				spacing={3}
@@ -236,12 +251,12 @@ function ResarchSection() {
 						</ListItem>
 						<ListItem>
 							<ListItemText>
-								Stone Tao, <b>Arth Shukla</b>, Tse-kai Chan, Hao Su
+								Stone Tao, <ItsAMe />, Tse-kai Chan, Hao Su
 							</ListItemText>
 						</ListItem>
 						<ListItem>
 							<ListItemText>
-								<A href="https://arxiv.org/abs/2405.03379">arXiv</A> &#124;&nbsp;<A href='https://reverseforward-cl.github.io'>Project Page</A> &#124;&nbsp;<A href='https://github.com/stonet2000/rfcl'>Code</A>
+								<A href='https://arxiv.org/abs/2405.03379'>arXiv</A> &#124;&nbsp;<A href='https://reverseforward-cl.github.io'>Project Page</A> &#124;&nbsp;<A href='https://github.com/stonet2000/rfcl'>Code</A>
 							</ListItemText>
 						</ListItem>
 					</List>
