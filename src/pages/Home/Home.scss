@@ -10,11 +10,11 @@
 		}
 	}
 
-	--main-page-intro-font-size: clamp(45px, 7.7vw, 80px);
+	--main-page-intro-font-size: clamp(45px, 6vw, 80px);
 	--main-page-intro-cursor-height: clamp(47px, 8vw, 82px);
 
-	@media screen and (max-width: v.$sm) {
-		height: 225px;
+	@media screen and (max-width: 620px) {
+		height: 14em;
 	}
 }
 
