@@ -5,6 +5,7 @@ import HomeRounded from '@mui/icons-material/HomeRounded'
 import Mail from '@mui/icons-material/Mail'
 import Bookmark from '@mui/icons-material/Bookmark'
 import Article from '@mui/icons-material/Article'
+import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing'
 
 interface WebsiteDrawerProps {
 	open: boolean
@@ -26,6 +27,10 @@ const toolbarRoutes: any = {
 	'/': {
 		name: 'Home',
 		icon: <HomeRounded />,
+	},
+	research: {
+		name: 'Research',
+		icon: <PrecisionManufacturingIcon />,
 	},
 	projects: {
 		name: 'My Projects',

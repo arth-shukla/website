@@ -1,0 +1,29 @@
+@use '../../variables' as v;
+
+.research-section {
+	.research-media-wrapper {
+		position: relative;
+		max-width: 400px;
+		margin-left: -24px;
+
+		img,
+		video {
+			width: 100%;
+			border-radius: 12px;
+			border-radius: 12px;
+		}
+	}
+
+	// Add transition for the MUI Buttons
+	.MuiButtonGroup-root {
+		.MuiButton-root,
+		.MuiButtonGroup-grouped {
+			transition: color v.$tr-sec ease-in-out, font-size 0s ease-in-out, background-color v.$tr-sec ease-in-out;
+
+			&.MuiButtonGroup-grouped {
+				border-color: inherit;
+				transition: color v.$tr-sec ease-in-out, font-size 0s ease-in-out, background-color v.$tr-sec ease-in-out;
+			}
+		}
+	}
+}

@@ -7,7 +7,7 @@ import CssBaseline from '@mui/material/CssBaseline'
 import Box from '@mui/material/Box'
 
 import { ProjectsData, ProjectsDataType, WebsiteDrawer, WebsiteToolbar } from './components'
-import { Contact, Error404, Home, ProjectInfo, Projects, Resume } from './pages'
+import { Contact, Error404, Home, ProjectInfo, Projects, Resume, Research } from './pages'
 
 import './App.scss'
 
@@ -126,6 +126,10 @@ function App() {
 							<Route
 								index
 								element={<Home winHeight={winHeight} />}
+							/>
+							<Route
+								path='research'
+								element={<Research />}
 							/>
 							<Route
 								path='projects'

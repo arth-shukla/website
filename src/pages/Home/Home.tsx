@@ -2,20 +2,15 @@ import React, { useRef } from 'react'
 
 import { TextTypeDelete } from '@arth-shukla/arth-components'
 import { CircleLogo, Section, Socials, SocialsContext, SocialsContextProvider, ProjectHomeCarousel, ProjectsData, A } from 'components'
+import Research from '../Research'
 
 import useTheme from '@mui/system/useTheme'
 import Box from '@mui/system/Box'
 import Grid from '@mui/material/Grid'
-import List from '@mui/material/List'
-import ListItem from '@mui/material/ListItem'
 
 import './Home.scss'
 
 import profilePic from '../../assets/Me_Profile.jpg'
-import rfclIcon from '../../assets/rfcl/icon.gif'
-import ms3Icon from '../../assets/ms3/icon.png'
-import { ListItemText } from '@mui/material'
-import { ThemeProvider } from '@emotion/react'
 
 interface HomeProps {
 	winHeight: number
@@ -46,20 +41,6 @@ const flexBoxMiddleAlign = {
 	alignItems: 'center',
 }
 
-function ItsAMe() {
-	const theme = useTheme()
-
-	return (
-		<ThemeProvider theme={theme}>
-			<b
-				style={{ color: theme.palette.primary.main }}
-				className='its-a-me'
-			>
-				Arth Shukla
-			</b>
-		</ThemeProvider>
-	)
-}
 function Home({ winHeight }: HomeProps) {
 	const textRef = useRef()
 	const theme = useTheme()
@@ -104,7 +85,7 @@ function Home({ winHeight }: HomeProps) {
 				className='text-section'
 			>
 				<SelfIntroSection />
-				<ResarchSection />
+				<Research />
 				<ProjectsInfoSection />
 			</Box>
 		</Box>
@@ -163,103 +144,6 @@ function SelfIntroSection() {
 						logo={profilePic}
 						identifier='home-profile-ge-lg'
 					/>
-				</Grid>
-			</Grid>
-		</Section>
-	)
-}
-
-function ResarchSection() {
-	return (
-		<Section>
-			<h1>Research</h1>
-			<p>My current research interests are in embodied AI and robot learning, with some intersections with CV, RL, etc. I'm generally interested in how AI can learn from diverse data, experiences, and representations acquired through general learning methodologies to create agents which can adapt to novel experiences/data.</p>
-
-			<Grid
-				container
-				spacing={3}
-				margin={0}
-				marginBottom='26px'
-				maxWidth={'100%'}
-			>
-				<h3>ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI</h3>
-				<Grid
-					item
-					xs={12}
-					md={4}
-					sx={flexBoxMiddleAlign}
-				>
-					<img
-						src={ms3Icon}
-						alt='MS3 teaser.'
-						width='100%'
-						style={{ maxWidth: 400, marginLeft: -24 }}
-					/>
-				</Grid>
-				<Grid
-					item
-					xs={12}
-					md={8}
-				>
-					<List sx={{ marginLeft: '-24px' }}>
-						<ListItem>
-							<ListItemText>Preprint (arXiv 2024)</ListItemText>
-						</ListItem>
-						<ListItem>
-							<ListItemText>
-								Stone Tao, Fanbo Xiang, <ItsAMe />, Yuzhe Qin, Xander Hinrichsen, Xiaodi Yuan, Chen Bao, Xinsong Lin, Yulin Liu, Tse-kai Chan, Yuan Gao, Xuanlin Li, Tongzhou Mu, Nan Xiao, Arnav Gurha, Zhiao Huang, Roberto Calandra, Rui Chen, Shan Luo, Hao Su
-							</ListItemText>
-						</ListItem>
-						<ListItem>
-							<ListItemText>
-								<A href='https://arxiv.org/abs/2410.00425'>arXiv</A> &#124;&nbsp;<A href='https://maniskill.ai'>Project Page</A> &#124;&nbsp;<A href='https://github.com/haosulab/ManiSkill'>Code</A>
-							</ListItemText>
-						</ListItem>
-					</List>
-				</Grid>
-			</Grid>
-
-			<Grid
-				container
-				spacing={3}
-				margin={0}
-				marginBottom='26px'
-				maxWidth={'100%'}
-			>
-				<h3>RFCL: Reverse Forward Curriculum Learning for Extreme Sample and Demonstration Efficiency in RL</h3>
-				<Grid
-					item
-					xs={12}
-					md={4}
-					sx={flexBoxMiddleAlign}
-				>
-					<img
-						src={rfclIcon}
-						alt='RFCL method.'
-						width='100%'
-						style={{ maxWidth: 400, marginLeft: -24 }}
-					/>
-				</Grid>
-				<Grid
-					item
-					xs={12}
-					md={8}
-				>
-					<List sx={{ marginLeft: '-24px' }}>
-						<ListItem>
-							<ListItemText>International Conference on Learning Representations (ICLR) 2024</ListItemText>
-						</ListItem>
-						<ListItem>
-							<ListItemText>
-								Stone Tao, <ItsAMe />, Tse-kai Chan, Hao Su
-							</ListItemText>
-						</ListItem>
-						<ListItem>
-							<ListItemText>
-								<A href='https://arxiv.org/abs/2405.03379'>arXiv</A> &#124;&nbsp;<A href='https://reverseforward-cl.github.io'>Project Page</A> &#124;&nbsp;<A href='https://github.com/stonet2000/rfcl'>Code</A>
-							</ListItemText>
-						</ListItem>
-					</List>
 				</Grid>
 			</Grid>
 		</Section>
