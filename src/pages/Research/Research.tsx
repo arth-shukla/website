@@ -1,12 +1,12 @@
 import { useMemo } from 'react'
 
-import { Section, A } from 'components'
+import { Section } from 'components'
 
 import { List, ListItem, ListItemText, Grid, ThemeProvider, useTheme, ButtonGroup, Button } from '@mui/material'
 
 import mshabVideo from '../../assets/mshab/mshab_renders.mp4'
-import ms3Icon from '../../assets/ms3/icon.png'
-import rfclIcon from '../../assets/rfcl/icon.gif'
+import ms3Icon from '../../assets/ms3/ms3_teaser.jpg'
+import rfclIcon from '../../assets/rfcl/rfcl_animation.mp4'
 import './Research.scss'
 
 const flexBoxMiddleAlign = {
@@ -116,14 +116,42 @@ function ResearchItem({ icon, iconAlt = '', title, conference, authors, arXiv, w
 						<ListItemText>{authors}</ListItemText>
 					</ListItem>
 					<ListItem>
-						<ListItemText>
+						<ListItemText
+							sx={{
+								'& .MuiButtonGroup-root': {
+									display: 'flex',
+									justifyContent: {
+										xs: 'center',
+										md: 'flex-start',
+									},
+								},
+							}}
+						>
 							<ButtonGroup
 								variant='text'
 								aria-label='research links'
 							>
-								<Button href={arXiv}>arXiv</Button>
-								<Button href={website}>Website</Button>
-								<Button href={code}>Code</Button>
+								<Button
+									href={arXiv}
+									target='_blank'
+									rel='noopener noreferrer'
+								>
+									arXiv
+								</Button>
+								<Button
+									href={website}
+									target='_blank'
+									rel='noopener noreferrer'
+								>
+									Website
+								</Button>
+								<Button
+									href={code}
+									target='_blank'
+									rel='noopener noreferrer'
+								>
+									Code
+								</Button>
 							</ButtonGroup>
 						</ListItemText>
 					</ListItem>
@@ -149,9 +177,9 @@ function Research() {
 						<ItsAMe />, Stone Tao, Hao Su
 					</>
 				}
-				arXiv='https://arxiv.org/abs/2410.00425'
-				website='https://maniskill.ai'
-				code='https://github.com/haosulab/ManiSkill'
+				arXiv='TODO'
+				website='https://arth-shukla.github.io/mshab/'
+				code='https://github.com/arth-shukla/mshab'
 			/>
 
 			<ResearchItem

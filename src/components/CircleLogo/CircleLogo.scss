@@ -6,10 +6,13 @@
 	transition: v.$default-transition;
 
 	circle,
-	rect,
 	path,
 	g,
 	polyline {
 		transition: inherit;
+	}
+
+	[id^='circle-logo-tint-'] {
+		transition: opacity v.$tr-sec ease-in-out, fill v.$tr-sec ease-in-out;
 	}
 }

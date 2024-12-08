@@ -39,13 +39,24 @@ function CircleLogo({ logo, size = 100, className = '', identifier = '', ...rest
 						viewBox={`0 0 ${size} ${size}`}
 					>
 						{typeof logo === 'string' && (
-							<image
-								x='0%'
-								y='0%'
-								width={size}
-								height={size}
-								href={logo}
-							/>
+							<>
+								<image
+									x='0%'
+									y='0%'
+									width={size}
+									height={size}
+									href={logo}
+								/>
+								<rect
+									id={`circle-logo-tint-${identifier}`}
+									x='0%'
+									y='0%'
+									width='100%'
+									height='100%'
+									fill={theme.palette.primary.main}
+									opacity={theme.palette.mode === 'dark' ? 0.05 : 0.025}
+								/>
+							</>
 						)}
 					</pattern>
 				</defs>
