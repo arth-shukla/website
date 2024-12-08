@@ -85,7 +85,7 @@ function ResearchItem({ icon, iconAlt = '', title, conference, authors, arXiv, w
 	return (
 		<Grid
 			container
-			spacing={3}
+			spacing={5}
 			margin={0}
 			marginBottom='26px'
 			maxWidth={'100%'}
