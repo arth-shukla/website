@@ -81,7 +81,7 @@ interface ResearchItemProps {
 	spacing: number
 }
 
-function ResearchItem({ icon, iconAlt = '', title, conference, authors, arXiv, website, code, buttonVariant = 'text', spacing = 5 }: ResearchItemProps) {
+function ResearchItem({ icon, iconAlt = '', title, conference, authors, arXiv, website, code, buttonVariant = 'text', spacing = 3 }: ResearchItemProps) {
 	const isVideo = useMemo(() => icon?.toString().endsWith('.mp4'), [icon])
 
 	return (
@@ -99,7 +99,7 @@ function ResearchItem({ icon, iconAlt = '', title, conference, authors, arXiv, w
 				item
 				xs={12}
 				md={4}
-				sx={flexBoxMiddleAlign}
+				sx={{ ...flexBoxMiddleAlign, paddingLeft: (spacing > 0 ? 10 : 0) + 'px !important' }}
 			>
 				<ResearchMedia
 					src={icon}
