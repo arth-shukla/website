@@ -78,15 +78,18 @@ interface ResearchItemProps {
 	website: string
 	code: string
 	buttonVariant: 'text' | 'outlined'
+	spacing: number
 }
 
-function ResearchItem({ icon, iconAlt = '', title, conference, authors, arXiv, website, code, buttonVariant = 'text' }: ResearchItemProps) {
+function ResearchItem({ icon, iconAlt = '', title, conference, authors, arXiv, website, code, buttonVariant = 'text', spacing = 5 }: ResearchItemProps) {
 	const isVideo = useMemo(() => icon?.toString().endsWith('.mp4'), [icon])
 
 	return (
 		<Grid
 			container
-			spacing={5}
+			spacing={0}
+			rowSpacing={5}
+			columnSpacing={spacing}
 			margin={0}
 			marginBottom='26px'
 			maxWidth={'100%'}
@@ -109,7 +112,7 @@ function ResearchItem({ icon, iconAlt = '', title, conference, authors, arXiv, w
 				xs={12}
 				md={8}
 			>
-				<List sx={{ marginLeft: '-24px' }}>
+				<List>
 					<ListItem>
 						<ListItemText>{conference}</ListItemText>
 					</ListItem>
@@ -163,10 +166,12 @@ function ResearchItem({ icon, iconAlt = '', title, conference, authors, arXiv, w
 }
 
 function Research() {
-	const [buttonVariant, setButtonVariant] = useState<'text' | 'outlined'>('text')
+	const [buttonVariant, setButtonVariant] = useState<'text' | 'outlined'>(window.innerWidth >= 900 ? 'text' : 'outlined')
+	const [spacing, setSpacing] = useState<number>(window.innerWidth >= 900 ? 5 : 0)
 
 	const handleResize = () => {
 		setButtonVariant(window.innerWidth >= 900 ? 'text' : 'outlined')
+		setSpacing(window.innerWidth >= 900 ? 5 : 0)
 	}
 
 	useEffect(() => {
@@ -192,6 +197,7 @@ function Research() {
 				website='https://arth-shukla.github.io/mshab/'
 				code='https://github.com/arth-shukla/mshab'
 				buttonVariant={buttonVariant}
+				spacing={spacing}
 			/>
 
 			<ResearchItem
@@ -208,6 +214,7 @@ function Research() {
 				website='https://maniskill.ai'
 				code='https://github.com/haosulab/ManiSkill'
 				buttonVariant={buttonVariant}
+				spacing={spacing}
 			/>
 
 			<ResearchItem
@@ -224,6 +231,7 @@ function Research() {
 				website='https://reverseforward-cl.github.io'
 				code='https://github.com/stonet2000/rfcl'
 				buttonVariant={buttonVariant}
+				spacing={spacing}
 			/>
 		</Section>
 	)
