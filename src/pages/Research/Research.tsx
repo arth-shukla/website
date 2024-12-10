@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 import { Section } from 'components'
 
@@ -77,9 +77,10 @@ interface ResearchItemProps {
 	arXiv: string
 	website: string
 	code: string
+	buttonVariant: 'text' | 'outlined'
 }
 
-function ResearchItem({ icon, iconAlt = '', title, conference, authors, arXiv, website, code }: ResearchItemProps) {
+function ResearchItem({ icon, iconAlt = '', title, conference, authors, arXiv, website, code, buttonVariant = 'text' }: ResearchItemProps) {
 	const isVideo = useMemo(() => icon?.toString().endsWith('.mp4'), [icon])
 
 	return (
@@ -128,7 +129,7 @@ function ResearchItem({ icon, iconAlt = '', title, conference, authors, arXiv, w
 							}}
 						>
 							<ButtonGroup
-								variant='text'
+								variant={buttonVariant}
 								aria-label='research links'
 							>
 								<Button
@@ -162,6 +163,16 @@ function ResearchItem({ icon, iconAlt = '', title, conference, authors, arXiv, w
 }
 
 function Research() {
+	const [buttonVariant, setButtonVariant] = useState<'text' | 'outlined'>('text')
+
+	const handleResize = () => {
+		setButtonVariant(window.innerWidth >= 900 ? 'text' : 'outlined')
+	}
+
+	useEffect(() => {
+		window.addEventListener('resize', handleResize, { passive: true })
+	}, [])
+
 	return (
 		<Section className='research-section'>
 			<h1>Research</h1>
@@ -180,6 +191,7 @@ function Research() {
 				arXiv='TODO'
 				website='https://arth-shukla.github.io/mshab/'
 				code='https://github.com/arth-shukla/mshab'
+				buttonVariant={buttonVariant}
 			/>
 
 			<ResearchItem
@@ -195,6 +207,7 @@ function Research() {
 				arXiv='https://arxiv.org/abs/2410.00425'
 				website='https://maniskill.ai'
 				code='https://github.com/haosulab/ManiSkill'
+				buttonVariant={buttonVariant}
 			/>
 
 			<ResearchItem
@@ -210,6 +223,7 @@ function Research() {
 				arXiv='https://arxiv.org/abs/2405.03379'
 				website='https://reverseforward-cl.github.io'
 				code='https://github.com/stonet2000/rfcl'
+				buttonVariant={buttonVariant}
 			/>
 		</Section>
 	)
