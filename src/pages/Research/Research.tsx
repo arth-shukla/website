@@ -9,6 +9,8 @@ import ms3Icon from '../../assets/ms3/ms3_teaser.jpg'
 import rfclIcon from '../../assets/rfcl/rfcl_animation.mp4'
 import './Research.scss'
 
+const MD_SIZE = 89.95
+
 const flexBoxMiddleAlign = {
 	display: 'flex',
 	justifyContent: 'center',
@@ -68,6 +70,44 @@ function ResearchMedia({ src, alt = '', isVideo = false }: ResearchMediaProps) {
 	)
 }
 
+interface ResearchLinksProps {
+	arXiv: string
+	website: string
+	code: string
+	buttonVariant: 'text' | 'outlined'
+}
+
+function ResearchLinks({ arXiv, website, code, buttonVariant }: ResearchLinksProps) {
+	return (
+		<ButtonGroup
+			variant={buttonVariant}
+			aria-label='research links'
+		>
+			<Button
+				href={arXiv}
+				target='_blank'
+				rel='noopener noreferrer'
+			>
+				arXiv
+			</Button>
+			<Button
+				href={website}
+				target='_blank'
+				rel='noopener noreferrer'
+			>
+				Website
+			</Button>
+			<Button
+				href={code}
+				target='_blank'
+				rel='noopener noreferrer'
+			>
+				Code
+			</Button>
+		</ButtonGroup>
+	)
+}
+
 interface ResearchItemProps {
 	icon: string
 	iconAlt?: string
@@ -77,21 +117,28 @@ interface ResearchItemProps {
 	arXiv: string
 	website: string
 	code: string
-	buttonVariant: 'text' | 'outlined'
-	spacing: number
 }
 
-function ResearchItem({ icon, iconAlt = '', title, conference, authors, arXiv, website, code, buttonVariant = 'text', spacing = 3 }: ResearchItemProps) {
+function ResearchItem({ icon, iconAlt = '', title, conference, authors, arXiv, website, code }: ResearchItemProps) {
 	const isVideo = useMemo(() => icon?.toString().endsWith('.mp4'), [icon])
+
+	const [winWidth, setWinWidth] = useState<number>(window.innerWidth >= MD_SIZE ? 5 : 0)
+
+	const handleResize = () => {
+		setWinWidth(window.innerWidth)
+	}
+
+	useEffect(() => {
+		window.addEventListener('resize', handleResize, { passive: true })
+	}, [])
 
 	return (
 		<Grid
 			container
-			spacing={0}
-			rowSpacing={5}
-			columnSpacing={spacing}
+			rowSpacing={3}
+			columnSpacing={winWidth >= MD_SIZE ? 5 : 0}
 			margin={0}
-			marginBottom='26px'
+			paddingBottom='50px'
 			maxWidth={'100%'}
 		>
 			<h3>{title}</h3>
@@ -99,12 +146,32 @@ function ResearchItem({ icon, iconAlt = '', title, conference, authors, arXiv, w
 				item
 				xs={12}
 				md={4}
-				sx={{ ...flexBoxMiddleAlign, paddingLeft: (spacing > 0 ? 10 : 0) + 'px !important' }}
+				sx={{ ...flexBoxMiddleAlign, paddingLeft: (winWidth >= MD_SIZE ? 10 : 0) + 'px !important' }}
 			>
 				<ResearchMedia
 					src={icon}
 					alt={iconAlt}
 					isVideo={isVideo}
+				/>
+			</Grid>
+			<Grid
+				className='research-links-mobile'
+				item
+				xs={12}
+				sx={{
+					'& .MuiButtonGroup-root': {
+						display: 'flex',
+						justifyContent: {
+							xs: 'center',
+						},
+					},
+				}}
+			>
+				<ResearchLinks
+					arXiv={arXiv}
+					website={website}
+					code={code}
+					buttonVariant='outlined'
 				/>
 			</Grid>
 			<Grid
@@ -119,44 +186,23 @@ function ResearchItem({ icon, iconAlt = '', title, conference, authors, arXiv, w
 					<ListItem>
 						<ListItemText>{authors}</ListItemText>
 					</ListItem>
-					<ListItem>
+					<ListItem className='research-links-desktop'>
 						<ListItemText
 							sx={{
 								'& .MuiButtonGroup-root': {
 									display: 'flex',
 									justifyContent: {
-										xs: 'center',
 										md: 'flex-start',
 									},
 								},
 							}}
 						>
-							<ButtonGroup
-								variant={buttonVariant}
-								aria-label='research links'
-							>
-								<Button
-									href={arXiv}
-									target='_blank'
-									rel='noopener noreferrer'
-								>
-									arXiv
-								</Button>
-								<Button
-									href={website}
-									target='_blank'
-									rel='noopener noreferrer'
-								>
-									Website
-								</Button>
-								<Button
-									href={code}
-									target='_blank'
-									rel='noopener noreferrer'
-								>
-									Code
-								</Button>
-							</ButtonGroup>
+							<ResearchLinks
+								arXiv={arXiv}
+								website={website}
+								code={code}
+								buttonVariant='text'
+							/>
 						</ListItemText>
 					</ListItem>
 				</List>
@@ -166,18 +212,6 @@ function ResearchItem({ icon, iconAlt = '', title, conference, authors, arXiv, w
 }
 
 function Research() {
-	const [buttonVariant, setButtonVariant] = useState<'text' | 'outlined'>(window.innerWidth >= 900 ? 'text' : 'outlined')
-	const [spacing, setSpacing] = useState<number>(window.innerWidth >= 900 ? 5 : 0)
-
-	const handleResize = () => {
-		setButtonVariant(window.innerWidth >= 900 ? 'text' : 'outlined')
-		setSpacing(window.innerWidth >= 900 ? 5 : 0)
-	}
-
-	useEffect(() => {
-		window.addEventListener('resize', handleResize, { passive: true })
-	}, [])
-
 	return (
 		<Section className='research-section'>
 			<h1>Research</h1>
@@ -185,8 +219,8 @@ function Research() {
 
 			<ResearchItem
 				icon={mshabVideo}
-				iconAlt='MSHAB video'
-				title='ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI'
+				iconAlt='MS-HAB video'
+				title='ManiSkill-HAB: A Benchmark for Low-Level Manipulation in Home Rearrangement Tasks'
 				conference='Preprint (arXiv 2024)'
 				authors={
 					<>
@@ -196,8 +230,6 @@ function Research() {
 				arXiv='TODO'
 				website='https://arth-shukla.github.io/mshab/'
 				code='https://github.com/arth-shukla/mshab'
-				buttonVariant={buttonVariant}
-				spacing={spacing}
 			/>
 
 			<ResearchItem
@@ -213,8 +245,6 @@ function Research() {
 				arXiv='https://arxiv.org/abs/2410.00425'
 				website='https://maniskill.ai'
 				code='https://github.com/haosulab/ManiSkill'
-				buttonVariant={buttonVariant}
-				spacing={spacing}
 			/>
 
 			<ResearchItem
@@ -230,8 +260,6 @@ function Research() {
 				arXiv='https://arxiv.org/abs/2405.03379'
 				website='https://reverseforward-cl.github.io'
 				code='https://github.com/stonet2000/rfcl'
-				buttonVariant={buttonVariant}
-				spacing={spacing}
 			/>
 		</Section>
 	)

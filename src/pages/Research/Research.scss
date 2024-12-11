@@ -24,4 +24,18 @@
 			}
 		}
 	}
+
+	.research-links-mobile {
+		display: none;
+		@media (max-width: 899.95px) {
+			display: block;
+		}
+	}
+
+	.research-links-desktop {
+		display: block;
+		@media (max-width: 899.95px) {
+			display: none;
+		}
+	}
 }
