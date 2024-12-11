@@ -9,7 +9,7 @@ import ms3Icon from '../../assets/ms3/ms3_teaser.jpg'
 import rfclIcon from '../../assets/rfcl/rfcl_animation.mp4'
 import './Research.scss'
 
-const MD_SIZE = 89.95
+const MD_SIZE = 899.95
 
 const flexBoxMiddleAlign = {
 	display: 'flex',
@@ -122,10 +122,12 @@ interface ResearchItemProps {
 function ResearchItem({ icon, iconAlt = '', title, conference, authors, arXiv, website, code }: ResearchItemProps) {
 	const isVideo = useMemo(() => icon?.toString().endsWith('.mp4'), [icon])
 
-	const [winWidth, setWinWidth] = useState<number>(window.innerWidth >= MD_SIZE ? 5 : 0)
+	const [columnSpacing, setColumnSpacing] = useState<number>(window.innerWidth >= MD_SIZE ? 3 : 0)
+	const [paddingLeft, setPaddingLeft] = useState<number>(window.innerWidth >= MD_SIZE ? 10 : 0)
 
 	const handleResize = () => {
-		setWinWidth(window.innerWidth)
+		setColumnSpacing(window.innerWidth >= MD_SIZE ? 3 : 0)
+		setPaddingLeft(window.innerWidth >= MD_SIZE ? 10 : 0)
 	}
 
 	useEffect(() => {
@@ -136,7 +138,7 @@ function ResearchItem({ icon, iconAlt = '', title, conference, authors, arXiv, w
 		<Grid
 			container
 			rowSpacing={3}
-			columnSpacing={winWidth >= MD_SIZE ? 5 : 0}
+			columnSpacing={columnSpacing}
 			margin={0}
 			paddingBottom='50px'
 			maxWidth={'100%'}
@@ -146,7 +148,7 @@ function ResearchItem({ icon, iconAlt = '', title, conference, authors, arXiv, w
 				item
 				xs={12}
 				md={4}
-				sx={{ ...flexBoxMiddleAlign, paddingLeft: (winWidth >= MD_SIZE ? 10 : 0) + 'px !important' }}
+				sx={{ ...flexBoxMiddleAlign, paddingLeft: paddingLeft + 'px !important' }}
 			>
 				<ResearchMedia
 					src={icon}
