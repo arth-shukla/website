@@ -4,11 +4,28 @@
 	aspect-ratio: 1 / 1;
 
 	transition: v.$default-transition;
-
 	circle,
 	path,
 	g,
-	polyline {
+	polyline,
+	rect,
+	line,
+	ellipse,
+	polygon,
+	text,
+	tspan,
+	use,
+	image,
+	clipPath,
+	mask,
+	pattern,
+	marker,
+	defs,
+	desc,
+	title,
+	symbol,
+	switch,
+	foreignObject {
 		transition: inherit;
 	}
 
