@@ -36,8 +36,8 @@ const toolbarRoutes: any = {
 		name: 'My Projects',
 		icon: <Bookmark />,
 	},
-	resume: {
-		name: 'Resume',
+	cv: {
+		name: 'CV',
 		icon: <Article />,
 	},
 	contact: {

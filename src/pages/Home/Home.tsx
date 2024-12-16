@@ -172,7 +172,7 @@ function ProjectsInfoSection() {
 						>
 							projects page
 						</A>
-						. Even more projects are listed in my <A href='/documents/Arth_Shukla_Resume.pdf'>resume</A>.
+						. Even more projects are listed in my <A href='/documents/Arth_Shukla_CV.pdf'>CV</A>.
 					</p>
 					<p>I've also done work in full stack web dev using React, Express, Angular, Go, etc.</p>
 				</Grid>

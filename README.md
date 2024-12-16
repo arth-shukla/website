@@ -15,7 +15,8 @@ Development Standards: Web Content Accessibility Guidelines (WCAG) 2.1, Aria Aut
 This repo holds the code for my personal website.
 
 The final product
-1. contains a home page, a projects page (along with subpages for each project), a resume page, and a "Contact Me" page.
+
+1. contains a home page, a projects page (along with subpages for each project), a CV page, and a "Contact Me" page.
 2. has code split into components pages (for the main website pages), (components used multiple times), and assets (images and the like).
 3. Is deployed to Netlify so it is accessible at [arth.website](https://arth.website). (Also, all traffic is routed to https).
 4. Is built using Material UI for consistency and its breadth of premade components.

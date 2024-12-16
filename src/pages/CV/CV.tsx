@@ -6,9 +6,9 @@ import useTheme from '@mui/material/styles/useTheme'
 import ThemeProvider from '@mui/material/styles/ThemeProvider'
 import Divider from '@mui/material/Divider'
 
-import './Resume.scss'
+import './CV.scss'
 
-const ResumeSocials: SocialsContext = {
+const CVSocials: SocialsContext = {
 	Email: {
 		include: true,
 		text: true,
@@ -27,7 +27,7 @@ const ResumeSocials: SocialsContext = {
 	},
 }
 
-const ResumeSocialsEmailGitHub: SocialsContext = {
+const CVSocialsEmailGitHub: SocialsContext = {
 	Email: {
 		include: true,
 		text: true,
@@ -46,7 +46,7 @@ const ResumeSocialsEmailGitHub: SocialsContext = {
 	},
 }
 
-const ResumeSocialsLinkedInPhone: SocialsContext = {
+const CVSocialsLinkedInPhone: SocialsContext = {
 	Email: {
 		include: false,
 		text: false,
@@ -65,30 +65,30 @@ const ResumeSocialsLinkedInPhone: SocialsContext = {
 	},
 }
 
-function ResumeSocialsLinks() {
+function CVSocialsLinks() {
 	return (
 		<>
-			<SocialsContextProvider value={ResumeSocials}>
+			<SocialsContextProvider value={CVSocials}>
 				<Socials
-					className='resume-socials-1'
+					className='cv-socials-1'
 					mt={0}
 				/>
 			</SocialsContextProvider>
-			<SocialsContextProvider value={ResumeSocialsEmailGitHub}>
+			<SocialsContextProvider value={CVSocialsEmailGitHub}>
 				<Socials
-					className='resume-socials-21'
+					className='cv-socials-21'
 					mt={0}
 				/>
 			</SocialsContextProvider>
-			<SocialsContextProvider value={ResumeSocialsLinkedInPhone}>
+			<SocialsContextProvider value={CVSocialsLinkedInPhone}>
 				<Socials
-					className='resume-socials-22'
+					className='cv-socials-22'
 					mt={0}
 				/>
 			</SocialsContextProvider>
-			<SocialsContextProvider value={ResumeSocials}>
+			<SocialsContextProvider value={CVSocials}>
 				<Socials
-					className='resume-socials-3'
+					className='cv-socials-3'
 					mt={0}
 					direction='column'
 				/>
@@ -97,10 +97,10 @@ function ResumeSocialsLinks() {
 	)
 }
 
-function ResumeSection({ style, ...rest }: any) {
+function CVSection({ style, ...rest }: any) {
 	return (
 		<Box
-			className='resume-section'
+			className='cv-section'
 			sx={{ padding: '0 2em', ...style }}
 			{...rest}
 		/>
@@ -155,16 +155,16 @@ function DivBP({ style, ...rest }: any) {
 	)
 }
 
-function Resume() {
+function CV() {
 	const theme = useTheme()
 	return (
 		<ThemeProvider theme={theme}>
-			<Section className='resume-intro-section'>
-				<h1>My Resume</h1>
+			<Section className='cv-intro-section'>
+				<h1>My CV</h1>
 				<DivBP>
-					My resume is available for{' '}
+					My cv is available for{' '}
 					<A
-						href={process.env.PUBLIC_URL + '/documents/Arth_Shukla_Resume.pdf'}
+						href={process.env.PUBLIC_URL + '/documents/Arth_Shukla_CV.pdf'}
 						target='_blank'
 					>
 						download as pdf
@@ -173,14 +173,14 @@ function Resume() {
 				</DivBP>
 			</Section>
 			<Box
-				className='resume'
+				className='cv'
 				sx={{
 					border: `${theme.palette.primary.main} solid 2px`,
 					boxShadow: `8px 8px ${theme.palette.primary.main}`,
 					display: 'none',
 				}}
 			>
-				<Box className='resume-sub'>
+				<Box className='cv-sub'>
 					<h2 style={{ textAlign: 'center' }}>
 						Arth{' '}
 						<span
@@ -191,12 +191,12 @@ function Resume() {
 						</span>
 					</h2>
 					<DivBP>
-						<ResumeSocialsLinks />
+						<CVSocialsLinks />
 					</DivBP>
 					<Divider textAlign='left'>
 						<h3>Education</h3>
 					</Divider>
-					<ResumeSection>
+					<CVSection>
 						<DivBP>
 							<PSlim>
 								<b>University of California, San Diego</b>
@@ -232,11 +232,11 @@ function Resume() {
 								<i>Ongoing in Spring 2023</i>: Supervised Machine Learning, Theory of Computation, Intro to Computational Statistics, Synthesis 100
 							</PSlim>
 						</DivBP>
-					</ResumeSection>
+					</CVSection>
 					<Divider textAlign='left'>
 						<h3>Experience</h3>
 					</Divider>
-					<ResumeSection>
+					<CVSection>
 						<DivBP>
 							<PSlim>
 								<b>Bittner Development Co.</b>
@@ -392,11 +392,11 @@ function Resume() {
 								</ULSlim>
 							</PSlim>
 						</DivBP>
-					</ResumeSection>
+					</CVSection>
 					<Divider textAlign='left'>
 						<h3>Skills</h3>
 					</Divider>
-					<ResumeSection>
+					<CVSection>
 						<DivBP>
 							<ULSlim>
 								<li>
@@ -410,11 +410,11 @@ function Resume() {
 								</li>
 							</ULSlim>
 						</DivBP>
-					</ResumeSection>
+					</CVSection>
 					<Divider textAlign='left'>
 						<h3>Activities &amp; Leadership</h3>
 					</Divider>
-					<ResumeSection>
+					<CVSection>
 						<DivBP>
 							<PSlim>
 								<b>Inspirit AI and Summer Stem Institute 2020</b>
@@ -423,11 +423,11 @@ function Resume() {
 								<i>Program Participant and Inspirit AI End-of-Program Project Lead</i> - Learn AI Fundamentals (neural nets and backprop, computer vision,etc) and develop model to identify pro- and anti-refugee tweets using sentiment analysis
 							</PSlim>
 						</DivBP>
-					</ResumeSection>
+					</CVSection>
 				</Box>
 			</Box>
 		</ThemeProvider>
 	)
 }
 
-export default Resume
+export default CV

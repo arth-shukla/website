@@ -7,7 +7,7 @@ import CssBaseline from '@mui/material/CssBaseline'
 import Box from '@mui/material/Box'
 
 import { ProjectsData, ProjectsDataType, WebsiteDrawer, WebsiteToolbar } from './components'
-import { Contact, Error404, Home, ProjectInfo, Projects, Resume, Research } from './pages'
+import { Contact, Error404, Home, ProjectInfo, Projects, CV, Research } from './pages'
 
 import './App.scss'
 
@@ -137,8 +137,12 @@ function App() {
 							/>
 							{generateProjectRoutes()}
 							<Route
+								path='cv'
+								element={<CV />}
+							/>
+							<Route
 								path='resume'
-								element={<Resume />}
+								element={<CV />}
 							/>
 							<Route
 								path='contact'

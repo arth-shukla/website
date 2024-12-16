@@ -34,7 +34,7 @@ function Projects() {
 			<h1>Projects</h1>
 
 			<p>
-				Here are some projects I found interesting and informative. Even more projects are listed in my <A href='/documents/Arth_Shukla_Resume.pdf'>resume</A>. To see more information, please click on the project icon.
+				Here are some projects I found interesting and informative. Even more projects are listed in my <A href='/documents/Arth_Shukla_CV.pdf'>CV</A>. To see more information, please click on the project icon.
 			</p>
 			<Box
 				sx={{
