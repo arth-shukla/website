@@ -162,7 +162,7 @@ function CV() {
 			<Section className='cv-intro-section'>
 				<h1>My CV</h1>
 				<DivBP>
-					My cv is available for{' '}
+					My CV is available for{' '}
 					<A
 						href={process.env.PUBLIC_URL + '/documents/Arth_Shukla_CV.pdf'}
 						target='_blank'
