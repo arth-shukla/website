@@ -221,7 +221,6 @@ const ProjectIcons = {
 		)
 	},
 	AnimLibraryIcon: (size: number, theme: string, primary: string, dark: boolean) => {
-		console.log(theme)
 		return (
 			<svg
 				width='100%'
@@ -606,6 +605,7 @@ const MarioPPO: Project = {
 							<A
 								href='https://wandb.ai/arth-shukla/Mario-PPO'
 								style={{ display: 'inline-block', width: 'calc(50% - 5px)', padding: '2.5px 0' }}
+								key={src + '_key'}
 							>
 								<img
 									src={src}

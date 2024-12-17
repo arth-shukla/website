@@ -29,10 +29,6 @@ const HomeSocials: SocialsContext = {
 		include: true,
 		text: false,
 	},
-	'Phone Number': {
-		include: false,
-		text: false,
-	},
 }
 
 const flexBoxMiddleAlign = {

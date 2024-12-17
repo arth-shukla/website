@@ -26,10 +26,6 @@ function Contact() {
 						include: true,
 						text: false,
 					},
-					'Phone Number': {
-						include: false,
-						text: false,
-					},
 				}}
 			>
 				<Socials

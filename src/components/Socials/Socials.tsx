@@ -9,7 +9,6 @@ import IconButton from '@mui/material/IconButton'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import EmailIcon from '@mui/icons-material/Email'
-import Call from '@mui/icons-material/Call'
 
 import './Socials.scss'
 
@@ -28,11 +27,6 @@ const socials: any = {
 		text: 'arthshukla03@gmail.com',
 		href: 'mailto:arthshukla03@gmail.com',
 		icon: <EmailIcon fontSize='large' />,
-	},
-	'Phone Number': {
-		text: '(650) 850-9097',
-		href: 'tel:+1-650-850-9097',
-		icon: <Call fontSize='large' />,
 	},
 }
 

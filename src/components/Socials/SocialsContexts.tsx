@@ -10,7 +10,6 @@ export interface SocialsContext {
 	Email: SocialInterface
 	GitHub: SocialInterface
 	LinkedIn: SocialInterface
-	'Phone Number': SocialInterface
 }
 
 const contextSocials = React.createContext<SocialsContext | null>(null)
