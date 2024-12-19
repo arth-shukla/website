@@ -1,5 +1,9 @@
 @use '../../variables' as v;
 
+.loading-progress {
+	transition: v.$default-transition;
+}
+
 .pdf-renderer {
 	// Add smooth transitions for fill and stroke color changes
 	.pdf-page {

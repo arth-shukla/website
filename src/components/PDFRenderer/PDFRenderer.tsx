@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import * as pdfjsLib from 'pdfjs-dist'
-import { useTheme, Box } from '@mui/material'
+import { useTheme, Box, CircularProgress } from '@mui/material'
 
 import './PDFRenderer.scss'
 
@@ -138,7 +138,11 @@ const PDFRenderer = ({ url, maxWidth = '1000px' }: PDFRendererProps) => {
 
 	return (
 		<div style={{ width: '100%', maxWidth: maxWidth }}>
-			{loading && <div>Loading...</div>}
+			{loading && (
+				<Box sx={{ display: 'flex', justifyContent: 'center', my: 2 }}>
+					<CircularProgress className='loading-progress' />
+				</Box>
+			)}
 			<Box
 				ref={containerRef}
 				className='pdf-renderer'
@@ -156,6 +160,7 @@ const PDFRenderer = ({ url, maxWidth = '1000px' }: PDFRendererProps) => {
 					[`.${text_fill_class}-path`]: {
 						stroke: theme.palette.text.primary,
 					},
+					display: loading ? 'none' : 'block',
 				}}
 			/>
 		</div>
