@@ -1,47 +1,21 @@
 @use '../../variables' as v;
 
-.cv-intro-section {
+#cv-intro-section {
 	a {
 		transition: v.$default-transition;
 	}
 }
 
-.cv {
-	margin: 0 calc(1em + 4px) 1em calc(1em - 4px);
-	overflow: hidden;
-
-	transition: border 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
-
-	#title-span {
-		transition: color 0.4s ease-in-out;
+#cv-document-section {
+	@media screen and (max-width: v.$sm) {
+		padding-left: 20px;
+		padding-right: 20px;
 	}
 
-	.cv-section:last-of-type {
-		padding-bottom: 2em;
-	}
-
-	.cv-socials-1 {
-		@media screen and (max-width: 819px) {
-			display: none;
-		}
-	}
-	.cv-socials-21,
-	.cv-socials-22 {
-		@media screen and (max-width: 819px) and (min-width: 472px) {
-			display: flex;
-		}
-		display: none;
-	}
-	.cv-socials-3 {
-		@media screen and (min-width: 472px) {
-			display: none;
-		}
-	}
-
-	.pslim {
-		padding-bottom: 0.25em;
-	}
-	.pslim:last-of-type {
-		padding-bottom: 0;
+	.pdf-page {
+		$shadow-width: 8px;
+		border: 2px solid var(--primary-color);
+		box-shadow: $shadow-width $shadow-width var(--primary-color);
+		margin-left: -$shadow-width;
 	}
 }

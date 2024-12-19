@@ -1,0 +1,14 @@
+@use '../../variables' as v;
+
+.pdf-renderer {
+	// Add smooth transitions for fill and stroke color changes
+	.pdf-page {
+		transition: v.$default-transition;
+		svg {
+			tspan,
+			path {
+				transition: v.$default-transition;
+			}
+		}
+	}
+}
