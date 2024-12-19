@@ -1,5 +1,5 @@
 import React from 'react'
-import { Section, A } from 'components'
+import { Section, A, PDFRenderer } from 'components'
 
 import useTheme from '@mui/material/styles/useTheme'
 import ThemeProvider from '@mui/material/styles/ThemeProvider'
@@ -21,6 +21,12 @@ function CV() {
 						download as pdf
 					</A>
 					.
+				</div>
+				<div style={{ display: 'flex', justifyContent: 'center', marginTop: '2em' }}>
+					<PDFRenderer
+						url={process.env.PUBLIC_URL + '/documents/Arth_Shukla_CV.pdf'}
+						width={800}
+					/>
 				</div>
 			</Section>
 		</ThemeProvider>
