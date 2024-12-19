@@ -42,7 +42,7 @@ const PDFRenderer = ({ url, maxWidth = '1000px' }: PDFRendererProps) => {
 
 	useEffect(() => {
 		let mounted = true
-		const container = containerRef.current
+		const currentContainer = containerRef.current
 
 		const renderPages = async () => {
 			try {
@@ -55,8 +55,8 @@ const PDFRenderer = ({ url, maxWidth = '1000px' }: PDFRendererProps) => {
 				if (!mounted) return
 
 				// Clear container
-				if (!container) return
-				container.innerHTML = ''
+				if (!currentContainer) return
+				currentContainer.innerHTML = ''
 
 				// Render each page
 				for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
@@ -71,7 +71,7 @@ const PDFRenderer = ({ url, maxWidth = '1000px' }: PDFRendererProps) => {
 					pageContainer.className = 'pdf-page'
 					pageContainer.style.marginBottom = '20px'
 					pageContainer.style.width = '100%'
-					container.appendChild(pageContainer)
+					currentContainer.appendChild(pageContainer)
 
 					// Create SVG container with preserveAspectRatio
 					const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
@@ -123,11 +123,11 @@ const PDFRenderer = ({ url, maxWidth = '1000px' }: PDFRendererProps) => {
 
 		renderPages()
 
-		// Cleanup function
+		// Cleanup function using captured reference
 		return () => {
 			mounted = false
-			if (containerRef.current) {
-				containerRef.current.innerHTML = ''
+			if (currentContainer) {
+				currentContainer.innerHTML = ''
 			}
 		}
 	}, [url])

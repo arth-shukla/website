@@ -3,7 +3,6 @@ import { Section, A, PDFRenderer } from 'components'
 
 import useTheme from '@mui/material/styles/useTheme'
 import ThemeProvider from '@mui/material/styles/ThemeProvider'
-import Box from '@mui/material/Box'
 
 import './CV.scss'
 
