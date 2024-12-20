@@ -59,8 +59,15 @@ function ResearchMedia({ src, highResSrc, alt = '', isVideo = false }: ResearchM
 
 			if (isVideo) {
 				const video = mediaElement.parentElement as HTMLVideoElement
-				mediaElement.setAttribute('src', highResSrc)
+				const currentTime = video.currentTime
 				video.load()
+				video.addEventListener(
+					'loadeddata',
+					() => {
+						video.currentTime = currentTime
+					},
+					{ once: true },
+				)
 			} else {
 				mediaElement.setAttribute('src', highResSrc)
 			}
