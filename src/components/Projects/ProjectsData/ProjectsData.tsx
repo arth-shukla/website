@@ -408,12 +408,12 @@ const DenseFusion: Project = {
 					<h3>Altered DenseFusion Loss</h3>
 					<p>
 						Unlike the original DenseFusion paper which only uses Chamfer and per-point MSE, I use <b>3 different losses</b>:
-						<ol>
-							<li>Chamfer distance for objects with infinite order symmetries</li>
-							<li>min-of-n loss for objects with finite order symmetries</li>
-							<li>simple per-point MSE for objects with no symmetries</li>
-						</ol>
 					</p>
+					<ol>
+						<li>Chamfer distance for objects with infinite order symmetries</li>
+						<li>min-of-n loss for objects with finite order symmetries</li>
+						<li>simple per-point MSE for objects with no symmetries</li>
+					</ol>
 					<p>
 						Furthermore, since Chamfer distance is known to get stuck in suboptimal local minima, I introduce a hyperparameter <CodeNB>min_over_cham</CodeNB> between 0 and 1 which represents the probability that min-of-n loss will be used over Chamfer distance for objects with infinite order symmetries.
 					</p>
@@ -473,26 +473,24 @@ const DenseFusion: Project = {
 			label: <h2>Ablations</h2>,
 			content: (
 				<>
-					<p>
-						We run three sets of ablations:
-						<ol>
-							<li>
-								<b>Semantic Segmentation Model</b>: UNet Transpose Convolution, UNet Bilinear Interpolation, Vanilla SegNet. We do this to show that the Vanilla Segnet from the original DenseFusion paper can be improved.
-							</li>
-							<li>
-								<b>
-									Stage 1 <CodeNB>min_over_cham</CodeNB>
-								</b>
-								: Values of 0, 0.1, 0.3, and 0.5. Stops when first curve hits 60% train accuracy. We do this to show that nonzero <CodeNB>min_over_cham</CodeNB> indeed does reduce RRE Symmetry, meaning the model better avoids suboptimal local minima.
-							</li>
-							<li>
-								<b>
-									Stage 2 <CodeNB>min_over_cham</CodeNB>
-								</b>
-								: Values of 0 and 0.3. Resumes from Stage 1 of <CodeNB>min_over_cham=0.3</CodeNB>, since that model performed the best. We do this to show that maintaining a nonzero <CodeNB>min_over_cham</CodeNB> throughout will result in a model that cannot finetune as well; hence, a second stage is necessary.
-							</li>
-						</ol>
-					</p>
+					<p>We run three sets of ablations:</p>
+					<ol>
+						<li>
+							<b>Semantic Segmentation Model</b>: UNet Transpose Convolution, UNet Bilinear Interpolation, Vanilla SegNet. We do this to show that the Vanilla Segnet from the original DenseFusion paper can be improved.
+						</li>
+						<li>
+							<b>
+								Stage 1 <CodeNB>min_over_cham</CodeNB>
+							</b>
+							: Values of 0, 0.1, 0.3, and 0.5. Stops when first curve hits 60% train accuracy. We do this to show that nonzero <CodeNB>min_over_cham</CodeNB> indeed does reduce RRE Symmetry, meaning the model better avoids suboptimal local minima.
+						</li>
+						<li>
+							<b>
+								Stage 2 <CodeNB>min_over_cham</CodeNB>
+							</b>
+							: Values of 0 and 0.3. Resumes from Stage 1 of <CodeNB>min_over_cham=0.3</CodeNB>, since that model performed the best. We do this to show that maintaining a nonzero <CodeNB>min_over_cham</CodeNB> throughout will result in a model that cannot finetune as well; hence, a second stage is necessary.
+						</li>
+					</ol>
 
 					<p>Ablation curves are pictured below:</p>
 
@@ -589,14 +587,12 @@ const MarioPPO: Project = {
 			label: <h2>Testing PPO Convergence Tricks on Level 1-1</h2>,
 			content: (
 				<>
-					<p>
-						First, I wanted to see which tricks were most/least helpful for world 1-1, a very simple level. The best results came from the following three:
-						<ol>
-							<li>Simple, standard PPO run</li>
-							<li>PPO with early stopping using approx KL divergence</li>
-							<li>PPO with advantage norming</li>
-						</ol>
-					</p>
+					<p>First, I wanted to see which tricks were most/least helpful for world 1-1, a very simple level. The best results came from the following three:</p>
+					<ol>
+						<li>Simple, standard PPO run</li>
+						<li>PPO with early stopping using approx KL divergence</li>
+						<li>PPO with advantage norming</li>
+					</ol>
 					<p>
 						Different combinations of different techniques might help (or harm) training performance as well. Image charts can be seen below for the three runs mentioned below, as well as all the other tests I ran. Interactive charts are available on <A href='https://wandb.ai/arth-shukla/Mario-PPO'>WandB</A>. Each run was capped at 2000 episodes, which is 6.5x fewer iterations than my <A href='https://arth.website/mario-ddqn'>DDQN required</A> to achieve similar results!
 					</p>
@@ -771,23 +767,21 @@ const ElementAI: Project = {
 					<p>
 						All game rules are explained in the <A href='https://github.com/acmucsd/Element.AI/blob/main/documentation/Element.AI%20Documentation.pdf'>graphic documentation</A>, and the environment was inspired by PaperIO (though the rules and setup were altered significantly to fit a 6-hour timeframe).
 					</p>
-					<p>
-						The environment has four major components:{' '}
-						<ol>
-							<li>
-								<b>Environment</b>: The environment is a PettingZoo Parallel Environment. For each environment step, all agents return their actions, and all actions are processed at the same time.
-							</li>
-							<li>
-								<b>Kits</b>: The Python and Java kits both communicate with the runner using stdout to support multiple languages and avoid the need for code jailing.
-							</li>
-							<li>
-								<b>Replay Video Generator</b>: The environment saves json files containing observations at each timestep. The replay video generators (simple and fancy) both process this json data and create an output video.
-							</li>
-							<li>
-								<b>LuxAI Runner</b>: We use the <A href='https://github.com/Lux-AI-Challenge/Lux-Design-S2'>Lux AI 2022 runner</A> to facilitate communication between the environment and the kits, while also offering features like environment configuration adjustment, verbosity, and replay generation. <CodeNB>Bot</CodeNB> communicates with the player kits. <CodeNB>Episode</CodeNB> gets observations from <CodeNB>PaperIO</CodeNB> (the environment) and sends them to the <CodeNB>Bot</CodeNB> instances through stdout. It then sends the resultant actions from the <CodeNB>Bot</CodeNB> instances to <CodeNB>PaperIO</CodeNB>. This loops until terminal state.
-							</li>
-						</ol>
-					</p>
+					<p>The environment has four major components: </p>
+					<ol>
+						<li>
+							<b>Environment</b>: The environment is a PettingZoo Parallel Environment. For each environment step, all agents return their actions, and all actions are processed at the same time.
+						</li>
+						<li>
+							<b>Kits</b>: The Python and Java kits both communicate with the runner using stdout to support multiple languages and avoid the need for code jailing.
+						</li>
+						<li>
+							<b>Replay Video Generator</b>: The environment saves json files containing observations at each timestep. The replay video generators (simple and fancy) both process this json data and create an output video.
+						</li>
+						<li>
+							<b>LuxAI Runner</b>: We use the <A href='https://github.com/Lux-AI-Challenge/Lux-Design-S2'>Lux AI 2022 runner</A> to facilitate communication between the environment and the kits, while also offering features like environment configuration adjustment, verbosity, and replay generation. <CodeNB>Bot</CodeNB> communicates with the player kits. <CodeNB>Episode</CodeNB> gets observations from <CodeNB>PaperIO</CodeNB> (the environment) and sends them to the <CodeNB>Bot</CodeNB> instances through stdout. It then sends the resultant actions from the <CodeNB>Bot</CodeNB> instances to <CodeNB>PaperIO</CodeNB>. This loops until terminal state.
+						</li>
+					</ol>
 				</>
 			),
 		},
@@ -796,30 +790,28 @@ const ElementAI: Project = {
 			content: (
 				<>
 					<p>At sponsor request, the competition was run in-person in the UCSD CSE Basement Labs. We had 198 linux machines, and 200 RSVPs. Students could enter alone or in pairs.</p>
-					<p>
-						We had a few requirements for these systems:
-						<ol>
-							<li>
-								<b>Feature</b>: Egress needed to be blocked for all domains except our api <CodeNB>api.ai.acmucsd.com</CodeNB> and our locally-run image of our website (some IP address of a basement lab machine).
-								<br />
-								<b>Reason</b>: Our sponsor wanted the competition to be wifi-free, but we needed our api available so students could upload submissions during the competition.
-							</li>
-							<li>
-								<b>Feature</b>: Participant accounts to access the machines which came preloaded with Conda, Maven, and several VSCode extensions.
-								<br />
-								<b>Reason</b>: Conda and Maven were necessary for the environment and kits, and VSCode extensions allowed for autocomplete, code lookup, linting, and other features which would be helpful for participants.
-							</li>
-							<li>
-								<b>Feature</b>: An instructor account which had easy access to all participant accounts, and could achieve the following:
-								<ol type='a'>
-									<li>Copy any file/directory to any participant account.</li>
-									<li>Give/remove access to any file/directory to any participant account.</li>
-									<li>Give/remove access to wifi to specific lab machines.</li>
-								</ol>
-								<b>Reason</b>: To make the competition run smoothly and easily deal with any issues that came up, we needed some way to control any aspect of our on-premise setup.
-							</li>
-						</ol>
-					</p>
+					<p>We had a few requirements for these systems:</p>
+					<ol>
+						<li>
+							<b>Feature</b>: Egress needed to be blocked for all domains except our api <CodeNB>api.ai.acmucsd.com</CodeNB> and our locally-run image of our website (some IP address of a basement lab machine).
+							<br />
+							<b>Reason</b>: Our sponsor wanted the competition to be wifi-free, but we needed our api available so students could upload submissions during the competition.
+						</li>
+						<li>
+							<b>Feature</b>: Participant accounts to access the machines which came preloaded with Conda, Maven, and several VSCode extensions.
+							<br />
+							<b>Reason</b>: Conda and Maven were necessary for the environment and kits, and VSCode extensions allowed for autocomplete, code lookup, linting, and other features which would be helpful for participants.
+						</li>
+						<li>
+							<b>Feature</b>: An instructor account which had easy access to all participant accounts, and could achieve the following:
+							<ol type='a'>
+								<li>Copy any file/directory to any participant account.</li>
+								<li>Give/remove access to any file/directory to any participant account.</li>
+								<li>Give/remove access to wifi to specific lab machines.</li>
+							</ol>
+							<b>Reason</b>: To make the competition run smoothly and easily deal with any issues that came up, we needed some way to control any aspect of our on-premise setup.
+						</li>
+					</ol>
 				</>
 			),
 		},
@@ -831,16 +823,14 @@ const ElementAI: Project = {
 						IT set up a squid proxy along with some iptables rules to block all domains except <CodeNB>api.ai.acmucsd.com</CodeNB>. Our regular website didn’t work since our CDN changed DNS very quickly, causing https requests to hang frequently. However, direct IP connections went through the proxy just fine, so we kept our website running locally. However, we also needed to block all IPs for popular websites like Google or YouTube since websites like Firefox sometimes directly connect to their IPs rather than through DNS. Finally, we kept logs of all egress to make sure participants didn’t bypass the proxy (e.g. some other IP, ssh traffic, etc).
 					</p>
 					<p>We created a public directory which was read/execute-accessible by all users. Here, we kept our Conda environment and Maven installation, so all users could read the same installation without duplicating files unnecessarily. Finally, we gave each participant 10GB so that they had more than enough space for swap files, saving game replays, and any other files they may need.</p>
-					<p>
-						Here, we made bash scripts for each function. These scripts could be accessed by SSHing into UCSD’s ieng6 system with an external device using instructor credentials. The scripts are as follows:
-						<ol>
-							<li>Simple recursive copy script.</li>
-							<li>Two simple recursive chmod scripts. While we could not alter files created by participants (since they had ownership and our instructor account had restricted access to sudo), we could remove access to at least the competition directory and any installations necessary to run the environment.</li>
-							<li>
-								First, we made an RSA key collector using <CodeNB>ssh-keyscan</CodeNB>. Then, after saving these RSA keys, we could ssh into each machine through the instructor account and turn on the iptables rules.
-							</li>
-						</ol>
-					</p>
+					<p>Here, we made bash scripts for each function. These scripts could be accessed by SSHing into UCSD’s ieng6 system with an external device using instructor credentials. The scripts are as follows:</p>
+					<ol>
+						<li>Simple recursive copy script.</li>
+						<li>Two simple recursive chmod scripts. While we could not alter files created by participants (since they had ownership and our instructor account had restricted access to sudo), we could remove access to at least the competition directory and any installations necessary to run the environment.</li>
+						<li>
+							First, we made an RSA key collector using <CodeNB>ssh-keyscan</CodeNB>. Then, after saving these RSA keys, we could ssh into each machine through the instructor account and turn on the iptables rules.
+						</li>
+					</ol>
 				</>
 			),
 		},
@@ -926,7 +916,7 @@ const DiceRollerData: Project = {
 			label: <h2>Motivation</h2>,
 			content: (
 				<>
-					Most Dice Rollers suffer from the same three problems:
+					<p>Most Dice Rollers suffer from the same three problems:</p>
 					<ol>
 						<li>
 							<b>Efficiency</b>: Most dice rollers have clunky UIs or unnecessary forms; as a result, it takes several button presses to roll a single dice.
@@ -945,7 +935,7 @@ const DiceRollerData: Project = {
 			label: <h2>Features</h2>,
 			content: (
 				<>
-					To solve these issues, I implemented the following features:
+					<p>To solve these issues, I implemented the following features:</p>
 					<ol>
 						<li>
 							<b>Efficiency</b>: Buttons are available to quickly roll 1-8 of a standard D&amp;D dice set (d4, d6, d8, d10, d12, d20) with a single button press. While this should cover most use cases, the user can also enter a custom number of dice as well.

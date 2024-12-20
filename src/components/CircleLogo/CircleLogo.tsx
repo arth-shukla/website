@@ -65,7 +65,7 @@ function CircleLogo({ logo, size = 100, className = '', identifier = '', ...rest
 					id='inner'
 					cx='50%'
 					cy='50%'
-					r={`calc((100% / 2) - ${strokeWidth}px * 2)`}
+					r={`${size / 2 - strokeWidth * 2}px`}
 					fill={typeof logo === 'string' ? `url(#${`image-${identifier}`})` : 'none'}
 					stroke={theme.palette.mode === 'dark' ? '#121212' : '#fff'}
 					strokeWidth={strokeWidth}
@@ -75,7 +75,7 @@ function CircleLogo({ logo, size = 100, className = '', identifier = '', ...rest
 					cx='50%'
 					cy='50%'
 					fill='none'
-					r={`calc((100% / 2) - ${strokeWidth}px)`}
+					r={`${size / 2 - strokeWidth}px`}
 					stroke={theme.palette.primary.main}
 					strokeWidth={strokeWidth}
 				/>
