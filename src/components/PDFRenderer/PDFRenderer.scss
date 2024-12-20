@@ -16,3 +16,27 @@
 		}
 	}
 }
+
+.pdf-page {
+	position: relative;
+	width: 100%;
+}
+
+.annotation-layer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: calc(100% - 4px) !important;
+	pointer-events: none;
+	
+	a.pdf-annotation-link {
+		pointer-events: all;
+		transition: background-color 0.2s ease;
+		border-radius: 2px;
+		
+		&:focus {
+			outline: none;
+		}
+	}
+}

@@ -62,15 +62,15 @@ const PDFRenderer = ({ url, maxWidth = '1000px' }: PDFRendererProps) => {
 				for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
 					if (!mounted) return
 					const page = await pdf.getPage(pageNum)
-					// Calculate height to maintain aspect ratio
 					const scale = 1
 					const scaledViewport = page.getViewport({ scale })
 
-					// Create page container
+					// Create page container with relative positioning
 					const pageContainer = document.createElement('div')
 					pageContainer.className = 'pdf-page'
 					pageContainer.style.marginBottom = '20px'
 					pageContainer.style.width = '100%'
+					pageContainer.style.position = 'relative'
 					currentContainer.appendChild(pageContainer)
 
 					// Create SVG container with preserveAspectRatio
@@ -79,6 +79,47 @@ const PDFRenderer = ({ url, maxWidth = '1000px' }: PDFRendererProps) => {
 					svg.setAttribute('viewBox', `0 0 ${scaledViewport.width} ${scaledViewport.height}`)
 					svg.setAttribute('preserveAspectRatio', 'xMidYMid meet')
 					pageContainer.appendChild(svg)
+
+					// Add annotation layer
+					const annotationLayer = document.createElement('div')
+					annotationLayer.className = 'annotation-layer'
+					annotationLayer.style.position = 'absolute'
+					annotationLayer.style.top = '0'
+					annotationLayer.style.left = '0'
+					annotationLayer.style.width = '100%'
+					annotationLayer.style.height = '100%'
+					pageContainer.appendChild(annotationLayer)
+
+					// Get annotations
+					const annotations = await page.getAnnotations()
+					
+					// Process link annotations
+					annotations
+						.filter(annotation => annotation.subtype === 'Link')
+						.forEach(annotation => {
+							const [x1, y1, x2, y2] = annotation.rect
+							const viewport = page.getViewport({ scale: 1 })
+							
+							// Convert PDF coordinates to viewport coordinates
+							const { width, height } = viewport
+							const link = document.createElement('a')
+							link.href = annotation.url || ''
+							link.style.position = 'absolute'
+							link.style.left = `${(x1 / width) * 100}%`
+							link.style.top = `${((height - y2) / height) * 100}%`
+							link.style.width = `${((x2 - x1) / width) * 100}%`
+							link.style.height = `${((y2 - y1) / height) * 100}%`
+							link.style.cursor = 'pointer'
+							link.className = 'pdf-annotation-link'
+							
+							if (annotation.url) {
+								link.target = '_blank'
+								link.rel = 'noopener noreferrer'
+							}
+							
+							
+							annotationLayer.appendChild(link)
+						})
 
 					// Render PDF page to SVG
 					const opList = await page.getOperatorList()
@@ -159,6 +200,10 @@ const PDFRenderer = ({ url, maxWidth = '1000px' }: PDFRendererProps) => {
 					},
 					[`.${text_fill_class}-path`]: {
 						stroke: theme.palette.text.primary,
+					},
+					'.pdf-annotation-link:hover, .pdf-annotation-link:focus': {
+						backgroundColor: `${theme.palette.mode === "dark" ? theme.palette.primary.light : theme.palette.primary.dark}40`,
+						outline: 'none',
 					},
 					display: loading ? 'none' : 'block',
 				}}

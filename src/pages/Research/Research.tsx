@@ -229,8 +229,8 @@ function Research() {
 						<ItsAMe />, Stone Tao, Hao Su
 					</>
 				}
-				arXiv='TODO'
-				website='https://arth-shukla.github.io/mshab/'
+				arXiv='https://arxiv.org/abs/2412.13211'
+				website='https://arth-shukla.github.io/mshab'
 				code='https://github.com/arth-shukla/mshab'
 			/>
 
