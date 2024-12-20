@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom'
 
+import CVIcon from 'components/CVIcon'
+
 import { Box, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
 import HomeRounded from '@mui/icons-material/HomeRounded'
 import Mail from '@mui/icons-material/Mail'
 import Bookmark from '@mui/icons-material/Bookmark'
-import Article from '@mui/icons-material/Article'
 import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing'
 
 interface WebsiteDrawerProps {
@@ -38,7 +39,7 @@ const toolbarRoutes: any = {
 	},
 	cv: {
 		name: 'CV',
-		icon: <Article />,
+		icon: <CVIcon fontSize='1.2rem' />,
 	},
 	contact: {
 		name: 'Contact Me',

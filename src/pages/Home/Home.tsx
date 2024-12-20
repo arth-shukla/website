@@ -29,6 +29,10 @@ const HomeSocials: SocialsContext = {
 		include: true,
 		text: false,
 	},
+	CV: {
+		include: true,
+		text: false,
+	},
 }
 
 const flexBoxMiddleAlign = {

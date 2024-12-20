@@ -26,6 +26,10 @@ function Contact() {
 						include: true,
 						text: false,
 					},
+					CV: {
+						include: true,
+						text: false,
+					},
 				}}
 			>
 				<Socials
