@@ -274,7 +274,7 @@ function Research() {
 				highResIcon={mshabVideoHighRes}
 				iconAlt='MS-HAB video'
 				title='ManiSkill-HAB: A Benchmark for Low-Level Manipulation in Home Rearrangement Tasks'
-				conference='Preprint (arXiv 2024)'
+				conference='International Conference on Learning Representations (ICLR) 2025'
 				authors={
 					<>
 						<ItsAMe />, Stone Tao, Hao Su
