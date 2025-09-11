@@ -267,7 +267,6 @@ function Research() {
 	return (
 		<Section className='research-section'>
 			<h1>Research</h1>
-			<p>My current research interests are in embodied AI and robot learning, with some intersections with CV, RL, etc. I'm generally interested in how AI can learn from diverse data, experiences, and representations acquired through general learning methodologies to create agents which can adapt to novel experiences/data.</p>
 
 			<ResearchItem
 				icon={mshabVideo}
@@ -290,7 +289,7 @@ function Research() {
 				highResIcon={ms3IconHighRes}
 				iconAlt='MS3 teaser'
 				title='ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI'
-				conference='Preprint (arXiv 2024)'
+				conference='Robotics: Science and Systems (RSS) 2025'
 				authors={
 					<>
 						Stone Tao, Fanbo Xiang, <ItsAMe />, Yuzhe Qin, Xander Hinrichsen, Xiaodi Yuan, Chen Bao, Xinsong Lin, Yulin Liu, Tse-kai Chan, Yuan Gao, Xuanlin Li, Tongzhou Mu, Nan Xiao, Arnav Gurha, Zhiao Huang, Roberto Calandra, Rui Chen, Shan Luo, Hao Su

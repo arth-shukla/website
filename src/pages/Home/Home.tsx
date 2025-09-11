@@ -121,9 +121,11 @@ function SelfIntroSection() {
 						/>
 					</p>
 					<p>
-						I'm Arth, a research assistant at the <A href='https://cseweb.ucsd.edu/~haosu/index.html'>Hao Su Lab @ UCSD</A> and a research intern at <A href='https://www.hillbot.ai'>Hillbot Inc</A>.
+						I'm Arth, a 1st-year PhD student at <A href='https://ucsd.edu/'>UC San Diego</A> advised by professor <A href='https://cseweb.ucsd.edu/~haosu/index.html'>Hao Su</A>. Previously I was a research intern at <A href='https://www.hillbot.ai'>Hillbot Inc</A>. I received my Bachelor's degree in Mathematics &mdash; Computer Science from <A href='https://ucsd.edu/'>UC San Diego</A> with highest distinction, working with <A href='https://cseweb.ucsd.edu/~haosu/index.html'>Hao Su</A>.
 					</p>
-					<p>I'm passionate about embodied AI and bringing intelligence to robots!</p>
+					<p>
+						My current research interests lie in embodied AI and robot learning, with some intersections with RL, CV, etc. Broadly, I am to develop agents which learn to solve useful robotics tasks with minimal human supervision. To this end, my research revolves around reinforcement learning, simulation, learning from demonstrations, and scalable datasets/benchmarks.
+					</p>
 				</Grid>
 				<Grid
 					item
@@ -163,7 +165,7 @@ function ProjectsInfoSection() {
 					md={8}
 					lg={12}
 				>
-					<h1>I like making stuff</h1>
+					<h1>Other projects</h1>
 					<p>
 						Aside from research, here's some past projects I had fun with. Feel free to check them out by clicking on the icons or on the{' '}
 						<A
