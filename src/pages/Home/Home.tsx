@@ -124,7 +124,7 @@ function SelfIntroSection() {
 						I'm Arth, a 1st-year PhD student at <A href='https://ucsd.edu/'>UC San Diego</A> advised by professor <A href='https://cseweb.ucsd.edu/~haosu/index.html'>Hao Su</A>. Previously I was a research intern at <A href='https://www.hillbot.ai'>Hillbot Inc</A>. I received my Bachelor's degree in Mathematics &mdash; Computer Science from <A href='https://ucsd.edu/'>UC San Diego</A> with highest distinction, working with <A href='https://cseweb.ucsd.edu/~haosu/index.html'>Hao Su</A>.
 					</p>
 					<p>
-						My current research interests lie in embodied AI and robot learning, with some intersections with RL, CV, etc. Broadly, I am to develop agents which learn to solve useful robotics tasks with minimal human supervision. To this end, my research revolves around reinforcement learning, simulation, learning from demonstrations, and scalable datasets/benchmarks.
+						My current research interests lie in embodied AI and robot learning, with some intersections with RL, CV, etc. Broadly, I aim to develop agents which learn to solve useful robotics tasks with minimal human supervision. To this end, my research revolves around reinforcement learning, simulation, learning from demonstrations, and scalable datasets/benchmarks.
 					</p>
 				</Grid>
 				<Grid
