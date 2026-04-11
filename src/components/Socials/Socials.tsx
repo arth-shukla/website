@@ -11,6 +11,7 @@ import IconButton from '@mui/material/IconButton'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import EmailIcon from '@mui/icons-material/Email'
+import SchoolIcon from '@mui/icons-material/School'
 
 import './Socials.scss'
 
@@ -22,16 +23,22 @@ const socials: any = {
 		newTab: false,
 		isRouter: true,
 	},
-	LinkedIn: {
-		text: 'arth-shukla',
-		href: 'https://www.linkedin.com/in/arth-shukla/',
-		icon: <LinkedInIcon fontSize='large' />,
+	Scholar: {
+		text: 'Scholar',
+		href: 'https://scholar.google.com/citations?user=Y5vV6XoAAAAJ&hl=en',
+		icon: <SchoolIcon fontSize='large' />,
 		newTab: true,
 	},
 	GitHub: {
 		text: 'arth-shukla',
 		href: 'https://github.com/arth-shukla',
 		icon: <GitHubIcon fontSize='large' />,
+		newTab: true,
+	},
+	LinkedIn: {
+		text: 'arth-shukla',
+		href: 'https://www.linkedin.com/in/arth-shukla/',
+		icon: <LinkedInIcon fontSize='large' />,
 		newTab: true,
 	},
 	Email: {

@@ -30,6 +30,10 @@ function Contact() {
 						include: true,
 						text: false,
 					},
+					Scholar: {
+						include: true,
+						text: false,
+					},
 				}}
 			>
 				<Socials

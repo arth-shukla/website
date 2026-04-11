@@ -4,6 +4,8 @@ import { Section } from 'components'
 
 import { List, ListItem, ListItemText, Grid, ThemeProvider, useTheme, ButtonGroup, Button } from '@mui/material'
 
+import sbpIcon from '../../assets/sbp/sbp_teaser.png'
+import sbpIconHighRes from '../../assets/sbp/sbp_teaser_high_res.png'
 import mshabVideo from '../../assets/mshab/mshab_renders.mp4'
 import mshabVideoHighRes from '../../assets/mshab/mshab_renders_high_res.mp4'
 import ms3Icon from '../../assets/ms3/ms3_teaser.jpg'
@@ -267,6 +269,22 @@ function Research() {
 	return (
 		<Section className='research-section'>
 			<h1>Research</h1>
+
+			<ResearchItem
+				icon={sbpIcon}
+				highResIcon={sbpIconHighRes}
+				iconAlt='SBP Image'
+				title='Seeing the Bigger Picture: 3D Latent Mapping for Mobile Manipulation Policy Learning'
+				conference='IEEE International Conference on Robotics and Automation (ICRA) 2026'
+				authors={
+					<>
+						Sunghwan Kim, Woojeh Chung, Zhirui Dai, Dwait Bhatt, <ItsAMe />, Hao Su, Yulun Tian, Nikolay Atanasov
+					</>
+				}
+				arXiv='https://arxiv.org/abs/2510.03885'
+				website='https://existentialrobotics.org/sbp_page'
+				code='https://github.com/ExistentialRobotics/SBP'
+			/>
 
 			<ResearchItem
 				icon={mshabVideo}

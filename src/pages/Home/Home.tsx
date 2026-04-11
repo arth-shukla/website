@@ -33,6 +33,10 @@ const HomeSocials: SocialsContext = {
 		include: true,
 		text: false,
 	},
+	Scholar: {
+		include: true,
+		text: false,
+	},
 }
 
 const flexBoxMiddleAlign = {
@@ -67,7 +71,7 @@ function Home({ winHeight }: HomeProps) {
 					}
 					textAlign='left'
 					constTextColor={theme.palette.text.primary}
-					typeText={[' a researcher.', ' a developer.', ' a student.', ' Arth.']}
+					typeText={[' Arth.', ' a researcher.', ' a developer.', ' a student.', ' Arth.']}
 					typeTextColor={theme.palette.primary.main}
 					fontSize='var(--main-page-intro-font-size)'
 					fontFamily='Courier, sans-serif'
@@ -121,7 +125,7 @@ function SelfIntroSection() {
 						/>
 					</p>
 					<p>
-						I'm Arth, a 1st-year PhD student at <A href='https://ucsd.edu/'>UC San Diego</A> advised by professor <A href='https://cseweb.ucsd.edu/~haosu/index.html'>Hao Su</A>. Previously I was a research intern at <A href='https://www.hillbot.ai'>Hillbot Inc</A>. I received my Bachelor's degree in Mathematics &mdash; Computer Science from <A href='https://ucsd.edu/'>UC San Diego</A> with highest distinction, working with <A href='https://cseweb.ucsd.edu/~haosu/index.html'>Hao Su</A>.
+						I'm Arth, an incoming PhD student at the <A href='https://www.washington.edu/'>University of Washington</A> advised by <A href='https://homes.cs.washington.edu/~fox/'>Dieter Fox</A>. Previously I was a research intern at <A href='https://www.hillbot.ai'>Hillbot Inc</A>. I received my Bachelor's degree in Mathematics &mdash; Computer Science from <A href='https://ucsd.edu/'>UC San Diego</A> with highest distinction, working with <A href='https://cseweb.ucsd.edu/~haosu/index.html'>Hao Su</A>.
 					</p>
 					<p>
 						My current research interests lie in embodied AI and robot learning, with some intersections with RL, CV, etc. Broadly, I am to develop agents which learn to solve useful robotics tasks with minimal human supervision. To this end, my research revolves around reinforcement learning, simulation, learning from demonstrations, and scalable datasets/benchmarks.
@@ -167,14 +171,14 @@ function ProjectsInfoSection() {
 				>
 					<h1>Other projects</h1>
 					<p>
-						Aside from research, here's some past projects I had fun with. Feel free to check them out by clicking on the icons or on the{' '}
+						Aside from my current research, here's some old projects I had fun with. Feel free to check them out by clicking on the icons or on the{' '}
 						<A
 							href='/projects'
 							target=''
 						>
 							projects page
 						</A>
-						. Even more projects are listed in my <A href='/documents/Arth_Shukla_CV.pdf'>CV</A>.
+						. More projects are listed in my <A href='/documents/Arth_Shukla_CV.pdf'>CV</A>.
 					</p>
 					<p>I've also done work in full stack web dev using React, Express, Angular, Go, etc.</p>
 				</Grid>
