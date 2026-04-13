@@ -125,7 +125,10 @@ function SelfIntroSection() {
 						/>
 					</p>
 					<p>
-						I'm Arth, an incoming PhD student at the <A href='https://www.washington.edu/'>University of Washington</A> advised by <A href='https://homes.cs.washington.edu/~fox/'>Dieter Fox</A>. Previously I was a research intern at <A href='https://www.hillbot.ai'>Hillbot Inc</A>. I received my Bachelor's degree in Mathematics &mdash; Computer Science from <A href='https://ucsd.edu/'>UC San Diego</A> with highest distinction, working with <A href='https://cseweb.ucsd.edu/~haosu/index.html'>Hao Su</A>.
+						I'm Arth, an incoming PhD student at the <A href='https://www.washington.edu/'>University of Washington</A> advised by <A href='https://homes.cs.washington.edu/~fox/'>Dieter Fox</A>. I am grateful to have my research funded by the <A href="https://www.nsfgrfp.org/">NSF Graduate Research Fellowship</A>.
+					</p>
+					<p>
+						Previously I was a research intern at <A href='https://www.hillbot.ai'>Hillbot Inc</A>. I received my Bachelor's degree in Mathematics &mdash; Computer Science from <A href='https://ucsd.edu/'>UC San Diego</A> with highest distinction, working with <A href='https://cseweb.ucsd.edu/~haosu/index.html'>Hao Su</A>.
 					</p>
 					<p>
 						My current research interests lie in embodied AI and robot learning, with some intersections with RL, CV, etc. Broadly, I aim to develop agents which learn to solve useful robotics tasks with minimal human supervision. To this end, my research revolves around reinforcement learning, simulation, learning from demonstrations, and scalable datasets/benchmarks.
